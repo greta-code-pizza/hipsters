@@ -10,28 +10,27 @@ source code to the site operating at
 [https://lobste.rs](https://lobste.rs).
 It is a Rails codebase and uses a SQL (MariaDB in production) backend for the database.
 
-You are free to use this code to start your own [sister site](https://github.com/lobsters/lobsters/wiki)
-because the code is available under a [permissive license](https://github.com/lobsters/lobsters/blob/master/LICENSE) (3-clause BSD).
-We welcome bug reports and code contributions that help use improve [lobste.rs](https://lobste.rs).
+You are free to use this code to start your own [sister site](https://github.com/greta-code-pizza/hipsters/wiki)
+because the code is available under a [permissive license](https://github.com/greta-code-pizza/hipsters/blob/staging/LICENSE) (3-clause BSD).
+We welcome bug reports and code contributions that help use improve [hipsters-feed.herokuapp.com](https://hipsters-feed.herokuapp.com/).
 As a volunteer project we're reluctant to take on work that's not useful to our site, so please understand if we don't want to adopt your custom feature.
 
 
 #### Contributing bugfixes and new features
 
 We'd love to have your help.
-Please see the [CONTRIBUTING](https://github.com/lobsters/lobsters/blob/master/CONTRIBUTING.md) file for details.
+Please see the [CONTRIBUTING](https://github.com/greta-code-pizza/hipsters/blob/staging/CONTRIBUTING.md) file for details.
 
 #### Initial setup
 
 Use the steps below for a local install.
 
-* Install the Ruby version specified in [.ruby-version](https://github.com/lobsters/lobsters/blob/master/.ruby-version)
+* Install the Ruby version specified in [.ruby-version](https://github.com/greta-code-pizza/hipsters/blob/staging/.ruby-version)
 
-* Checkout the lobsters git tree from Github
+* Checkout the hipsters git tree from Github
     ```sh
-    $ git clone https://github.com/greta-code-pizza/lobsters.git
-    $ cd lobsters
-    lobsters$
+    $ git clone https://github.com/greta-code-pizza/hipsters.git
+    $ cd hipsters
     ```
 
 * Install Nodejs, needed (or other execjs) for uglifier
@@ -44,7 +43,7 @@ Use the steps below for a local install.
 * Run Bundler to install/bundle gems needed by the project:
 
     ```sh
-    lobsters$ bundle
+    $ bundle
     ```
     
     * If when installing the `mysql2` gem on macOS, you see 
@@ -64,7 +63,7 @@ running tests:
       adapter: mysql2
       encoding: utf8mb4
       reconnect: false
-      database: lobsters_dev
+      database: hipsters_dev
       socket: /tmp/mysql.sock
       username: *dev_username*
       password: *dev_password*
@@ -73,7 +72,7 @@ running tests:
       adapter: mysql2
       encoding: utf8mb4
       reconnect: false
-      database: lobsters_test
+      database: hipsters_test
       socket: /tmp/mysql.sock
       username: *test_username*
       password: *test_password*
@@ -82,7 +81,7 @@ running tests:
 * Load the schema into the new database:
 
     ```sh
-    lobsters$ rails db:schema:load
+    $ rails db:schema:load
     ```
 
 * On your production server, copy `config/initializers/production.rb.sample`
@@ -94,25 +93,25 @@ running tests:
 * Seed the database to create an initial administrator user, the `inactive-user`, and at least one tag:
 
     ```sh
-    lobsters$ rails db:seed
+    $ rails db:seed
     ```
 
 * On your personal computer, you can add some sample data and run the Rails server in development mode.
   You should be able to login to `http://localhost:3000` with your new `test` user:
 
     ```sh
-    lobsters$ rails fake_data
-    lobsters$ rails server
+    $ rails fake_data
+    $ rails server
     ```
 
 * Deploying the site in production requires setting up a web server and running the app in production mode.
   There are more tools and options available than we can describe; find a guide or an expert.
-  The lobsters-ansible repo has our config files to crib from. Some app-specific notes:
+  The hipsters-ansible repo has our config files to crib from. Some app-specific notes:
 
 * Set up crontab or another scheduler to run regular jobs:
 
     ```
-    */5 * * * *  cd /path/to/lobsters && env RAILS_ENV=production sh -c 'bundle exec ruby script/mail_new_activity; bundle exec ruby script/post_to_twitter; bundle exec ruby script/traffic_range'
+    */5 * * * *  cd /path/to/hipsters && env RAILS_ENV=production sh -c 'bundle exec ruby script/mail_new_activity; bundle exec ruby script/post_to_twitter; bundle exec ruby script/traffic_range'
     ```
 
 * See `config/initializers/production.rb.sample` for GitHub/Twitter integration help.
