@@ -2,7 +2,7 @@
 <% coder = HTMLEntities.new %>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title><%= Rails.application.name %><%= @title.present? ?
+    <title><%= t('helpers.appli.hipster') %><%= @title.present? ?
       ": " + h(@title) : "" %></title>
     <description><%= @title %></description>
     <link><%= Rails.application.root_url + (@newest ? t('home.rss.newest') : "") %></link>

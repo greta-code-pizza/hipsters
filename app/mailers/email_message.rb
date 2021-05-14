@@ -5,7 +5,7 @@ class EmailMessage < ApplicationMailer
 
     mail(
       :to => user.email,
-      :subject => "[#{Rails.application.name}] Private Message from " <<
+      :subject => "[#{t('helpers.appli.hipster')}] #{t('mailers.email.private')}" <<
                   "#{message.author_username}: #{message.subject}"
     )
   end

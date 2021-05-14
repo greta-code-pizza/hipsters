@@ -260,7 +260,7 @@ class Comment < ApplicationRecord
 
         if u.pushover_mentions?
           u.pushover!(
-            :title => "#{Rails.application.name} mention by " <<
+            :title => "#{t('helpers.appli.hipster')} mention by " <<
               "#{self.user.username} on #{self.story.title}",
             :message => self.plaintext_comment,
             :url => self.url,
@@ -299,7 +299,7 @@ class Comment < ApplicationRecord
 
       if u.pushover_replies?
         u.pushover!(
-          :title => "#{Rails.application.name} reply from " <<
+          :title => "#{t('helpers.appli.hipster')} reply from " <<
             "#{self.user.username} on #{self.story.title}",
           :message => self.plaintext_comment,
           :url => self.url,
