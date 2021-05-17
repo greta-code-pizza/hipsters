@@ -1,7 +1,5 @@
 class RepliesController < ApplicationController
   REPLIES_PER_PAGE = 25
-  
-  
 
   before_action :require_logged_in_user, :flag_warning, :set_page
   after_action :update_read_ribbons, only: [:unread]
@@ -9,41 +7,38 @@ class RepliesController < ApplicationController
   def all
     render action: 'show' and return
     @heading = @title = "All Your Replies"
-    @replies = Comment.all
-    # @replies = ReplyingComment
-    #              .for_user(@user.id)
-    #              .offset((@page - 1) * REPLIES_PER_PAGE)
-    #              .limit(REPLIES_PER_PAGE)
-    # apply_current_vote
+    @replies = ReplyingComment
+                 .for_user(@user.id)
+                 .offset((@page - 1) * REPLIES_PER_PAGE)
+                 .limit(REPLIES_PER_PAGE)
+    apply_current_vote
     render :show
   end
 
   def comments
-    render action: 'show' and return
+    render action: 'placeholder' and return
     @heading = @title = "Your Comment Replies"
-    @replies = Comment.all
-    # @replies = ReplyingComment
-    #              .comment_replies_for(@user.id)
-    #              .offset((@page - 1) * REPLIES_PER_PAGE)
-    #              .limit(REPLIES_PER_PAGE)
-    # apply_current_vote
+    @replies = ReplyingComment
+                 .comment_replies_for(@user.id)
+                 .offset((@page - 1) * REPLIES_PER_PAGE)
+                 .limit(REPLIES_PER_PAGE)
+    apply_current_vote
     render :show
   end
 
   def stories
-    render action: 'show' and return
+    render action: 'placeholder' and return
     @heading = @title = "Your Story Replies"
-    @replies = Comment.all
-    # @replies = ReplyingComment
-    #              .story_replies_for(@user.id)
-    #              .offset((@page - 1) * REPLIES_PER_PAGE)
-    #              .limit(REPLIES_PER_PAGE)
-    # apply_current_vote
+    @replies = ReplyingComment
+                 .story_replies_for(@user.id)
+                 .offset((@page - 1) * REPLIES_PER_PAGE)
+                 .limit(REPLIES_PER_PAGE)
+    apply_current_vote
     render :show
   end
 
   def unread
-    render action: 'show' and return
+    render action: 'placeholder' and return
     @heading = @title = "Your Unread Replies"
     @replies = ReplyingComment.unread_replies_for(@user.id)
     apply_current_vote
