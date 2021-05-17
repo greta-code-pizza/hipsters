@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/greta-code-pizza/hipsters/documentation/.wiki/hispters-logo.png" width='200' alt='Logo Hipsters'>
+  <img src="https://raw.githubusercontent.com/greta-code-pizza/hipsters/staging/.wiki/hispters-logo.png" width='200' alt='Logo Hipsters'>
 </div>
 
 <br/>
@@ -73,3 +73,4 @@ $ rails server
 ```
 
 Vous pouvez ouvrir l'application sur l'url `http://localhost:3000`
+
