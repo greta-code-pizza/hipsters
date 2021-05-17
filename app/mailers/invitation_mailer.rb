@@ -5,7 +5,7 @@ class InvitationMailer < ApplicationMailer
     mail(
       to: invitation.email,
       subject: "[#{t('helpers.appli.hipster')}] #{t('mailers.inv.invited')}" <<
-               <%t('helpers.appli.hipster')%>
+               "#{t('helpers.appli.hipster')}"
     )
   end
 end
