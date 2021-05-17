@@ -1,0 +1,22 @@
+<li class="story">
+  <div class="story_liner h-entry">
+    <div class="voters">
+    <% if @user %>
+      <a class="upvoter" title="Add upvote"></a>
+    <% else %>
+      <%= link_to "", login_path, :class => "upvoter" %>
+    <% end %>
+    <div class="score"> 0 <%# story.show_score_to_user?(@user) ? story.score : '~' %></div>
+  </div>
+    <div class="details">
+      <span class="link u-repost-of">
+        <a href="advertisement/<%= @advertisement.id %>" class="u-url"><%= @advertisement.title %></a>
+      </span>
+      <a class="description_present" title="<%= @advertisement.title %>" href="#">&#x2636;</a>
+      <span class="tags"><a href="#" class="tag"><%= @advertisement.tag %></a></span>
+    </div>
+    <div class="byline">
+      <%= time_ago_in_words_label(@advertisement.created_at) %>
+    </div>
+  </div>
+</li>
