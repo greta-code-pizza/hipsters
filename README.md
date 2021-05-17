@@ -23,46 +23,50 @@ Ce projet est un fork du site [Lobsters](https://lobste.rs/) qui sera adapté au
 
 Étapes à suivre :
 
-* Installer la version de ruby spécifié dans le fichier [.ruby-version](https://github.com/greta-code-pizza/hipsters/blob/staging/.ruby-version)
+1. Installer la version de ruby spécifié dans le fichier [.ruby-version](https://github.com/greta-code-pizza/hipsters/blob/staging/.ruby-version)
 
-* Cloner le dépôt github et se déplacer dans le dossier associé
+2. Cloner le dépôt github et se déplacer dans le dossier associé
+
 ```sh
 $ git clone https://github.com/greta-code-pizza/hipsters.git
 $ cd hipsters
 ```
 
-* Installer Nodejs en fonction de votre OS
+3. Installer Nodejs en fonction de votre OS
+
 ```sh
 Fedora: sudo yum install nodejs
 Ubuntu: sudo apt-get install nodejs
 OSX: brew install nodejs
 ```
 
-* Installer le projet et ses dépendances
+4. Installer le projet et ses dépendances
+
 ```sh
 $ bundle
 ```
 
-* Configurer les variables d'environnement
+5. Configurer les variables d'environnement
 
 - Créer un fichier .env à la racine du projet
 - Copier le contenu de .env.example dedans
 - Éditer pour adapter à votre base de donnée mysql
 
-* Créer et charger votre base de donnée
+6. Créer et charger votre base de donnée
 
 ```sh
 $ rails db:create
 $ rails db:schema:load
 $ rails db:seed
 ```
-* (facultatif) vous pouvez charger un jeu de donnée de test avec la commande suivante
+
+7. (facultatif) vous pouvez charger un jeu de donnée de test avec la commande suivante
 
 ```sh
 $ rails fake_data
 ```
 
-* Lancer le serveur d'application
+8. Lancer le serveur d'application
 
 ```sh
 $ rails server
