@@ -4,6 +4,7 @@ class ReplyingComment < ApplicationRecord
   belongs_to :comment
 
   scope :for_user, ->(user_id) {
+
     where(user_id: user_id)
       .order(comment_created_at: :desc)
       .preload(:comment => [:story, :user])
