@@ -1,5 +1,5 @@
 <div align="center">
-  <img src=".wiki/hipsters-logo" width='200' alt='Logo Hipsters'>
+  <img src=".wiki/hipsters-logo.png" width='200' alt='Logo Hipsters'>
 </div>
 
 <br/>
