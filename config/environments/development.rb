@@ -60,3 +60,8 @@ end
 
 Keybase.DOMAIN = Rails.application.domain
 Keybase.BASE_URL = ENV.fetch('KEYBASE_BASE_URL') { 'https://keybase.io' }
+
+  # Config for use gem mailcatcher  http://127.0.0.1:1080/
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = { :address => '127.0.0.1', :port => 1025 }
+config.action_mailer.raise_delivery_errors = false
