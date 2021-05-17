@@ -1,8 +1,19 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/9d0328e288fcf5afb83e/maintainability)](https://codeclimate.com/github/greta-code-pizza/hipsters/maintainability) 
-[![CircleCI](https://img.shields.io/circleci/build/github/greta-code-pizza/hipsters/staging)](https://app.circleci.com/pipelines/github/greta-code-pizza)
+<div align="center">
+  <img src=".wiki/hipsters-logo" width='200' alt='Logo Hipsters'>
+</div>
+
+<br/>
+<div>
+  <a href='https://api.codeclimate.com/v1/badges/9d0328e288fcf5afb83e/maintainability'>
+    <img src="https://codeclimate.com/github/greta-code-pizza/hipsters/maintainability" alt='Current version'>
+  </a>
+  <a href='https://app.circleci.com/pipelines/github/greta-code-pizza'>
+    <img src="https://img.shields.io/circleci/build/github/greta-code-pizza/hipsters/staging" alt='Current version'>
+  </a>
+</div>
 
 
-### Hipsters - edu project
+### Hipsters
 
 This is the
 [quite sad](https://www.reddit.com/r/rails/comments/6jz7tq/source_code_lobsters_a_hacker_news_clone_built/)
