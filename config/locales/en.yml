@@ -1091,6 +1091,7 @@ en:
       reply: "Reply"
       replies: "Replies"
       error: 'error'
+      deleted: "deleted"
     users:
       newest: "/newest/"
       deleted: "deleted"

@@ -967,6 +967,7 @@ fr:
   helpers:
     appli:
       justnow: "juste maintenant"
+      deleted: "supprimé(s) "
       less: "il y a moins d'une minute"
       minute: 'minute'
       hours: "hour"

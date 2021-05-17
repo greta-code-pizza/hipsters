@@ -71,7 +71,7 @@ module ApplicationHelper
       if (count = @user.unread_replies_count) > 0
         @right_header_links[replies_unread_path] = {
           :class => ["new_messages"],
-          :title => "#{@user.unread_replies_count+ t('helpers.appli.reply')}".pluralize(count),
+          :title => "#{@user.unread_replies_count} #{t('helpers.appli.reply')}".pluralize(count),
         }
       else
         @right_header_links[replies_path] = { :title => t('helpers.appli.replies') }
