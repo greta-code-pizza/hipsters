@@ -1,21 +1,61 @@
 class AdvertisementController < ApplicationController
+  before_action :set_advertisement, only: [:show, :edit, :update, :destroy]
 
-  def new
-    @title = "Submit"
-    @cur_url = "advertisement/new"
+  # GET /advertisements
+  def index
+    @advertisements = Advertisement.all
   end
 
+  # GET /advertisements/1
+  def show
+  end
+
+  # GET /advertisements/new
+  def new
+    @advertisement = Advertisement.new
+  end
+
+  # GET /advertisements/1/edit
+  def edit
+    @advertisement = Advertisement.find_by(:id => params[:id])
+  end
+
+  # POST /advertisements
   def create
-    begin
-      Advertisement.create(ad_params(params))
-      redirect_to "/"
-    rescue => e
-      puts e
+    @advertisement = Advertisement.new(advertisement_params)
+
+    if @advertisement.save
+      redirect_to @advertisement, notice: 'Advertisement was successfully created.'
+    else
+      render :new
     end
   end
 
-  def ad_params(params)
-    params.permit(:title, :lien_externe, :tag)
+  # PATCH/PUT /advertisements/1
+  def update
+    advert = Advertisement.find_by(:id => params[:id])
+    params.delete(:id)
+    if advert.update(advertisement_params)
+      redirect_to @advertisement, notice: 'Advertisement was successfully updated.'
+    else
+      render :edit
+    end
   end
 
+  # DELETE /advertisements/1
+  def destroy
+    @advertisement = Advertisement.destroy_by(:id => params[:id])
+    redirect_to advertisements_url, notice: 'Advertisement was successfully destroyed.'
+  end
+
+  private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_advertisement
+    @advertisement = Advertisement.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def advertisement_params
+    params.permit(:title, :content, :tag)
+  end
 end

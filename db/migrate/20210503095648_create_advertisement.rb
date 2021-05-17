@@ -3,7 +3,7 @@ class CreateAdvertisement < ActiveRecord::Migration[6.0]
   def self.up
     create_table :advertisements do |t|
       t.string :title
-      t.text :lien_externe
+      t.text :content
       t.string :tag
       t.timestamp :created_at
       t.integer :vote, :default => 0
