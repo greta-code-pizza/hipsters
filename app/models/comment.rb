@@ -17,6 +17,7 @@ class Comment < ApplicationRecord
   belongs_to :hat,
              :optional => true
   has_many :taggings, through: :story
+  belongs_to :comment
 
   attr_accessor :current_vote, :previewing, :indent_level
 
@@ -41,6 +42,15 @@ class Comment < ApplicationRecord
       .by(user).arel.exists
     ) : where('true')
   }
+
+  scope :for_user, ->(user_id) {
+    where(user_id: user_id)
+      .order(created_at: :desc)
+      .preload(:comment => [:story, :user])
+  }
+  scope :comment_replies_for,
+        ->(user_id) { for_user(user_id).where('parent_comment_id is not null') }
+  scope :story_replies_for, ->(user_id) { for_user(user_id).where('parent_comment_id is null')}
 
   FLAGGABLE_DAYS = 7
   DELETEABLE_DAYS = FLAGGABLE_DAYS * 2

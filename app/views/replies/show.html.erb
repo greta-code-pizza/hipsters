@@ -1,5 +1,6 @@
 <div class="box wide">
   <div class="legend right">
+    <%#=
     <%= link_to_different_page(t('replies.show.unread'),   replies_unread_path) %> |
     <%= link_to_different_page(t('replies.show.all'),      replies_path) %> |
     <%= link_to_different_page(t('replies.show.comments'), replies_comments_path) %> |
@@ -17,9 +18,9 @@
     <% @replies.each do |reply| %>
       <li class="comments_subtree">
         <%= render "comments/comment",
-            comment: reply.comment,
+            comment: reply,
             show_story: true,
-            is_unread: reply.is_unread,
+            #is_unread: reply.is_unread,
             show_tree_lines: false %>
         <ol class="comments"></ol>
       </li>

@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   include IntervalHelper
+ 
 
   caches_page :about, :chat, :index, :newest, :newest_by_user, :recent, :top, if: CACHE_PAGE
 
@@ -65,12 +66,13 @@ class HomeController < ApplicationController
 
     render :action => "index"
   end
+ 
+  
+  def index 
 
-  def index
     @stories, @show_more = get_from_cache(hottest: true) {
       paginate stories.hottest
     }
-
     @rss_link ||= {
       :title => "RSS 2.0",
       :href => user_token_link("/rss"),
