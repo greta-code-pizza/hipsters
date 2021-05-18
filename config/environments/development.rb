@@ -58,20 +58,23 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # Config for use gem mailcatcher  http://127.0.0.1:1080/
-  #config.action_mailer.raise_delivery_errors = false
-  #config.action_mailer.delivery_method = :smtp
-  #config.action_mailer.smtp_settings = { :address => "127.0.0.1", :port => 1025 }
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { :address => "127.0.0.1", :port => 1025 }
 
   #Config for ActionMailer via gmail
-  config.action_mailer.delivery_method = :smtp
+  #config.action_mailer.delivery_method = :smtp
+  # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
-    port: 587,
-    address: 'smtp.gmail.com',
-    user_name: ENV['SMTP_USERNAME'],
-    password: ENV['SMTP_PASSWORD'],
-    authentication: :plain,
-    enable_starttls_auto: true
+   :address              => "smtp.gmail.com",
+   :domain               => 'hipsters.com',
+   :port                 => 587,
+   :user_name            => ENV['SMTP_USERNAME'],
+   :password             => ENV['SMTP_PASSWORD'],
+   :authentication       => "plain",
+   :enable_starttls_auto => true
   }
+  
 
 
 end

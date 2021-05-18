@@ -1,32 +1,10 @@
-<<<<<<< HEAD
 fr:
-=======
-#ban_notification
-#categories
-#comments
-#email_message
-#email_reply
-#filters
-#global
-#hats
-#home >> en cours about
-#stories
-
-
-
-fr:
-  layout:
-    footer:
-      a1: toto
-      a2: toto
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
   ban_notification:
     text: "Vous avez été banni de"
     for: "pour"
     notification: "Vous n'êtes plus autorisés à vous connecter à ce site. Si vous le souhaitez, vous pouvez contester ce ban avec un modérateur en répondant à cet email"
 
   categories:
-<<<<<<< HEAD
     text: "Astuce: lisez des histoires dans plusieurs catégories avec"
 
   comments:
@@ -47,23 +25,11 @@ fr:
       placeholder: "Vous devez être connectés pour poster un commentaire"
       markdown: "Formatage Markdown disponible"
       post: "Poster"
-=======
-  text: "Astuce: lisez des histoires dans plusieurs catégories avec"
-
-  comments:
-    _commentbox:
-      placeholder: "Vous devez être connectés pour poster un commentaire"
-      markdown: "Formatage Markdown disponible"
-      post: "Posté"
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
       update: "Mis à jour"
       preview: "Précédent"
       cancel: "Annuler"
       hats: "Porter une casquette"
-<<<<<<< HEAD
       comment: "commentaire"
-=======
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
 
   email_message:
     notify:
@@ -76,7 +42,6 @@ fr:
       text: "Continuer la discussion à"
 
   filters:
-<<<<<<< HEAD
     legend: "Les tags filtrés"
     text1_part1: "Pour cacher des histoires avec certains"
     text1_part2: "de partout sur le site, vérifiez-les ci-dessous"
@@ -90,21 +55,6 @@ fr:
     table_th5 : "Filtration"
     inactive_tag: "inactif"
     save: "Enregistrer les filtres"
-=======
-    legend: "Tags filtrés"
-    text1_part1: "Pour cacher des articles avec certains?"
-    #text1_part2: "from across the site, check them below"
-    text2_part1: "Puisque vous n'êtes pas connecté, vos filtres seront stockés dans un cookie de navigateur de longue durée.
-                  Pour stocker de manière permanente vos filtres de balises et les faire fonctionner dans tous les navigateurs"
-    text2_part2: "Pour votre compte"
-    table_th1 : "Cacher"
-    table_th2 : "Tag"
-    table_th3 : "Description"
-    table_th4 : "Articles"
-    table_th5 : "Filtrer"
-    inactive_tag: "inactif"
-    save: "Sauvegarder Filtres"
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
 
   global:
     table_tr1:
@@ -135,29 +85,18 @@ fr:
       text: "texte"
       prefix: "prefixer le texte avec au moins"
       space: "4 espaces"
-<<<<<<< HEAD
       image: "(image en ligne)"
-=======
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
 
   hats:
     build_request:
       legend: "Demander le rôle"
-<<<<<<< HEAD
       p1: "Un rôle est un moyen formel et authentifié de parler officiellement d'un projet, d'une organisation ou d'une compagnie de Hipsters .
-=======
-      p1: "Un rôle est un moyen formel et authentifié de parler officiellement d'un projet, d'une organisation ou d'une compagnie de Lobsters.
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
            Un utilisateur peut avoir plusieurs rôles, mais ne peut en endosser qu'un par commentaire ou message"
       p2: "Les rôles servent à faire des déclarations publiques, non rappeler d'anciennes contribution d'un projet ou d'emplois occupés.
           Veuillez en demander un uniquement si vous agissez officiellement ici, par exemple si vous êtes un développeur ou un employé autorisé à communiquer au nom de votre entreprise.
           Les rôles sont généralment réservés aux projet et organisations notables"
       p3: "Pour demander un rôle pour votre compte, fournissez une brève description du rôle (par exemple 'OpenBSD Developer', un lien publique   sera affiché lors du survol de vote rôle que les utilisateurs pourront voir, comme une adresse mail pour le projet, ou un lien vers le site Web de l'entreprise montrant votre emploi, et un commentaire privé qui ne sera visible que par les modérateurs durant la validation"
-<<<<<<< HEAD
       p4: "Il est vraiment utile si vous associez votre compte GitHub ou Twitter à votre compte Hipsters  et, dans votre commentaire, créez un    lien vers l'endroit où l'organisation est liée à ce compte publique. Then nous pourrons instentanément voir votre légitimité sans avoir à vous envoyer un mail de vérification"
-=======
-      p4: "Il est vraiment utile si vous associez votre compte GitHub ou Twitter à votre compte Lobsters et, dans votre commentaire, créez un    lien vers l'endroit où l'organisation est liée à ce compte publique. Then nous pourrons instentanément voir votre légitimité sans avoir à vous envoyer un mail de vérification"
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
     
       p5: "Lorsque vous ne pouvez plus parler pour un projet ou une entreprise, veuillez contacter un modérateur pour retirer votre rôle. Les anciens messages s'afficheront toujours mais vous ne pourrez plus les utiliser"
       hat: "Rôle:"
@@ -167,27 +106,15 @@ fr:
       comment: "Commentaire:"
       placeholder_comment: "Durant l'approbation, ce ne sera visible que par les modérateurs. Veuillez créer un lien vers les discussions ou ce rôle serait utile pour parler au nom de ce projet"     
       request_hat_bnt : "Demande de rôle"
-<<<<<<< HEAD
     index:
       legendR: "Demande de rôle"
       legend: "Rôles"
       text: "Un rôle est un moyen formel et authentifié de parler officiellement d'un projet, d'une organisation ou d'une compagnie de Hipsters .
-=======
-
-    index:
-      legendR: "Demande de rôle"
-      legend: "Rôle"
-      text: "Un rôle est un moyen formel et authentifié de parler officiellement d'un projet, d'une organisation ou d'une compagnie de Lobsters.
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
            Un utilisateur peut avoir plusieurs rôles, mais ne peut en endosser qu'un par commentaire ou message"
       table_th1: "Utilisateur"
       table_th2: "Rôle"
       table_th3: "Lien"
       none: "rien"
-<<<<<<< HEAD
-=======
-    
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
     request_index: 
       legend: "Requiert rôle"
       no_hat_requests: "Pas de rôle demandé"
@@ -206,21 +133,12 @@ fr:
       legend: "404"
       text: "La ressource que vous avez demandé n'a pas été trouvée, ou l'article a été supprimé"
     about:
-<<<<<<< HEAD
       title: "A propos"
       p1_part1: "Hipsters  est une communauté axée sur l'informatique centrée sur l'agrégation de liens
                 et discussion, lancée le 3 juillet 2012.
                 L'administrateur est"
       p1_part2: ", contactez-le pour tout problème de support"
       p1_part3: "Hipsters  a été créé par "
-=======
-      title: 'à propos'
-      p1_part1: "Lobsters est une communauté axée sur l'informatique centrée sur l'agrégation de liens
-          et discussion, lancée le 3 juillet 2012.
-          L'administrateur est"
-      p1_part2: ", contactez-le pour tout problème de support"
-      p1_part3: "Lobsters a été créé par "
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
       p1_part4: "avec des touches de conception soignées pour encourager une communauté saine:"
       li1:
         a: "a"
@@ -249,11 +167,7 @@ fr:
       p2_p6: "Le système de tags fonctionne de cette façon pour trois raisons:"      
       tags: "tags"
       filter: "filtres"
-<<<<<<< HEAD
       example: "exemple:"
-=======
-      example: "exemples:"
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
       li6: "Il maintient le site sur le sujet en n'autorisant qu'une liste prédéfinie de balises. Ces balises représentent ce que la plupart des utilisateurs du site veulent lire, donc le contenu qui ne rentre dans aucune catégorie ne doit pas être soumis. Il permet également d'organiser les articles et de les rechercher plus facilement"
       li7: 
         p1: "Cela favorise la discussion, Sur un site avec des forums séparés, un développeur Ruby s'abonnerait probablement à un forum Ruby, mais pas à un forum Python. Quand un lien est posté sur le forum Python, le développeur Ruby ne le verrait probablement jamais même si il aurait quelque chose d'utile à dire à ce sujet (peut être le lien concerne une bibliothèque Python qui fait la même chose qu'une bibliothèque Ruby). Sur ce site, le lien serait affiché avec un "
@@ -261,20 +175,12 @@ fr:
         p3: "it out."
         python: "python"
       li8: "Cela garde la communauté cohérente. Les histoires contiennent souvent des discussions sur plus d'un sujet, mais sur d'autres sites, ils sont confinés à une seule catégorie/forum, limitant l'exposition. Le lien pourrait être soumis à plus qu'un seul forum, mais chaque conversation resterait séparée et les utilisateurs interagiraient rarement avec les utilisateurs d'autres forums. Sur ce site, l'histoire serait simplement étiquetée avec plusieurs tags et tous les utilisateurs verraient toutes les discussions sur l'histoire en un seul endroit"
-<<<<<<< HEAD
       p3_p1: "La création de nouveaux tags et la suppression des anciens tags sont effectuées par la communauté en soumettabt, discutant et en votant pour"
-=======
-      p3_p1: "La création de nouvelles balises et la suppression des anciennes balises sont effectuées par la communauté en soumettabt, discutant et en votant pour"
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
       p3_p2: "Les demandes taggées à leur sujet, et les événements sont"
       p3_p3: "depuis 2018-04). Pour proposer un tag, postez un"
       p3_p4: "Suivant avec le nom et la description. Expliquez la portée, répertoriez les histoires existantes qui auraient du être taggées, expliquez pourquoi les gens voudraient spécifiquement les filtrer et justifiez la complexité accrue pour les contributeurs et les modérateurs"
       logged: "connecté"
-<<<<<<< HEAD
       p4_p1: "Hipsters  se concentre assez étroitement sur l'informatique, et des tags comme"
-=======
-      p4_p1: "Lobsters se concentre assez étroitement sur l'informatique, et des tags comme"
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
       p4_p2: "n'implique pas que chaque oeuvre d'art est sur le sujet. Quelques règles de base pour de bons articles à soumettre: Améliorent-ils les futurs programmes du lecteur? Cela approfondira-t-il leur compréhension du dernier programme? Cela va t il être plus intéressant dans cinq ou dix ans?"
       p5: "Certaines choses populaires sur des sites plus grands similaires à celui ci sont ici hors sujet: entrepreneuriat, management, actialité des entreprises qui emploient beaucoup de développeurs, investissement, événements mondiaux, anthropologie, auto-assistance, système de productivité personnelle"
       h2_2: "arborescence d'invitation"
@@ -284,11 +190,7 @@ fr:
       p7_p1: "Les nouveaux utilisateurs doivent être invités par un utilisateur actuel, bien qu'il n'y ait pas de processus formel de   vérification.
               Les invitations sont utilisées comme mécanisme de contrôle du spam,
               pour ralentir les inscriptions à un rythme"
-<<<<<<< HEAD
       p7_p2: "et pour encourager les utilisateurs à être gentils, ne pas faire de la base d'utilisateurs Hipsters  un club d'élite.
-=======
-      p7_p2: "et pour encourager les utilisateurs à être gentils, ne pas faire de la base d'utilisateurs Lobsters un club d'élite.
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
             Le moyen le plus rapide de recevoir une invitation est de parler à quelqu'un que vous"
       p7_p3: "Si vous avez écrit un lien qui a été publié, veuillez contacter"
       p7_p4: ", nous serions ravis de vous voir participer à la discussion.
@@ -311,18 +213,13 @@ fr:
       hotness: "modifier les pertinences"
       p9_p1: "Il n'y a pas de limite au nombre d'invitations qu'un utilisateur peut envoyer (bien que nous puissions à un moment donné, gérer"
       p9_p2: "Quand le compte est banni pour spam,"
-<<<<<<< HEAD
       p9_p3: "comptes utilisateurs/identités multiples malveillants"
-=======
-      #p9_p3: "sockpuppeting"
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
       p9_p4: ", ou tout autre abus,
               les modérateurs envisageront de désactiver la capacité de leur invité à envoyer des invitations ou, rarement, de les interdire également."
       growth: "croissance"
       p10_p1: "Les utilisateurs peuvent signaler les histoires et les commentaires lorsqu'il y a un problème sérieux qui nécessite l'attention du modérateur.
               Les utilisateurs doivent atteindre "
       p10_p2: "karma à signaler. Pour guider l'utilisation et éviter les méta-conversations distrayantes («Pourquoi cela a-t-il été signalé!?», Etc.), le marquage nécessite une sélection dans une liste prédéfinie de raisons."
-<<<<<<< HEAD
       p11_p1: "Pour les histoires, ce sont:
               «Hors sujet» pour les histoires qui ne concernent pas l'informatique;
               `` Déjà publié '' pour les soumissions en double et les liens qui développent ou les réponses à un fil de discussion datant de moins d'une semaine (voir "
@@ -469,11 +366,6 @@ fr:
       p34_1O: "faire cela."
     chat:
       legend: "Tchat Hipsters "
-=======
-    
-    chat:
-      legend: "Chat Lobsters"
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
       p1_1: "Un canal de discussion officiel en temps réel est à la disposition des membres et des invités
             du site, hébergé sur le"
       in: " dans "
@@ -482,11 +374,7 @@ fr:
       and: ", avec"
       p1_3: "sont des opérateurs de canaux"
       p2: "les politiques et idéaux du canal de discussion sont les mêmes que sur le site internet. Contenu et conversation de qualité, respect des autres utilisateurs et non spamming. une discussion légèrement hors sujet est généralement acceptable. Le canal n'est pas assez occupé pour qu'il y ait toujours quelqu'un qui parle, alors ne soyez pas surpris si vous essayez d'entamer une conversation et que personne ne répond. Laissez le ouvert et vous verrez une activité, bien que nous soyons plus actifs pendant les heures de travail aux Etats-Unis."
-<<<<<<< HEAD
       p3: "Les nouveaux contributeurs sont toujours les bienvenus sur Hipsters . Si vous êtes l'auteur ou impliqué d'une autre manière dans un article qui a été soumis au site "
-=======
-      p3: "Les nouveaux contributeurs sont toujours les bienvenus sur Lobsters. Si vous êtes l'auteur ou impliqué d'une autre manière dans un article qui a été soumis au site "
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
        
       p4: "Sinon, vous êtes invités à rejoindre le communauté dans la salle de chat. Les invitations ne sont pas automatiquement prolongées, mais en général quelqu'un le fera une fois qu'il vous connaîtra dans le chat. Ils vous demanderont probablement un lien vers votre page d'accueil ou un profil publique pour s'assurer que vous n'êtes pas un spammeur"
       p5_1: "lurking est un bot qui se cache dans le canal"
@@ -500,19 +388,11 @@ fr:
       cloak: "voile."
       p8_1: "Pour un flux d'articles sans discussion,"
       p8_2: "publie également de nouvelles histoires dans"
-<<<<<<< HEAD
       p9_1: "Hipsters  utilisait un canal appelé"
-=======
-      p9_1: "Lobsters utilisait un canal appelé"
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
       p9_2: "pour des conversations hors sujet (en particulier la politique américaine) qui «débordaient» de la chaîne principale.
             C'était utile à la suite de certains grands événements, mais les modérateurs "
       p9_3: "ne voulaient pas continuer indéfiniment"
       p9_4: "Les membres de la communauté dirigent indépendamment"
-<<<<<<< HEAD
-=======
-
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
     index:
       the: "Les"
       newest: "nouveaux"
@@ -523,25 +403,16 @@ fr:
       in: "dans le"
       tagged: "taggé"
       as: "comme"
-<<<<<<< HEAD
-=======
-
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
     privacy:
       legend: "Politique de confidentialité"
       p1: "C'est Internet, vous n'avez aucune vie privée."
       p2:  "(sauf si vous êtes" 
       p3: "en dessous de 13" 
       p4: ", auquel cas vous n'êtes pas autorisé ici."
-<<<<<<< HEAD
-=======
-
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
     rss:
       newest: "nouveau"
       comments: "Commentaires"
 
-<<<<<<< HEAD
   inv_mail:
     user: "L'utilisateur"
     invited: "vous a invité à"
@@ -750,8 +621,6 @@ fr:
     li1_p5: "ignorer les termes, et"
     li1_p6: "''citations pour des phrases''"
 
-=======
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
   signup:
     index:
       legend: "Créer un compte"
@@ -786,7 +655,6 @@ fr:
       markdown: "Formatage markDown disponible"
       signup: "Se déconnecter"
   
-<<<<<<< HEAD
   settings: 
     index: 
       legend1: "Paramètres du compte"
@@ -839,7 +707,7 @@ fr:
       receivemail: "Recevoir un e-mail:"
       receivealert: "Recevoir une alerte "
       hint: "Nécessite un abonnement ci-dessus"
-      showin: "Montre"
+      showin: "Afficher"
       yourthreads: "Vos fils"
       tagfilter: "filtres des tags"
       receivelist: "Recevoir les e-mails de la liste:"
@@ -874,16 +742,6 @@ fr:
       currentpassword: "Mot de passe actuel:"
       disableauthentication: "Désactiver l'authentification à deux facteurs"
       continue: "Continuer"
-=======
-      
-
-      
-
-
-
-    
-
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
 
 
   stats:
@@ -921,7 +779,6 @@ fr:
                           Consultez les directives ci-dessous pour en savoir plus."
       summary: "Directives de soumission d'article"
       li1:
-<<<<<<< HEAD
         p: "N'éditorialisez pas les titres des articles, mais lorsque l'histoire originale est le titre n'a pas de contexte ou n'est pas clair, veuillez le modifier."
         strong: "Veuillez supprimer les éléments superflus des titres tels que le nom du site, blog, section et auteur."
       li2: "Lorsque l'article soumis a plus d'un an environ, veuillez ajouter l'année où il a été écrit au titre du message dans parenthèses."
@@ -937,32 +794,6 @@ fr:
         p3: "Soumettre à"
         p4: "Vous serez redirigé vers cette page avec l'URL et le titre de la page consultée.
             (Cependant, il ne peut pas reconnaître et supprimer les noms de blog / auteur pour vous.)"
-=======
-        p: "N'éditorialisez pas les titres des articles, mais lorsque l'histoire originale est
-        le titre n'a pas de contexte ou n'est pas clair, veuillez le modifier."
-        strong: "Veuillez supprimer les éléments superflus des titres tels que le nom du
-        site, blog, section et auteur."
-      li2: "Lorsque l'article soumis a plus d'un an environ,
-        veuillez ajouter l'année où il a été écrit au titre du message dans
-        parenthèses."
-      li3: "Lors de la soumission d'une URL, le champ de texte est facultatif et ne doit
-        être utilisé lorsqu'un contexte supplémentaire ou une explication de l'URL est
-        nécessaire. Les commentaires ou opinions doivent être réservés pour un commentaire,
-        afin qu'il puisse être voté séparément de l'article."
-      li4: 
-        if: "Sinon" 
-        text: "s'appliquent clairement à l'article que vous soumettez, les chances
-        est-ce qu'il n'a pas sa place ici. N'utilisez pas trop de tags si ils
-        ne sont pas l’objet principal de l’article."
-      li5: 
-        p1: "Pour pouvoir soumettre facilement une page que vous consultez dans votre navigateur
-        à"
-        p2: ", faites glisser ce bookmarklet vers votre
-        barre des signets:"
-        p3: "Soumettre à"
-        p4: "Vous serez redirigé vers cette page avec l'URL et le titre de la page consultée.
-        (Cependant, il ne peut pas reconnaître et supprimer les noms de blog / auteur pour vous.)"
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
       autor: "Auteur:"
       submitter: "L'auteur est"
       i_am: "Je suis"
@@ -970,15 +801,10 @@ fr:
       follow: "Suivre"
       submitter_following: "L'auteur suit "
       mail_story: "cet article pour recevoir des réponses par e-mail et Pushover "
-<<<<<<< HEAD
-=======
-      
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
     # +similar
     listdetail:
       authored_by: "autorisé par"
       via: "via"
-<<<<<<< HEAD
       unhide: "montrer"
       hide: "cacher"
       save: "savegarder"
@@ -989,12 +815,6 @@ fr:
       suggest: "suggérer"
       cached: "caché"
       comment: "commentaire"
-=======
-      edit: "editer"
-      justnow: "maintenant"
-      nocomment: "pas de commentaires"
-
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
     edit:
       legend: "Editer un article"
       merge: "fusionner dans:"
@@ -1010,25 +830,16 @@ fr:
       confirm: "Etes-vous sur de vouloir annuler la suppression de cet article?"
       delete: "Supprimer"
       confirmdelete: "AEtes-vous sur de vouloir supprimer cet article?"
-<<<<<<< HEAD
-=======
-
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
     new: 
       legend: "Soumettre un article"
       markdown: "Formatage MarkDown disponible"
       submit: "Soumettre"
       preview: "Précédent"
-<<<<<<< HEAD
-=======
-
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
     show:
       storytext: "URL source considérée comme indisponible à compter du"
       cache: ", texte mis en cache disponible"
       allstory: "Tous les droits d'auteur du contenu de l'article des propriétaires respectifs."
       storylink: "Articles avec des liens similaires:"
-<<<<<<< HEAD
     suggest: 
       legend: "Proposer un changement d'article"
       suggest: "Proposer un changement"
@@ -1200,13 +1011,4 @@ fr:
       request: "demande à "
     reset:
       reset: "Reset your password"
-=======
-
-    suggest: 
-      legend: "Proposer un changement d'article"
-      suggest: "Proposer"
-      cancel: "cancel"
-
-  
->>>>>>> a149ab035888ce6e6f6d2fe533b49f23fffab349
 

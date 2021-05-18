@@ -82,7 +82,7 @@ class << Rails.application
   end
 
   def domain
-    "127.0.0.1"
+    "exemple.com"
   end
 
   def name

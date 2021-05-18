@@ -238,7 +238,7 @@
 
     <div class="boxline">
       <%= f.label :show_submitted_story_threads,
-        raw(" t('settings.index.showin') <a href=\"/threads\"> t('settings.index.yourthreads')</a>:"),
+        raw(" #{t('settings.index.showin')} <a href=\"/threads\"> #{t('settings.index.yourthreads')}</a>:"),
         :class => "required" %>
       <%= f.check_box :show_submitted_story_threads %>
     </div>
