@@ -71,6 +71,8 @@ class HomeController < ApplicationController
       paginate stories.hottest
     }
 
+    @advertisement = Advertisement.find_random_advert
+
     @rss_link ||= {
       :title => "RSS 2.0",
       :href => user_token_link("/rss"),

@@ -42,6 +42,7 @@ RSpec.describe "/advertisements", type: :request do
 
   describe "GET /new" do
     it "renders a successful response" do
+      Advertisement.create! valid_attributes
       get new_advertisement_url
       expect(response).to be_successful
     end
