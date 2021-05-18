@@ -20,7 +20,7 @@
         <td><%= advertisement.tag %></td>
         <td><%= link_to 'Show', advertisement %></td>
         <td><%= link_to 'Edit', edit_advertisement_path(advertisement) %></td>
-        <td><%= button_to 'Delete', {:controller => 'advertisement', :action => 'destroy', :id => advertisement.id}, :confirm => 'Are you sure ?', :method => 'delete' %></td>
+        <td><%= button_to 'Delete', {:controller => 'advertisements', :action => 'destroy', :id => advertisement.id}, :confirm => 'Are you sure ?', :method => 'delete' %></td>
       </tr>
     <% end %>
   </tbody>
