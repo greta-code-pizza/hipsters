@@ -267,7 +267,8 @@ div#inside {
 	margin-left: 4px;
 	margin-right: 11px;
 	border-radius: 100%;
-	background-color: var(--logo-color) !important;
+	background-color: var(--logo-color);
+	position: relative;
 }
 
 #l_holder i {
