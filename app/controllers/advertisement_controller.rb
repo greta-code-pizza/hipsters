@@ -1,7 +1,6 @@
 class AdvertisementController < ApplicationController
   before_action :require_logged_in_admin, only: [:show, :edit, :update, :destroy]
   before_action :set_advertisement, only: [:show, :edit, :update, :destroy]
-
   # GET /advertisements
   def index
     @advertisements = Advertisement.all
