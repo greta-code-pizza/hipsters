@@ -70,3 +70,5 @@ group :test, :development, :staging do
   gem 'rack-mini-profiler'
   gem 'stackprof'
 end
+
+gem "bugsnag", "~> 6.20"
