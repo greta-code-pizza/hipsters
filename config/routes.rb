@@ -175,14 +175,7 @@ Rails.application.routes.draw do
   post "/tags" => "tags#create"
   post "/tags/:tag_name" => "tags#update", :as => "update_tag"
 
-  resources :advertisement
-
-  get "/advertisements" => "advertisement#index"
-  get "/advertisement/new" => "advertisement#new"
-  post "/advertisement/new" => "advertisement#create"
-  get "/advertisements/:id" => "advertisement#show"
-  get "/advertisements/:id/edit" => "advertisement#edit"
-  post "advertisement/:id/edit" => "advertisement#update"
+  resources :advertisements
 
   post "/invitations" => "invitations#create"
   get "/invitations" => "invitations#index"
