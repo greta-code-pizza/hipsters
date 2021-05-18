@@ -36,7 +36,7 @@ module ApplicationHelper
       recent_path => { :title => "Recent" },
       comments_path => { :title => "Comments" },
     }
-    if @user 
+    if @user && @user.is_admin?
       @header_links[dashboard_path] = { :title => "Dashboard" }
     end
     if @user
