@@ -1,5 +1,5 @@
-class AdvertisementController < ApplicationController
-  before_action :require_logged_in_admin, only: [:new, :show, :edit, :update, :destroy]
+class AdvertisementsController < ApplicationController
+  before_action :require_logged_in_admin
   before_action :set_advertisement, only: [:show, :edit, :update, :destroy]
   # GET /advertisements
   def index
@@ -56,6 +56,6 @@ class AdvertisementController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def advertisement_params
-    params.permit(:title, :content, :tag)
+    params.require(:advertisement).permit(:title, :content, :tag)
   end
 end
