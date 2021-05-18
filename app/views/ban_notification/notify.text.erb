@@ -1,4 +1,4 @@
-<%= t('ban_notification.text') %> <%= Rails.application.name %> by <%= @banner.username %> <%= t('ban_notification.for') %>:
+<%= t('ban_notification.text') %> <%= t('helpers.appli.hipster') %> by <%= @banner.username %> <%= t('ban_notification.for') %>:
 
   <%= word_wrap(@reason, :line_width => 72).gsub(/\n/, "\n  ") %>
 

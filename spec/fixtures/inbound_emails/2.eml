@@ -17,7 +17,7 @@ DomainKey-Signature: a=rsa-sha1; c=nofws; d=lobste.rs; h=from:reply-to
         XRn+8zLEd1Mg8Hy2PzZuBVLMxXcJ+WGFTxUbArupByqp9qJnCPGusJmrCEIQCC+N
         KqOAQotiWz9B5x5oFaBj97ZbSM=
 To: ##SHORTNAME##-##MAILING_LIST_TOKEN##@lobste.rs
-List-Id: Lobsters <##SHORTNAME##-##MAILING_LIST_TOKEN##@lobste.rs>
+List-Id: Hipsters <##SHORTNAME##-##MAILING_LIST_TOKEN##@lobste.rs>
 List-Unsubscribe: <https://lobste.rs/settings>
 Precedence: list
 Content-Type: text/plain; charset="us-ascii"
@@ -26,7 +26,7 @@ In-Reply-To: <comment.nh0wig.1373986371@lobste.rs>
 References: <story.jg3eet.1372275536@lobste.rs>
         <comment.nh0wig.1373986371@lobste.rs>
 Date: Tue, 16 Jul 2013 10:37:18 -0500
-Subject: Re: Lobsters by mail [announce]
+Subject: Re: Hipsters by mail [announce]
 X-BeenThere: ##SHORTNAME##-##MAILING_LIST_TOKEN##@lobste.rs
 
 It hasn't decreased any measurable amount but since the traffic to

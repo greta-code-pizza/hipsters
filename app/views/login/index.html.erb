@@ -27,7 +27,7 @@
 
       <p>
       <%= t('login.index.p2')%>
-        <%= link_to "Reset your password", forgot_password_path %>.
+        <%= link_to t('login.index.resetpassword'), forgot_password_path %>.
       </p>
 
       <% if Rails.application.open_signups? %>

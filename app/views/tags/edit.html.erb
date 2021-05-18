@@ -4,7 +4,7 @@
   </div>
 
   <div class="boxline">
-    <%= link_to t('tags.edit.legend') "#{@tag.tag}", tag_path(@tag) %>
+    <%= link_to "#{t('tags.edit.filter')} #{@tag.tag}", tag_path(@tag) %>
   </div>
 
   <%= render partial: 'form' %>
