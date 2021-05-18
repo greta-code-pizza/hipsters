@@ -23,38 +23,22 @@ User.create(
 )
 
 c1 = Category.create!(category: "Project_management")
-Tag.create(category: c1, tag: "project_management")
+Tag.create(category: c1, tag: "CDA")
 
 c2 = Category.create!(category: "Data")
-Tag.create(category: c2, tag: "data")
+Tag.create(category: c2, tag: "CDA-BTS")
 
 c3 = Category.create!(category: "Design")
-Tag.create(category: c3, tag: "design")
- first commit #7
-Open
-staging
-HIP-42-Amelioration-seed
-+33 −2
-Conversation 0
-Commits 4
-Checks 0
- first commit #7
-Open
-staging
-HIP-42-Amelioration-seed
-+33 −2
-Conversation 0
-Commits 4
-Checks 0
+Tag.create(category: c3, tag: "Web-designer")
 
 c4 = Category.create!(category: "Dev")
-Tag.create(category: c4, tag: "development")
+Tag.create(category: c4, tag: "CDA-BTS-Kercode")
 
 c5 = Category.create!(category: "Networking")
-Tag.create(category: c5, tag: "networking")
+Tag.create(category: c5, tag: "CDA-BTS")
 
 c6 = Category.create!(category: "Security")
-Tag.create(category: c6, tag: "security")
+Tag.create(category: c6, tag: "CDA-BTS")
 
 puts "created:"
 puts "  * an admin with username/password of test/test"
