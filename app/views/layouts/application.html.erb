@@ -40,7 +40,11 @@
       href="<%= @comments_rss_link[:href] %>" />
   <% end %>
 </head>
-<body>
+<% if Rails.env.development? || Rails.env.staging? %>
+  <body class="toto">
+<% else %>
+  <body>
+<% end %>
   <div id="wrapper">
     <div id="header">
       <div id="headerleft">

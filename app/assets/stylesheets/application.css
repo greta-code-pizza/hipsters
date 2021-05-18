@@ -24,6 +24,10 @@ body {
 	background-color: #fefefe;
 }
 
+.toto{
+	border: 10px solid green;
+}
+
 a {
 	color: #2562dc;
 	cursor: pointer;

@@ -1,26 +1,44 @@
-default: &default
-  adapter: mysql2
-  encoding: utf8
-  host: <%= ENV["DB_HOST"] %>
-  username: <%= ENV["DB_USER"] %>
-  password: <%= ENV["DB_PASSWORD"] %>
-  socket: <%= ENV["DB_SOCKET"] || "/tmp/mysql.sock" %>
-
 development:
-  <<: *default
-  database: hipsters_dev
-
+  adapter: mysql2
+  encoding: utf8mb4
+  reconnect: false
+  database: lobsters_dev
+  socket: /var/run/mysqld/mysqld.sock
+  username: stephanie
+  password: nounours
+  
 test:
-  <<: *default
-  host: 127.0.0.1
-  database: hipsters_test
-  username: <%= ENV["DB_USER_TEST"] %>
-  password: <%= ENV["DB_PASSWORD_TEST"] %>
+  adapter: mysql2
+  encoding: utf8mb4
+  reconnect: false
+  database: lobsters_test
+  socket: /var/run/mysqld/mysqld.sock
+  username: stephanie
+  password: nounours
 
-staging:
-  <<: *default
-  database: <%= ENV["DB_NAME"] %>
+#default: &default
+  #adapter: mysql2
+  #encoding: utf8
+  #host: <%= ENV["DB_HOST"] %>
+  #username: <%= ENV["DB_USER"] %>
+  #password: <%= ENV["DB_PASSWORD"] %>
+  #socket: <%= ENV["DB_SOCKET"] || "/tmp/mysql.sock" %>
 
-production:
-  <<: *default
-  database: <%= ENV["DB_NAME"] %>
+#development:
+  #<<: *default
+  #database: hipsters_dev
+
+#test:
+  #<<: *default
+  #host: 127.0.0.1
+  #database: hipsters_test
+  #username: <%= ENV["DB_USER_TEST"] %>
+  #password: <%= ENV["DB_PASSWORD_TEST"] %>
+
+#staging:
+ # <<: *default
+  #database: <%= ENV["DB_NAME"] %>
+
+#production:
+  #<<: *default
+  #database: <%= ENV["DB_NAME"] %>
