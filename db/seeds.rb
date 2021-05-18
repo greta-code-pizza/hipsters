@@ -22,7 +22,7 @@ User.create(
   :created_at => User::NEW_USER_DAYS.days.ago
 )
 
-c1 = Category.create!(category: "Gestion de projet")
+c1 = Category.create!(category: "Project_management")
 Tag.create(category: c1, tag: "project_management")
 
 c2 = Category.create!(category: "Data")
@@ -30,6 +30,22 @@ Tag.create(category: c2, tag: "data")
 
 c3 = Category.create!(category: "Design")
 Tag.create(category: c3, tag: "design")
+ first commit #7
+Open
+staging
+HIP-42-Amelioration-seed
++33 −2
+Conversation 0
+Commits 4
+Checks 0
+ first commit #7
+Open
+staging
+HIP-42-Amelioration-seed
++33 −2
+Conversation 0
+Commits 4
+Checks 0
 
 c4 = Category.create!(category: "Dev")
 Tag.create(category: c4, tag: "development")
@@ -40,7 +56,6 @@ Tag.create(category: c5, tag: "networking")
 c6 = Category.create!(category: "Security")
 Tag.create(category: c6, tag: "security")
 
-
 puts "created:"
 puts "  * an admin with username/password of test/test"
 puts "  * inactive-user for disowned comments by deleted users"
@@ -48,18 +63,3 @@ puts "  * a test tag"
 puts
 puts "If this is a dev environment, you probably want to run `rails fake_data`"
 puts "If this is production, you want to run `rails console` to rename your admin, category, and tag"
-
-
-# Category.create(
-#     :name => "project-management",
-#     :description => "Gestion"
-#     :
-#   )
-
-# Category.create(
-#     :name => "data",
-#     :description => "données"
-#   )
-
-  
-  
