@@ -66,6 +66,8 @@ GEM
     afm (0.2.2)
     ast (2.4.2)
     bcrypt (3.1.16)
+    bugsnag (6.20.0)
+      concurrent-ruby (~> 1.0)
     builder (3.2.4)
     byebug (11.1.3)
     capybara (3.35.3)
@@ -165,6 +167,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-mini-profiler (2.3.1)
       rack (>= 1.2.0)
     rack-test (1.1.0)
@@ -300,6 +304,7 @@ DEPENDENCIES
   actionpack-page_caching (>= 1.2.3)
   activerecord-typedstore
   bcrypt (~> 3.1.2)
+  bugsnag (~> 6.20)
   byebug
   capybara
   commonmarker (~> 0.14)
@@ -322,6 +327,7 @@ DEPENDENCIES
   pdf-reader
   pry-rails
   puma (>= 5.3.1)
+  rack-cors
   rack-mini-profiler
   rails (~> 6.0.3.7)
   rb-readline

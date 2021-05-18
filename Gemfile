@@ -43,6 +43,9 @@ gem "sitemap_generator" # for better search engine indexing
 gem "svg-graph", require: 'SVG/Graph/TimeSeries' # for charting, note workaround in lib/time_series.rb
 gem 'transaction_retry' # mitigate https://github.com/lobsters/lobsters-ansible/issues/39
 
+# API
+gem 'rack-cors'
+
 group :test, :development, :staging do
   gem 'capybara'
   gem 'database_cleaner'
@@ -67,3 +70,5 @@ group :test, :development, :staging do
   gem 'rack-mini-profiler'
   gem 'stackprof'
 end
+
+gem "bugsnag", "~> 6.20"
