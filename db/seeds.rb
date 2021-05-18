@@ -30,22 +30,6 @@ Tag.create(category: c2, tag: "data")
 
 c3 = Category.create!(category: "Design")
 Tag.create(category: c3, tag: "design")
- first commit #7
-Open
-staging
-HIP-42-Amelioration-seed
-+33 −2
-Conversation 0
-Commits 4
-Checks 0
- first commit #7
-Open
-staging
-HIP-42-Amelioration-seed
-+33 −2
-Conversation 0
-Commits 4
-Checks 0
 
 c4 = Category.create!(category: "Dev")
 Tag.create(category: c4, tag: "development")
