@@ -23,22 +23,22 @@ User.create(
 )
 
 c1 = Category.create!(category: "Project_management")
-Tag.create(category: c1, tag: "Toutes les formations")
+Tag.create(category: c1, tag: "project_management", description: "Toutes les formations")
 
 c2 = Category.create!(category: "Data")
-Tag.create(category: c2, tag: "Formation de développement")
+Tag.create(category: c2, tag: "data", description: "Formation de développement")
 
 c3 = Category.create!(category: "Design")
-Tag.create(category: c3, tag: "Formation de designer")
+Tag.create(category: c3,tag: "design", description: "Formation de designer")
 
 c4 = Category.create!(category: "Dev")
-Tag.create(category: c4, tag: "Toutes les formations")
+Tag.create(category: c4, tag: "development", description: "Toutes les formations")
 
 c5 = Category.create!(category: "Networking")
-Tag.create(category: c5, tag: "Formation de développement")
+Tag.create(category: c5, tag: "networking", description: "Formation de développement")
 
 c6 = Category.create!(category: "Security")
-Tag.create(category: c6, tag: "Formation de développement")
+Tag.create(category: c6, tag: "security", description: "Formation de développement")
 
 puts "created:"
 puts "  * an admin with username/password of test/test"
