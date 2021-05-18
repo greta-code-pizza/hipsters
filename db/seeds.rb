@@ -29,7 +29,11 @@ c2 = Category.create!(category: "Data")
 Tag.create(category: c2, tag: "CDA-BTS")
 
 c3 = Category.create!(category: "Design")
+<<<<<<< HEAD
 Tag.create(category: c3, tag: "Web-designer")
+=======
+Tag.create(category: c3, tag: "design")
+>>>>>>> 41954403f7d7035150b8881c0ab2a5a8e415c33a
 
 c4 = Category.create!(category: "Dev")
 Tag.create(category: c4, tag: "CDA-BTS-Kercode")
