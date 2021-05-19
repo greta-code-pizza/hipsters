@@ -1,33 +1,1130 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  ban_notification:
+    text: "You have been banned from"
+    for: "for"
+    notification: "You are no longer allowed to login to the site.  If you wish, you can
+                  discuss this ban with the moderator by replying to this e-mail."
+
+  categories:
+    text: "Tip: read stories across multiple categories with"
+
+  comments:
+    comment:
+      prev: "previewed"
+      now: "just now"
+      edited: "edited"
+      e-mailed: "e-mailed"
+      delete: "delete"
+      flag: "flag"
+      unflag: "unflag"
+      reply: "reply"
+      sur: "on:"
+      visible: "Visible to moderator:"
+      link: "link"
+
+    _commentbox:
+      placeholder: "You must be logged in to leave a comment."
+      markdown: "Markdown formatting available"
+      post: "Post"
+      update: "Update"
+      preview: "Preview"
+      cancel: "Cancel"
+      hats: "Put on hat"
+      comment: "comment"
+
+  email_message:
+    notify:
+      text: "Reply at"
+
+  email_reply:
+    mention:
+      text: "Continue this discussion at"
+    reply:
+      text: "Continue this discussion at"
+
+  filters:
+    legend: "Filtered Tags"
+    text1_part1: "To hide stories with certain "
+    text1_part2: "from across the site, check them below"
+    text2_part1: "Since you are not logged in, your filters will be stored in a long-lasting browser cookie.  
+                  To permanently store your tag filters and have them work across browsers"
+    text2_part2: "to your account"
+    table_th1 : "Hide"
+    table_th2 : "Tag"
+    table_th3 : "Description"
+    table_th4 : "Stories"
+    table_th5 : "Filtering"
+    inactive_tag: "inactive"
+    save: "Save Filters"
+
+  global:
+    table_tr1:
+      th1: "emphasized text"
+      th2: "surround text with"
+      asterisks: "asterisks"
+    table_tr2:
+      th1: "strong text"
+      th2: "surround text with "
+      asterisks: "two asterisks"
+    table_tr3:
+      th1: "struck-through"
+      th2: "surround text with"
+      tilde: "two tilde characters"
+    table_tr4:
+      th1: "fixed width"
+      th2: "surround text with"
+      backticks: "backticks"     
+    table_tr5: 
+       linked_text: "linked text"  
+       text: "or just a bare URL to create without a title"  
+    table_tr6:
+      td1: "quoted text"
+      td2: "prefix text with"
+      prefix: "&gt;"  
+    table_tr7:
+      pre: "pre"
+      text: "text"
+      prefix: "prefix text with at least"
+      space: "4 spaces"
+      image: "(inline image)"
+
+  hats:
+    build_request:
+      legend: "Request a Hat"
+      p1: "A hat is a formal, verified way of speaking officially for a project, organization, or company on Hipsters.
+          A user can have more than one hat, but only wear one at a time on a comment or private message."
+      p2: "Hats are for making public statements, not commemorating contributions to a project or jobs held.
+          Please request one only if you'll be acting offically here, like if you're a core project developer or company employee authorized to post on behalf of your organization.
+          Hats are usually reserved for notable projects and organizations."
+      p3: 'To request a hat for your account, provide a short description of the hat
+          (e.g., "OpenBSD Developer"), a public link that will be shown when hovering
+          over the hat that users can see, such as your e-mail address at that project
+          or company, or a link to a company website showing your employment, and
+          private comments that will be seen only by moderators during approval.'
+      p4: "It's really helpful if you link your GitHub or Twitter account to your Hipsters account and,
+          in your comment, link to where the organization links to that public account.
+          Then we can instantly see you're legit without having to send a verification email."
+      p5: "When you can no longer speak for a project or company, please contact a moderator to doff your hat.
+          Old messages will still show it and you won't be able to use it again."
+      hat: "Hat:"
+      placeholder_hat: "XYZ Project Member"
+      link: "Link:"
+      placeholder_link: "user@project.org, or a URL to an employment page"
+      comment: "Comment:"
+      placeholder_comment: "Will only be shown to moderators during approval. Please link to discussions where this hat would be useful for speaking on behalf of your project."     
+      request_hat_bnt : "Request Hat"
+    index:
+      legendR: "Request Hat"
+      legend: "Hats"
+      text: "A hat is a formal, verified, way of posting a comment while speaking for a
+            project, organization, or company.  Each user may have multiple hats, one of
+            which may be selected to be worn when posting a comment or sending a private
+            message."
+      table_th1: "User"
+      table_th2: "Hat"
+      table_th3: "Link"
+      none: "none"
+    request_index: 
+      legend: "Requested Hats"
+      no_hat_requests: "No hat requests."
+      user: "User:"
+      hat: "Hat:"
+      hat_txt: "hat"
+      link: "Link:"
+      link_txt: "link"
+      comment: "Comment:"
+      reason: "Reason"
+      approve_hat: "Approve Hat Request"
+      reject_hat: "Reject Hat Request"
+
+  home:
+    no_found:
+      legend: "404"
+      text: "The resource you requested was not found, or the story has been deleted."
+    about:
+      title: "About à"
+      p1_part1: 'Hipsters is a computing-focused community centered around link aggregation
+          and discussion, launched on July 3rd, 2012.
+          The administrator is'
+      p1_part2: ", contact him with any support issues."
+      p1_part3: "Hipsters was created by "
+      p1_part4: "with careful design touches to encourage a healthy community:"
+      li1:
+        a: "a"
+        tagging: "tagging"
+        text: "system to categorize and filter submissions,"
+      li2:
+        user: "a user"
+        invitation: "invitation tree"
+        combat: "to combat spam,"
+      li3: 
+        flag: "flag explanations"
+        curl: "to curb punishing disagreement,"
+      li4:         
+        strong: "a strong commitment to"
+        transparency: "transparency"        
+      li5: 
+        and: "and"
+        features: "many more features"  
+        add: "that have been added over the years."
+      h2: "Tags and Topicality"
+      p2_p1: "When links or stories are submitted, they must be tagged by the submitter from a list of predefined"
+      p2_p2: "Users can choose to"
+      p2_p3: "out or subscribe to all submissions with particular tags"
+      p2_p4: "or combinations of tags"
+      p2_p5: "All users see all stories by default."
+      p2_p6: "The tagging system works this way for three reasons:"      
+      tags: "tags"
+      filter: "filter"
+      example: "example:"
+      li6: "It keeps the site on-topic by only allowing a predefined list of tags.
+            These tags represent what most of the users of the site want to read, so
+            content that does not fit into any of those categories should not be
+           submitted.  It also keeps stories organized and more easily searchable."
+      li7: 
+        p1: "It promotes discussion.  On a site with separate forums, a Ruby programmer
+            would probably subscribe to a Ruby forum, but not a Python one.  When a link
+            is posted to the Python forum, that Ruby programmer would probably never see
+            it, even though they may have something useful to say about it (perhaps the
+            link is about a Python library which does the same thing as a Ruby library
+            which that Ruby programmer created).  On this site, the link would get posted
+            with a"
+        p2: "tag and shown to everyone,
+            encouraging the Ruby programmer to read and comment on it (unless that Ruby
+            programmer disliked Python enough to"
+        p3: "it out."
+        python: "python"
+      li8: "It keeps the community coherent.  Often stories contain discussion
+            about more than one topic, yet on other sites they are confined to a single
+            category/forum, limiting the exposure.  The link could be submitted to more
+            than one forum, but then each conversation would remain separate and users
+            would rarely interact with users from other forums.  On this site, the story
+            would simply be tagged with multiple tags and all users would see all
+            discussion about the story in a single location."
+      p3_p1: "Creating new tags and retiring old tags is done by the community by submitting, discussing, and voting on"
+      p3_p2: "tagged requests about them, and these events are"
+      p3_p3: "since 2018-04). To propose a tag, post a"
+      p3_p4: "thread with the name and description.
+              Explain the scope, list existing stories that should have been tagged, make a case for why people would want to specifically filter it out, and justify the increased complexity for submitters and mods."
+      logged: "logged"
+      p4_p1: "Hipsters is focused pretty narrowly on computing; tags like"
+      p4_p2: "don't imply every piece of art is on-topic.
+              Some rules of thumb for great stories to submit: Will this improve the reader's 
+              next program? Will it deepen their understanding of their last program? Will it 
+              be more interesting in five or ten years?"
+      p5: "Some things that are off-topic here but popular on larger, similar sites:
+          entrepreneurship, management, news about companies that employ a lot of programmers,
+          investing, world events, anthropology, self-help, personal productivity systems,
+          last-resort customer service requests via public shaming,
+          'I wanted to see what this site's amazing users think about this off-topic thing',
+          and defining the single morally correct economic and political system for the entire world when we can't even settle tabs vs. spaces."
+      h2_2: "Invitation Tree"
+      p6_p1: "The full"
+      p6_p2: "is public and each user's profile
+              shows who invited them.  This provides some degree of accountability and
+              helps identify voting rings."
+      usertree: "user tree"
+      p7_p1: "New users must be invited by a current user, though there is no formal vetting process.
+              Invitations are used as a mechanism for spam-control,
+              to slow registrations to a pace"
+      p7_p2: "and to encourage users to be nice, not to make the Hipsters userbase an elite club.
+            The quickest way to receive an invitation is to talk to someone you "
+      p7_p3: "If you wrote a link that was posted, please reach out in"
+      p7_p4: ", we'd love to have you join the discussion.
+            Finally, if you can't find anyone you know in the invitation tree and didn't author something posted to the site,"
+      p7_p5: "you can"
+      p7_p6: "consider joining the"
+      p7_p7: "community in the chat room"
+      acculturate: "we can acculturate"
+      recognize: "recognize from the site"
+      request: "request an invite"
+      h2_3: "Ranking"
+      p8_p1: "All story and comment ranking on this site comes from user activity.
+              All users have equal votes, with no special priorities or penalties for specific users or domains.
+              Moderators have no ability to raise or"
+      p8_p2: "the rankings of stories or comments (besides voting like any user).
+              Per-tag"
+      p8_p3: "affect all stories with those tags, but these modifiers (and"
+      p8_p4: "are public.
+              Domains used for marketing analytics are banned and tracking parameters are removed from links
+              (look for"
+      p8_p5: "and"
+      p8_p6: "in"
+      lower: "lower"
+      changes: "changes"
+      hotness: "hotness modifiers"
+      p9_p1: "There's no limit on how many invitations a user can send (though we might at some point, to manage"
+      p9_p2: "When accounts are banned for spam,"
+      p9_p3: "sockpuppeting"
+      p9_p4: ", or other abuse,
+              moderators will consider disabling their inviter's ability to send invitations or, rarely, also ban them."
+      growth: "growth"
+      p10_p1: "Users can flag stories and comments when there's a serious problem that needs moderator attention.
+              Users must reach "
+      p10_p2: "karma to flag. To guide usage and head off distracting meta conversations ('Why was this flagged!?', etc), flagging requires selecting from a preset list of reasons."
+      #suite ajout à trad dans about
+      p11_p1: "For stories, these are:
+              ''Off-topic'' for stories that are not about computing;
+              ''Already Posted'' for duplicate submissions and links that elaborate on or responses to a thread that's less than a week old (see "
+      p11_p2: "; and
+              ''Broken Link'' for links that 404, 500, or present a paywall;
+              ''Spam'' for links that promote a commercial service."
+      p12_p1: "For comments, these are:
+              ''Off-topi'' for drifting into meta or topics that aren't related to the story;
+              ''Me-to'' when a comment doesn't add new information, typically a single sentence of appreciation, agreement, or humor;
+              ''Trol'' for derailing conversations into classic arguments, well-intentioned or not;
+              ''Unkin'' when uncharitable, insulting, or dismissive;
+              and
+              ''Spam'' for promoting commercial services."
+      p13_p1: "Less than 1% of stories or comments get flagged, and users are not automatically punished by flags.
+              Users whose stories or comments are getting flagged significantly more often are strongly encouraged to talk to mods about what's not working.
+              (Please don't use flagging to try to push down topics or people you don't like; click ''hide'' on the story and "
+      p13_p2: "move on"
+      merging: "merging"
+      p13_p3: " rather than clutter up the mod dashboard with false alarms.)"
+      h2: "Transparency Policy"
+      p14_p1: "All"
+      p14_p2: "moderator actions"
+      p14_p3: "on this site are visible to
+              everyone and the identities of those moderators are "
+      p14_p4: "public"
+      p14_p5: "While the individual actions of a moderator may cause debate, there should be no question about if an action happened or who is responsible."
+      p15_p1: "If users are disruptive enough to warrant banning, they will be banned
+              absolutely, given notice of their banning, and their disabled user profile
+              will indicate which moderator banned them and why.
+              There will be no "
+      p15_p2: "shadow banning"
+      p15_p3: "or other secret moderation actions."
+      p16_p1: "The"
+      p16_p2: "source code to this site"
+      p16_p3: "and its"
+      p16_p4: "provisioning and deployment"
+      p16_p5: "are made available under a 3-clause BSD license for viewing, auditing, forking, or contributing to.
+              The codebase is used to run a dozen or so sister sites (that we know of) and we"
+      p16_p6: "keep a list"
+      p16_p7: "please get in touch if you've launched one."
+      p17_p1: "The Hipsters community is in a sweet spot that it's large enough to be worth asking questions about and small enough the answers make sense.
+              We have"
+      p17_p2: "some basic stats"
+      p17_p3: "available, and Peter is happy to run queries against the"
+      p17_p4: "database"
+      p17_p5: " and Rails/MySQL/nginx logs (but not write them for you),
+              as long as they don't reveal personal info like IPs, browsing, and voting or create ''worst-of'' leaderboards celebrating most-flagged users/comments/stories.
+              If you're an academic researcher, please"
+      p17_p6: "be like MIT"
+      p17_p7: ", not like"
+      p17_p8: "secretly experimenting on maintainers without IRB review."
+      p18_p1: "If you dislike the content or moderation policies here, you may prefer"
+      p18_p2: "Or you could use"
+      p18_p3: "our codebase"
+      p18_p4: "to start your own site."
+      h2_4: "Other Technical Features"
+      p19_1: "Mailing list mode"
+      p19_2: "can be enabled
+            per-user to receive all new stories (including their plain-text content as
+            fetched and extracted by"
+      p19_4: ") and user comments as e-mails, mirroring discussion threads offline.  This makes it
+            easy and efficient to read new stories as well as keep track of new comments
+            on old threads or stories, just like technical mailing lists or Usenet of
+            yore.  Each user is assigned a private mailing list address at this domain
+            which allows them to reply to stories or comments directly in their e-mail
+            client.  These e-mails are then converted and submitted to the website as
+            comments, just as if the comment was posted through a web browser."
+      p19_5: "Don't just delete that error message. You didn't set up mailing list mode, right? This really isn't your about page, write one from scratch."
+      p20_1: "Private messaging" 
+      p20_2:  "enables users to communicate privately
+              without having to publicly disclose an e-mail address, and users can receive
+              e-mail and"
+      p20_2: "Pushover"
+      p20_3: "notifications of new private messages."
+      p21_1: "Responsive design" 
+      p21_2: "enhances functionality on smaller screens
+              such as phones and tablets without having to use a separate URL, 3rd party
+              (often read-only) websites, or mobile apps."
+      p22_1: "Integrated search engine"
+      p22_2: "covers all submitted stories and comments, including full-text caches of all submitted
+            story contents.  Searching for a keyword will often bring up relevant stories
+            that don't even mention that keyword in the URL or title."
+      p23_1: "Story merging"
+      p23_2: "collects comments on a topic that would otherwise fragment across multiple stories.
+              This keeps the front page from being overwhelmed by a single topic and the discussion together for those interested (or so disinterested they'd prefer to hide it).
+              Moderators merge stories on the same topic submitted within a week.
+              Here's a"
+      p23_3: "small"
+      p23_4: "and"
+      p23_5: "large"
+      p23_5: "example."
+      p24_1: "Fuzzy-matching of submitted story URLs"
+      p24_2: "to avoid duplicate submissions of similar URLs that differ only in "
+      p24_3: ", trailing slashes, useless analytics parameters, etc.  When
+              using the story submission bookmarklet, story URLs are automatically
+              converted to use the page's canonical URL (if available) to present the best
+              URL to represent the story, as defined by the story's author or publisher."
+      p25_1: "User-suggested titles and tags"
+      p25_2: "can be automatically applied to a story when a quorum of users agrees on a new
+              title (such as removing a site's name, or appending the story's year of
+              publication) or set of tags, without any moderator action required."
+      p26_1: "Hats"
+      p26_2: "are a more formal process of
+              allowing users to post comments while ''wearing "
+      p26_3: "such and such "
+      p26_4: " hat'' to
+              give their words more authority (such as an employee speaking for the
+              company, or an open source developer speaking for the project)."
+      p27_1: "Per-tag, multi-tag and site-wide RSS feeds"
+      p27_2: "are available to the public and logged-in users have private RSS feeds that
+              filter out each user's"
+      p27_3: "filtered tags"
+      p28_1: "Official Twitter mirror"
+      p28_2: "posts all stories that have reached the front page to
+              the "
+      p28_3: "account on Twitter for easy following, retweeting/sharing, or archiving."
+      p29_1: "Tor onion/hidden service"
+      p29_2: "for anonymous access to the site."
+      p30_1: "Stickers"
+      p30_2: "will be available again when someone finds a service that will print and ship 2'' square vinyl stickers
+              with a blee <= 1/16'' (preferably full-bleed) directly to people who want them."
+      p31_1: "Hipsters is hosted at DigitalOcean. We"
+      p31_2: "recently migrated"
+      p31_3: "and our setup is still in flux.
+              Please hassle pushcx if he hasn't filled in details by March 2021.
+              Our domain name is registered with "
+      p31_4: "CRI Domains"
+      p31_5: ", who donated our first year of registration.
+              DNS is provided by"
+      p31_6: "and we use"
+      p31_7: "for backups, both of which pushcx pays for."
+      p32_1: "Sponsor of the Hipster emoji"
+      p32_2: "In February 2018, Hipsters"
+      p32_3: "held a fundraiser"
+      p32_4: "to officially adopt the new Hipster emoji in support of the Unicode Foundation."
+      p33_1: "The name ''Lobste.rs'' is a cute"
+      p33_2: "domain hack"
+      p33_3: "without any deeper meaning."
+      p33_4: "It"
+      p33_5: "has nothing to do"
+      p33_6: "with self-help guru Jordan Peterson, whose fans started to"
+      p33_7: "call themselves ''Hipsters'' "
+      p33_8: "about six years after we started."
+      p34_1: "If you prefer to read Hipsters on a dark background instead of a light one, there are a few options. You could install the"
+      p34_2: "Dark Reader extension"
+      p34_3: "or an extension to add your own CSS to sites like"
+      p34_4: "or"
+      p34_5: "never Stylish"
+      p34_6: "Themes:"
+      p34_7: "Discussion:"
+      p34_8: "If you prefer the article links or comment links to open a new tab instead of navigating in your current tab you can add"
+      p34_9: "a client-side script"
+      p34_1O: "to do so."
+
+
+
+
+
+    
+    chat:
+      legend: "Hipsters Chat"
+      p1_1: "An official real-time discussion channel is available to members and guests
+            of the site, hosted on the"
+      in: " in "
+      p1_2: ".  This channel was originally"
+      by: "by"
+      and: ", and"
+      p1_3: "are channel operators."
+      p2: "The policies and ideals of the discussion channel are the same as the
+            website; quality content and conversing, respect for other users, and no
+            spamming.  Slightly off-topic discussion is generally acceptable.  The
+            channel isn't busy enough that there's always someone talking, so don't be
+            surprised if you try to start a conversation and no one responds.  Leave it
+            open and you'll see activity, though we're most active during US work hours."
+      p3: "New contributors are always welcome on Hipsters.
+          If you are the author of or otherwise involved with a story that was submitted to the site, ask and someone can send you an invite.
+          We've unfortunately had problems with impersonation, so it helps a lot if you point out how your email address is linked to the story."
+       
+      p4: "Otherwise, you're welcome to join the community in the chat room.
+          Invites are not automatically extended, but typically someone will once they get to know you in chat.
+          They'll likely ask you for a link to your homepage or a public profile to feel confident that you're not a spammer."
+      p5_1: "Lurking in the channel is a bot creatively called"
+      p5_2: "It announces new stories submitted to the site and provides other useful features like showing the page title of URLs mentioned in the channel."
+      p6_1: "To participate in the discussion, join the"
+      p6_2: "channel on"
+      p6_3: "with an IRC client."
+      p7_1: "If you'd like a cloak to note that you've contributed to"
+      p7_2: "  or just for privacy as a regular user, contact a channel operator for a"
+      or: "or"
+      cloak: "cloak."
+      p8_1: "For a feed of stories without discussion,"
+      p8_2: "also posts new stories in "
+      p9_1: "Hipsters used to have an channel called "
+      p9_2: "for off-topic conversations (especially American politics) that ''boiled over'' from the main channel.
+            It was useful in the wake of some big events, but the mods "
+      p9_3: "didn't want to run it indefinitely<"
+      p9_4: "Community members independently run"
+    index:
+      the: "The"
+      newest: "newest"
+      text: "stories that have not yet reached the front page."
+      banned: "Banned"
+      stories: "Stories"
+      tags: "tags"
+      in: "in the"
+      tagged: "tagged"
+      as: "as"
+    privacy:
+      legend: "Privacy Policy"
+      p1: "This is the Internet, you have no privacy."
+      p2:  "(Unless you are " 
+      p3: "under 13" 
+      p4: ", in which case you are not allowed here.)"
+    rss:
+      newest: "newest"
+      comments: "Comments"
+
+  inv_mail:
+    user: "The user"
+    invited: "has invited you to"
+    p1: "To accept this invitation and create an account, visit the URL below:"
+    inv: "invitations/"
+
+  inv_request:
+    hello: "Hello"
+    p1: "Someone at"
+    p2: "has submitted an invitation request to"
+    name: "Name:"
+    mail: "E-mail:"
+    users: "(won't be displayed to other users)"
+    p3: "If this is you, visit the URL below to confirm your request and
+        display it to other logged-in users."
+    p4: "If this is not you, you can delete this message."
+    
+  inv:
+    build:
+      legend: "Request an Invitation"
+      p1: "If you don't know (or can't find) an"
+      p2: "existing user"
+      p3: "whom to request an invitation, you can make a public request for one.  This
+          will display your name and memo to all other logged-in users who can then
+          send you an invitation if they recognize you."
+      p4: "Your e-mail address must be valid and confirmed by visiting a URL e-mailed to
+          you before your request will be displayed.  Your e-mail address will not be
+          shown to any other users (except moderators)."
+      name: "Name (not username):"
+      mail: "E-mail Address:"
+      url: "URL:"
+      p5: "URL to verify you (Personal website, GitHub account,
+          etc.)"
+      request: "Request Invitation"
+    index:
+      legend: "Requested Invitations"
+      p1: "These persons have requested invitations and confirmed their e-mail
+          addresses.  If you recognize anyone, feel free to send them an invitation and
+          remove their request.  If a request looks suspicious, delete it."
+      th1: "Date/Time"
+      th2: "Name"
+      send: "Send Invitation"
+      are: "Are "
+      invite: "you sure you want to invite this person and remove this request?"
+      delete: "Delete"
+      sure: "Are you sure "
+      deleterequest: "you want to delete this request?"
+      noinvitation: "No invitation requests"
+
+  key:
+    new: 
+      legend1: "Connect Your Account "
+      legend2: "to Keybase"
+      confirm: "Confirm"
+
+  layout:
+    footer:
+      a1: "Moderation Log"
+      a2: "Invitation Queue"
+      a3: "Hat Requests"
+      a4: "Hats"
+      a5: "Tags"
+      a6: "Privacy"
+      a7: "About"
+    app:
+      sign: "Sign Up Now"
+      join: "Join"
+      moderation: "Moderation Log"
+      invitation: "Invitation Queue"
+      hat: "Hat Requests"
+      hats: "Hats"
+      chat: "Chat"
+      privacy: "Privacy"
+      about: "About"
+    upvoted:
+      legend: "Upvoted"
+      
+  login:
+    forgot:
+      legend: "Reset Password"
+      p1: "If you've forgotten your password, enter your e-mail address or username
+            below and instructions will be e-mailed to you."
+      mail: "E-mail or Username:"
+      reset: "Reset Password"
+    index:
+      legend: "Login"
+      p1: "The site is currently in read-only mode for maintenance."
+      mail: "E-mail or Username:"
+      password: "Password:"
+      login: "Login"
+      p2: "Forgot your password or deleted your account?"
+      resetpassword: "Reset your password"
+      p3: "Not a user yet?"
+      p4: "Sign up here"
+      p5: "Not a user yet?  Signup is by invitation only to combat spam and increase
+        accountability.  If you know"
+      p6: "a current user"
+      p7: "of the site, ask them for an invitation or"
+      p8: "request one publicly"
+      p9: "community in chat"
+    setnew: 
+      legend: "Set New Password"
+      username: "Username:"
+      newpassword: "New Password:"
+      again: "(Again):"
+      setnewpassword: "Set New Password"
+    twofa:
+      legend: "Login - Two Factor Authentication"
+      p1: "Enter the current TOTP code from your TOTP application:"
+      login: "Login"
+
+  messages:
+    form:
+      to: "To:"
+      subject: "Subject:"
+      message: "Message:"
+      puthat: "Put on hat:"
+      reply: "Reply"
+      sendmessage: "Send Message"
+    index:
+      viewreceived: "View Received"
+      viewsent: "View Sent"
+      private: "Private Messages"
+      sent: "Sent"
+      from: "From"
+      to: "To"
+      received: "Received"
+      sent: "Sent"
+      delete: "Delete Selected"
+      sent2: "sent"
+      p1: "You do not have any"
+      p2: "private messages."
+      legend: "Compose Message"
+      subject: "Subject"
+    shw:
+      backsent: "Back to Sent Messages"
+      backmessages: "Back to Messages"
+      sent: "Sent from"
+      delete: "Delete Message"
+      keepnew: "Keep As New"
+      p1: "For help with this message, contact"
+      p2: "a moderator"
+      compose: "Compose Reply"
+
+  mod:
+    nav:
+      F-Stories: "F-Stories:"
+      F-Comments: "F-Comments:"
+      commenters: "Commenters:"
+    commenters:
+      title: "Average of commenters, including the most-flagged commenters above"
+    index:
+      legend: "Activity by other mods"
+      Compose Reply: "Compose Reply"
+
+  mod_notes:
+    table:
+      userwhen: "User/When"
+    index:
+      username: "Username:"
+      filter: 'Filter'
+
+  moderations:
+    index:
+      legend: "Moderation Log"
+      moderator: "Moderator:"
+      filter: "Filter"
+    table:
+      th1: "Date/Time"
+      th2: "Moderator"
+      th3: "Story/Comment/User, Action, Reason"
+      users: "(Users)"
+      story: "Story:"
+      commentby: "Comment by"
+      sur: "on"
+      user: "User"
+      deleted: "(Deleted)"
+      domain: "Domain"
+
+  password:
+    someone: "Someone at"
+    account: "requested to reset your account password"
+    sur: "on"
+    subrequest: "If you submitted this request, visit the link below to
+                set a new password.  If not, you can disregard this e-mail."
+
+  replies: 
+    placeholder:
+      p1: "2020-12-03: We recently migrated the database and this feature hammers this db config, so it's unavailable until we can sort that out. Sorry for the hassle. - Peter"
+    show:
+      unread: 'Unread'
+      all: 'All'
+      comments: 'Comments'
+      stories: 'Stories'
+      noreplies: "No replies to show."
+      allreplies: "All replies to your stories and comments, most-recent first."
+      allcomments: "All replies to your comments, most-recent first."
+      newreplies: "New replies to your stories and comments that you haven't seen on this page or on story pages."
+      allstories: "All replies to stories you've submitted, most-recent first."
+
+  search:
+    legend: "Search"
+    stories: "Stories"
+    comments: "Comments"
+    orderby: "Order By:"
+    relevance: "Relevance"
+    newest: "Newest"
+    points: "Points"
+    searchhints: "Search hints:"
+    li1_p1: "Use"
+    li1_p2: "search operators"
+    li1_p3: "like"
+    li1_p4: "to require terms,"
+    li1_p5: "to ignore terms, and"
+    li1_p6: "''quotes for phrases''"
+    bydomain: "Search by domain with "
+    searchby: "Search by "
+    
+
+
+  signup:
+    index:
+      legend: "Create an Account"
+      nouser: "Not a user yet?"
+      sign: "Sign up here"
+      p1: "Signup is currently by invitation only to combat spam and increase
+          accountability.  If you know "
+      current: "a current user"
+      p2: "of the site,
+          ask them for an invitation, or"
+      requestpublicly: "request one publicly"
+      requestin : "request one in "
+    invite:
+      legend: "Pass Along an Invitation"
+      p1: "Now that you are a member you can invite people you think would be a good fit.
+          This is available anytime from "
+      p2: "your settings page"
+      skip: "Skip"
+    invited:
+      legend: "Create an Account"
+      p1: "To create a new account, enter your e-mail address and a password.
+          Your e-mail address will never be shown to users and will only be used
+          if you need to reset your password, or to receive optional new-message
+          alerts.  Your username can be changed later."
+      invited: "Invited By:"
+      username: "Username:"
+      mail: "E-mail Address:"
+      password: "Password:"
+      passwordagain: "Password (again):"
+      p2: "Want to tell us about yourself?  It's optional, but it will be visible in
+          your public profile and can be changed at any time."
+      about: "About:"
+      markdown: "Markdown formatting available"
+      signup: "Signup"
+  
+  settings: 
+    index: 
+      legend1: "Account Settings"
+      legend2: "View Profile"
+      legend3: "Security Settings"
+      legend4: "Comment Reply Notification Settings"
+      legend5: "Comment Mention Notification Settings"
+      legend6: "Private Message Notification Settings"
+      legend7: "Submitted Story Comment Settings"
+      legend8: "Mailing List Settings"
+      legend9: "Miscellaneous Settings"
+      legend10: "Invite a New User"
+      legend11: "Delete Account"
+      p1: "Your avatar will be cached from the Gravatar icon for your e-mail
+          address above."      
+      p2: "For optional comment and message notifications below"  
+      p3_1: "When enabled, you will receive all newly submitted stories and comments to
+            your e-mail address entered above, except the stories and comments filtered
+            by your"
+      p3_2: "All e-mail messages will appear to be sent to your private list address
+            shown below which you can filter on, and e-mails you send to that address
+            will be posted under your account on this website.  You should keep your
+            unique list address private to prevent others from posting comments as you."    
+      p4: "To permanently delete your account, verify your current password below."
+      li1: "Your account will be put into a deleted state."
+      li2: "Your username will remain reserved and will not be available for any other account."
+      li3: "Your private messages will be deleted."
+      li4: "Your submitted stories will not be deleted."
+      li5_p1: "Your comments with negative scores will be deleted, and you can check ''disown comments''
+              below if you want all of your stories and comments to change to list"
+      li5_p2: "instead of your username."
+      a: "Filtered Tags"  
+      logout: "Logout" 
+      confirm: "Are you sure you want to logout?"
+      username: "Username:"
+      current: "Current Password:"
+      newpassword: "New Password:"
+      confirmpassword: "Confirm Password:"
+      mail: "E-mail Address:"
+      homepage: "Homepage:"
+      about: "About:"
+      saveaccount: "Save Account Settings"
+      external: "External Accounts"
+      linktext1: "Manage Pushover Subscription"
+      linktext2: "Subscribe With Pushover"
+      linkedto: "Linked to"
+      disconnect: "Disconnect"
+      Connect: "Connect"
+      factorauth: "Two-Factor Auth:"
+      enabled: "Enabled"
+      disable: "Disable"
+      enroll: "Enroll"
+      receivemail: "Receive E-mail:"
+      receivealert: "Receive Pushover Alert"
+      hint: "Requires Pushover subscription above"
+      showin: "Show in"
+      yourthreads: "Your Threads"
+      tagfilter: "tag filters"
+      receivelist: "Receive List E-mails:"
+      nomails: "No e-mails"
+      allstoriesandcomments: "All stories and comments"
+      onlystories: "Only stories"
+      listaddress: "List Address:"
+      showstory: "Show Story Previews:"
+      showuser: "Show User Avatars:"
+      saveall: "Save All Settings"
+      sendinvitations: "You cannot send invitations:"
+      verifypass: "Verify Password:"
+      iamsure: "I am sure:"
+      disown: "Disown stories/comments:"
+      deleteaccount: "Yes, Delete My Account"
+      inactiveuser: "inactive-user"
+      optional: "(optional)"
+    twofa_enroll:
+      legend: "Back to Settings"
+      p1_p1: "Scan the QR code below or click on it to open in your"
+      p1_p2: "application of choice:"
+      p2: "Once you have finished registering with your TOTP application, proceed to
+          the next screen to verify your current TOTP code and actually enable
+          Two-Factor Authentication on your account."
+      verify: "Verify and Enable"
+    twofa_verify:
+      p1: "To enable Two-Factor Authentication on your account using your new TOTP
+          secret, enter the six-digit code from your TOTP application:"
+      code: "TOTP Code:"
+      verify: "Verify and Enable"
+    twofa:
+      p1: "To turn off two-factor authentication for your account, enter your
+          current password:"
+      p2: "To begin the two-factor authentication enrollment for your account,
+          enter your current password:"
+      currentpassword: "Current Password:"
+      disableauthentication: "Disable Two-Factor Authentication"
+      continue: "Continue"
+
+
+  stats:
+    h2_1: "New users by month"
+    h2_2: "Active users by month"
+    h2_3: "Stories submitted by month"
+    h2_4: "Comments posted by month"
+    h2_5: "Votes cast by month"
+    outliers: "Outliers:"
+    isthe: "is the"
+    inv: "invitation queue"
+    drive: "pledge drive"
+    results: "results"
+    users: "Users who have submitted a story, posted a comment, or cast a vote"
+    want: "Want more info?"
+    write: "Write a query"
+
+  stories:
+    form_errors:
+      h2_part1: "Note: This story was already submitted"
+      h2_part2: ", but may be submitted again."
+      p1: "If the content has changed or warrants new discussion, you may submit it again."
+      p2: "Previous discussions for this story:"
+    form:
+      url: "URL:"
+      fetch: "Fetch Title"
+      title: "Title:"
+      tags: "Tags"
+      text: "Text:"
+      p1: "Please remove extraneous components from titles such as the name of the site, blog, section, and author."
+      p2: "Users have suggested setting this story's title to:"
+      p3: "Users have suggested setting this story's tags to:"
+      placeholder_area: "Use this for stories without a URL, to link additional context, or to paste abstracts from PDF papers.
+                          Please don't use this to promote the story, summarize the post, or explain why you posted it.
+                          See the guidelines below for more."
+      summary: "Story submission guidelines"
+      li1:
+        p: "Do not editorialize story titles, but when the original story's
+        title has no context or is unclear, please change it."
+        strong: "Please remove extraneous components from titles such as the name of the
+        site, blog, section, and author."
+      li2: "When the story being submitted is more than a year or so old,
+        please add the year the story was written to the post title in
+        parentheses."
+      li3: "When submitting a URL, the text field is optional and should only
+        be used when additional context or explanation of the URL is
+        needed.  Commentary or opinion should be reserved for a comment,
+        so that it can be voted on separately from the story."
+      li4: 
+        if: "If no" 
+        text: "clearly apply to the story you are submitting, chances
+        are it does not belong here.  Do not overreach with tags if they
+        are not the primary focus of the story."
+      li5: 
+        p1: "To be able to easily submit a page you're viewing in your browser
+        to"
+        p2: ", drag this bookmarklet to your
+        bookmark bar:"
+        p3: "Submit to"
+        p4: "You'll be taken to this page with the viewed page's URL and title.
+        (It can't recognize and remove blog/author names for you, though.)"
+      autor: "Author:"
+      submitter: "Submitter is"
+      i_am: "I am "
+      autor_story: "the author of the story at this URL (or this text)"
+      follow: "Follow"
+      submitter_following: "Submitter is following "
+      mail_story: " this story to receive replies via e-mail and Pushover"
+      
+    # +similar
+    listdetail:
+      authored_by: "authored by"
+      via: "via"
+      edit: "edit"
+      justnow: "just now"
+      save: "save"
+      unsave: "unsave"
+      nocomment: "no comments"
+      unhide: "unhide"
+      hide: "hide"
+      suggest: "suggest"
+      cached: "cached"
+      comment: "comment"
+
+    edit:
+      legend: "Edit Story"
+      merge: "Merge Into:"
+      placeholder1: "Short id of story into which this story "
+      bemerged: "be merged"
+      unavailable: "Unavailable:"
+      unavailable_label1: "Source URL is unavailable, "
+      unavailable_label2: "enable display of cached text"
+      modreason: "Mod Reason:"
+      markdown: "Markdown formatting available"
+      save: "Save"
+      undelete: "Undelete"
+      confirm: "Are you sure you want to undelete this story?"
+      delete: "Delete"
+      confirmdelete: "Are you sure you want to delete this story?"
+
+    new: 
+      legend: "Submit a Story"
+      markdown: "Markdown formatting available"
+      submit: "Submit"
+      preview: "Preview"
+
+    show:
+      storytext: "Source URL considered unavailable as of"
+      cache: ", cached text available"
+      allstory: "All story content copyright of its respective owner."
+      storylink: "Stories with similar links:"
+
+    suggest: 
+      legend: "Suggest Story Changes"
+      suggest: "Suggest Changes"
+      cancel: "cancel"
+
+  tags:
+    form:
+      name: 'Name:'
+      category: 'Category:'
+      description: 'Description:'
+      permit: 'Permit by new users:'
+      privileged: 'Privileged:'
+      media: 'Is Media:'
+      active: 'Active:'
+      hotness: 'Hotness Mod:'
+      update: 'Update Tag'
+      create: 'Create Tag'
+    multi:
+      p1: "Tip: read stories across multiple tags with"
+    edit:
+      legend: "Tag Edit"
+      filter: "Filter By Tag"
+    index:
+      legend: "Tags"
+      p1: "Inactive tags can no longer be used. You can also"
+      filter: "filter out stories by tag"
+      inactive: "inactive"
+      newtag: "Create New Tag"
+      filtered: "filtered"
+      edit: 'edit'
+    new:
+      legend: "Tag Create"
+
+  users:
+    flag:
+      p1: "Your comments have been heavily flagged across several stories in the last"
+      p2: "Review "
+      p3: "for context on how unusual this is. Reconsider your behavior or "
+      p4: "take a break"
+      p5: "You could also talk to "
+      p6: "about what went wrong, or
+            delete your account from the bottom of your"
+      p7: "if you prefer to leave."
+    inv:
+      p1: "Invitations are unlimited, but persons you invite will be associated with your
+            account in the "
+      p2: "user tree"
+      p3: "and you may be responsible for them
+            if they cause problems.  Please use your discretion when inviting persons you
+            don't personally know."
+      mail: "E-mail Address:"
+      memo: "Memo to User:"
+      send: "Send Invitation"
+    not:
+      legend: "User not found"
+      p1: "If this user used to exist, they changed their username.
+              Check the"
+      p2: "moderation log"
+    list:
+      admin: "(administrator)"
+      mod: "(moderator)"
+    show:
+      send: "Send a Message"
+      banned: "Banned user"
+      inactive: "Inactive user"
+      active: "Active"
+      administrator: "administrator"
+      moderator: "moderator"
+      user: "user"
+      with: "with invites"
+      submissions: "and story submissions"
+      disabled: "disabled"
+      joined: "Joined:"
+      inv: "invitation"
+      from: "from"
+      averaging: ", averaging "
+      banned2: "Banned:"
+      per: "per story/comment"
+      left: "Left:"
+      commentspost: "Comments Posted:"
+      number: "number_with_precision"
+      homepage: "Homepage:"
+      storiessub: "Stories Submitted:"
+      mystery: "A mystery..."
+      hats: "Hats:"
+      about: "About:"
+      h2: "Moderator Information"
+      flagged: "Flagged (1m):"
+      non: "No"
+      self: "Self Promoter:"
+      yes: "Yes"
+      last: "Last 10 Notes:"
+      new: "New Note:"
+      last2: "Last 10 Moderations:"
+      admin: "Admin Information"
+      recent: "Recent Votes:"
+      com: "comment"
+      unban: "Unban" 
+      enable: "Enable Invites"
+      p1: "Banning or disabling invites for a user will send an e-mail to the user with the reason below,
+             with your e-mail address as the Reply-To so the user can respond"
+      reason: "Reason:"
+      ban: "Ban"
+      disable: "Disable Invites"
+    standing:
+      h1: "Breakdown of commenters receiving flags in the last "
+      p1: "Most commenters get zero or very few flags across their comments in the last"
+      p2: "Currently, users who see the warning have been flagged between"
+      p3: "and"
+      p4: "times."
+      p5: "Or, to make that visible:"
+      p6: "If you're seeing the warning, the best case scenario is that you review your recent flagged comments below, maybe talk to "
+      p7: "about what you think went wrong, and meet community norms.
+            If you can't or don't want to do that, you can delete your account from the bottom of your "
+      p8: "We count total number of flags because that's the most direct measurement of harm:
+            occasionally one or two really nasty comments that hit deep negative scores,
+            but most often it's a consistent pattern of inappropriate, rude, dismissive, or abusive behavior poisoning many discussions.
+            We've tried more complicated measurements, but they correlate almost perfectly to a simple count and are a lot harder to explain than the total number of times another user has flagged your behavior as inappropriate."
+      p9: "The warning (and appearance on a mod dashboard) doesn't kick in until an author has received an unusually high number of flags across several comments on several threads because anyone can have a bad day or a bad thread.
+            The problem is a pattern across many threads, especially if it's gone on a while."
+      p10: "To address some common objections:
+            This isn't based on the percentage of the author's comments flagged or the average score because good comments don't excuse bad ones.
+            This doesn't ignore comments where you feel provoked or justified because you're still responsible for your words.
+            This includes flags on comments with net positive scores because Hipsters isn't a contest to write comments that are slightly funnier or more insightful than they are cruel.
+            If you think the people you're responding to don't deserve courtesy and respect: why do you spending time talking to them at all?"
+      p11: "For reference, your recent flagged comments are below."
+    tree:
+      newest: "Newest users:"
+      admi: "(administrator)"
+      mod: "(moderator)"
+  helpers:
+    appli:
+      justnow: "just now"
+      less: "less than a minute ago"
+      minute: 'minute'
+      ago: "ago"
+      day: day
+      month: "month"
+      year: 'year'
+      login: "Login"
+      home: "Home"
+      hipster: "Lobsters"
+      recent: "Recent"
+      comments: "Comments"
+      threads: "Your Threads"
+      submit: "Submit Story"
+      saved: "Saved"
+      search: "Search"
+      prohibited: "prohibited this "
+      beingsaved: "from being saved"
+      fields: "There were the problems with the following fields:"
+      reply: "Reply"
+      replies: "Replies"
+      error: 'error'
+    users:
+      newest: "/newest/"
+      deleted: "deleted"
+      threads: "/threads/"
+      tagged: ", most commonly tagged "
+  mailers:
+    ban:
+      banned: "You have been banned"
+    email:
+      private: "Private Message from "
+    reply:
+      reply: "Reply from "
+      on: "on"
+      mention: "Mention from "
+    inv:
+      invited: "You are invited to join"
+    request:
+      confirm: "Confirm your invitation"
+      request: "request to "
+
+      
+
+
+
+
+
+
+
+
+
+  
+
+    

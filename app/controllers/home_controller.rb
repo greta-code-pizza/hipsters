@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   include IntervalHelper
-
+ 
   caches_page :about, :chat, :index, :newest, :newest_by_user, :recent, :top, if: CACHE_PAGE
 
   # for rss feeds, load the user's tag filters if a token is passed
@@ -65,11 +65,14 @@ class HomeController < ApplicationController
 
     render :action => "index"
   end
+ 
+  def index 
 
-  def index
     @stories, @show_more = get_from_cache(hottest: true) {
       paginate stories.hottest
     }
+
+    @advertisement = Advertisement.find_random_advert
 
     @rss_link ||= {
       :title => "RSS 2.0",

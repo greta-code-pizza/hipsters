@@ -7,14 +7,14 @@ describe Moderation do
     moderation = Moderation.new(action: value, reason: nil)
     expect(moderation).not_to be_valid
     expect(moderation.errors.messages.dig(:action))
-      .to eq(["is too long (maximum is 16777215 characters)"])
+      .to eq([I18n.t('activerecord.errors.models.moderation.attributes.action.too_long')])
   end
 
   it "validates the length of reason" do
     moderation = Moderation.new(action: nil, reason: value)
     expect(moderation).not_to be_valid
     expect(moderation.errors.messages.dig(:reason))
-      .to eq(["is too long (maximum is 16777215 characters)"])
+      .to eq([I18n.t('activerecord.errors.models.moderation.attributes.reason.too_long')])
   end
 
   it "validates a moderation linked to exactly one object" do

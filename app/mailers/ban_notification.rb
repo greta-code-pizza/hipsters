@@ -7,7 +7,7 @@ class BanNotification < ApplicationMailer
       :from => "#{@banner.username} <nobody@#{Rails.application.domain}>",
       :replyto => "#{@banner.username} <#{@banner.email}>",
       :to => user.email,
-      :subject => "[#{Rails.application.name}] You have been banned"
+      :subject => "[#{t('helpers.appli.hipster')}] #{t('mailers.ban.banned')}"
     )
   end
 end
