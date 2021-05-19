@@ -695,6 +695,10 @@ en:
     li1_p4: "to require terms,"
     li1_p5: "to ignore terms, and"
     li1_p6: "''quotes for phrases''"
+    bydomain: "Search by domain with "
+    searchby: "Search by "
+    
+
 
   signup:
     index:

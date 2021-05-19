@@ -86,8 +86,8 @@ fr:
       edited: "editer"
       e-mailed: "envoyé par e-mail"
       delete: "supprimer"
-      flag: "Mettre un drapeau"
-      unflag: "Enlever un drapeau"
+      flag: "Mettre un flag"
+      unflag: "Enlever un flag"
       reply: "réponse"
       sur: "sur:"
       visible: "Visible par le modérateur:"
@@ -693,6 +693,8 @@ fr:
     li1_p4: "exiger des conditions,"
     li1_p5: "ignorer les termes, et"
     li1_p6: "''citations pour des phrases''"
+    bydomain: "Rechercher par domaine avec "
+    searchby: "Rechercher par "
 
   signup:
     index:
@@ -780,7 +782,7 @@ fr:
       receivemail: "Recevoir un e-mail:"
       receivealert: "Recevoir une alerte "
       hint: "Nécessite un abonnement ci-dessus"
-      showin: "Montre"
+      showin: "Afficher"
       yourthreads: "vos fils"
       tagfilter: "filtres des tags"
       receivelist: "Recevoir les e-mails de la liste:"
@@ -1017,7 +1019,7 @@ fr:
       #conflit avec submit_story_spec 
       disable: "Disable Invites"
     standing:
-      h1: "Répartition des commentateurs recevant des drapeaux à la fin"
+      h1: "Répartition des commentateurs recevant des flags à la fin"
       p1: "La plupart des commentateurs obtiennent zéro ou très peu d'indicateurs dans leurs commentaires à la fin"
       p2: "Actuellement, les utilisateurs qui voient l'avertissement ont été signalés entre"
       p3: "et"
@@ -1026,7 +1028,7 @@ fr:
       p6: "Si vous voyez l'avertissement, le meilleur scénario est que vous passiez en revue vos récents commentaires signalés ci-dessous, parlez peut-être à"
       p7: "sur ce que vous pensez avoir mal tourné et respectez les normes de la communauté.
             Si vous ne pouvez pas ou ne voulez pas faire cela, vous pouvez supprimer votre compte en bas de votre "
-      p8: "Nous comptons le nombre total de drapeaux car c'est la mesure la plus directe du préjudice:
+      p8: "Nous comptons le nombre total de flags car c'est la mesure la plus directe du préjudice:
             parfois un ou deux commentaires vraiment désagréables qui ont atteint des scores profondément négatifs,
             mais le plus souvent, il s'agit d'un modèle constant de comportement inapproprié, grossier, dédaigneux ou abusif qui empoisonne de nombreuses discussions.
             Nous avons essayé des mesures plus compliquées, mais elles correspondent presque parfaitement à un simple décompte et sont beaucoup plus difficiles à expliquer que le nombre total de fois qu'un autre utilisateur a signalé votre comportement comme inapproprié."
