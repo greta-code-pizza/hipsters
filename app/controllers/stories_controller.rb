@@ -131,7 +131,7 @@ class StoriesController < ApplicationController
         }
       end
     end
-
+    
     if !@story.can_be_seen_by_user?(@user)
       raise ActionController::RoutingError.new("story gone")
     end
