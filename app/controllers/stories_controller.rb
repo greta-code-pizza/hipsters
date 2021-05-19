@@ -147,7 +147,6 @@ class StoriesController < ApplicationController
     respond_to do |format|
       format.html {
         @comment = @story.comments.build
-
         @meta_tags = {
           "twitter:card" => "summary",
           "twitter:site" => "@lobsters",

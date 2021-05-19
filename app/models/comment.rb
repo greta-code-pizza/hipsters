@@ -17,7 +17,7 @@ class Comment < ApplicationRecord
   belongs_to :hat,
              :optional => true
   has_many :taggings, through: :story
-  belongs_to :comment
+  # belongs_to :comment
 
   attr_accessor :current_vote, :previewing, :indent_level
 
@@ -46,7 +46,6 @@ class Comment < ApplicationRecord
   scope :for_user, ->(user_id) {
     where(user_id: user_id)
       .order(created_at: :desc)
-      .preload(:comment => [:story, :user])
   }
   scope :comment_replies_for,
         ->(user_id) { for_user(user_id).where('parent_comment_id is not null') }
@@ -72,6 +71,7 @@ class Comment < ApplicationRecord
 
   validate do
     self.comment.to_s.strip == "" &&
+    # (self.comment.to_s.strip == "" && self[:comment].to_s.strip == "") &&
       errors.add(:comment, "cannot be blank.")
 
     self.user_id.blank? &&
