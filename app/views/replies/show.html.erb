@@ -1,6 +1,6 @@
 <div class="box wide">
   <div class="legend right">
-    <%= link_to_different_page(t('replies.show.unread'),   replies_unread_path) %> |
+    <%# <%= link_to_different_page(t('replies.show.unread'),   replies_unread_path) %> |
     <%= link_to_different_page(t('replies.show.all'),      replies_path) %> |
     <%= link_to_different_page(t('replies.show.comments'), replies_comments_path) %> |
     <%= link_to_different_page(t('replies.show.stories'),  replies_stories_path) %>
@@ -12,15 +12,14 @@
 </div>
 
 <%= render partial: 'users/flag_warning' if @show_flag_warning %>
-
 <% if @replies.present? %>
   <ol class="comments comments1">
     <% @replies.each do |reply| %>
       <li class="comments_subtree">
         <%= render "comments/comment",
-            comment: reply.comment,
+            comment: reply,
             show_story: true,
-            is_unread: reply.is_unread,
+            #is_unread: reply.is_unread,
             show_tree_lines: false %>
         <ol class="comments"></ol>
       </li>
@@ -29,14 +28,12 @@
 <% else %>
   <p class="help"><%= t('replies.show.noreplies')%></p>
 <% end %>
-
 <% if @replies.count > RepliesController::REPLIES_PER_PAGE && @filter != 'unread'%>
 <div class="morelink">
   <% if @page && @page > 1 %>
     <a href="/replies<%= @page == 2 ? "" : "/page/#{@page - 1}" %>">&lt;&lt;
       Page <%= @page - 1 %></a>
   <% end %>
-
   <% if @replies.any? %>
     <% if @page && @page > 1 %>
       |

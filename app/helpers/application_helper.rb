@@ -36,7 +36,9 @@ module ApplicationHelper
       recent_path => { :title => t('helpers.appli.recent') },
       comments_path => { :title => t('helpers.appli.comments') },
     }
-
+    if @user && @user.is_admin?
+      @header_links[dashboard_path] = { :title => "Dashboard" }
+    end
     if @user
       @header_links[threads_path] = { :title => t('helpers.appli.threads') }
     end
