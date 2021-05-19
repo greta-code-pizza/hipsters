@@ -36,10 +36,9 @@ class ApplicationController < ActionController::Base
       "  Request #{request.remote_ip} #{request.request_method} #{request.fullpath} user: " +
       (@user ? "#{@user.id} #{@user.username}" : "0 nobody")
     )
-
     true
   end
-
+ 
   def check_for_read_only_mode
     if Rails.application.read_only?
       flash.now[:error] = "Site is currently in read-only mode."
@@ -169,4 +168,5 @@ class ApplicationController < ActionController::Base
 
     request.env["exception_notifier.exception_data"] = exception_data
   end
+
 end
