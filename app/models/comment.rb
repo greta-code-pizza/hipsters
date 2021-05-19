@@ -17,7 +17,6 @@ class Comment < ApplicationRecord
   belongs_to :hat,
              :optional => true
   has_many :taggings, through: :story
-  # belongs_to :comment
 
   attr_accessor :current_vote, :previewing, :indent_level
 

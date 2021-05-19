@@ -1,4 +1,5 @@
-<% flagged = true %>
+
+<% flagged = comment.current_vote && comment.current_vote[:vote] == -1 %>
 <input id="comment_folder_<%= comment.short_id %>"
   class="comment_folder_button" type="checkbox"
   <%= defined?(force_open) ||
