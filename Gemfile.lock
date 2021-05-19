@@ -66,6 +66,8 @@ GEM
     afm (0.2.2)
     ast (2.4.2)
     bcrypt (3.1.16)
+    bugsnag (6.20.0)
+      concurrent-ruby (~> 1.0)
     builder (3.2.4)
     byebug (11.1.3)
     capybara (3.35.3)
@@ -110,6 +112,8 @@ GEM
       i18n (>= 1.6, < 2)
     ffi (1.15.0)
     flamegraph (0.9.5)
+    font-awesome-rails (4.7.0.7)
+      railties (>= 3.2, < 7)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     good_migrations (0.0.2)
@@ -142,7 +146,7 @@ GEM
     minitest (5.14.4)
     mysql2 (0.5.3)
     nio4r (2.5.7)
-    nokogiri (1.11.3)
+    nokogiri (1.11.4)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     oauth (0.5.6)
@@ -165,6 +169,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-mini-profiler (2.3.1)
       rack (>= 1.2.0)
     rack-test (1.1.0)
@@ -300,6 +306,7 @@ DEPENDENCIES
   actionpack-page_caching (>= 1.2.3)
   activerecord-typedstore
   bcrypt (~> 3.1.2)
+  bugsnag (~> 6.20)
   byebug
   capybara
   commonmarker (~> 0.14)
@@ -309,6 +316,7 @@ DEPENDENCIES
   factory_bot_rails (>= 6.1.0)
   faker
   flamegraph
+  font-awesome-rails
   good_migrations (>= 0.0.2)
   htmlentities
   jquery-rails (~> 4.4, >= 4.4.0)
@@ -322,6 +330,7 @@ DEPENDENCIES
   pdf-reader
   pry-rails
   puma (>= 5.3.1)
+  rack-cors
   rack-mini-profiler
   rails (~> 6.0.3.7)
   rb-readline
