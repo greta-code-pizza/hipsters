@@ -15,8 +15,8 @@ module ApplicationHelper
     html = ""
     unless object.errors.blank?
       html << "<div class=\"flash-error\">"
-      html << "<h2>#{pluralize(object.errors.count, + t('helpers.appli.error')) + t('helpers.appli.prohibited')} \
-               #{object.class.name.downcase + t('helpers.appli.beingsaved')}</h2>"
+      html << "<h2>#{pluralize(object.errors.count,'error')}  #{t('helpers.appli.prohibited')} \
+               #{object.class.name.downcase} #{t('helpers.appli.beingsaved')}</h2>"
       html << "<p>#{t('helpers.appli.fields')}</p>"
       html << "<ul>"
       object.errors.full_messages.each do |error|
@@ -168,7 +168,7 @@ module ApplicationHelper
       ago = "#{days} #{t('helpers.appli.day').pluralize(days) + t('helpers.appli.ago')}"
     elsif secs < (60 * 60 * 24 * 365)
       months = (secs / 60.0 / 60.0 / 24.0 / 30.0).floor
-      ago = "#{months} #{t('helpers.appli.month').pluralize(months)+ t('helpers.appli.ago')}"
+      ago = "#{months} #{t('helpers.appli.month')+ t('helpers.appli.ago')}"
     else
       years = (secs / 60.0 / 60.0 / 24.0 / 365.0).floor
       ago = "#{years} #{t('helpers.appli.year').pluralize(years)+ t('helpers.appli.ago')}"

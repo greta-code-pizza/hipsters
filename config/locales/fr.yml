@@ -1,4 +1,76 @@
 fr:
+  activerecord:
+    errors:
+      invitation_request:
+        attributes:
+          email:
+            too_long: "is too long (maximum is 255 characters)"
+          memo:
+            too_long: "is too long (maximum is 255 characters)"
+          name:
+            too_long: "is too long (maximum is 255 characters)"
+          ip_address:
+            too_long: "is too long (maximum is 255 characters)"
+      models:
+        invitation:
+          attributes:
+            email:
+              too_long: "is too long (maximum is 255 characters)"
+            memo:
+              too_long: "is too long (maximum is 255 characters)"
+        mod_note:
+          attributes:
+            note:
+              too_long: "is too long (maximum is 65535 characters)"
+              blank: "can't be blank"
+            markeddown_note:
+              too_long: "is too long (maximum is 65535 characters)"
+              blank: "can't be blank"
+        moderation:
+          attributes:
+            action:
+              too_long: "is too long (maximum is 16777215 characters)"
+            reason:
+              too_long: "is too long (maximum is 16777215 characters)"
+        story:
+          attributes:
+            markeddown_description:
+              too_long: "is too long (maximum is 16777215 characters)"
+            twitter_id:
+              too_long: "is too long (maximum is 20 characters)"
+        story_text:
+          attributes:
+            body:
+              too_long: "is too long (maximum is 16777215 characters)"
+        user:
+          attributes:
+            password_reset_token:
+              too_long: "is too long (maximum is 75 characters)"
+            session_token:
+              too_long: "is too long (maximum is 75 characters)"
+            about:
+              too_long: "is too long (maximum is 16777215 characters)"
+            rss_token:
+              too_long: "is too long (maximum is 75 characters)"
+            mailing_list_token:
+              too_long: "is too long (maximum is 75 characters)"
+            banned_reason:
+              too_long: "is too long (maximum is 200 characters)"
+            disabled_invite_reason:
+              too_long: "is too long (maximum is 200 characters)"
+        vote:
+          attributes:
+            vote:
+              blank: "can't be blank"      
+            reason:
+              wrong_length: "is the wrong length (should be 1 character)"  
+        tag:
+          attributes:
+            tag.blank: "can't be blank"
+      messages:
+        record_invalid: "Validation failed: Username is not permitted"
+
+
   ban_notification:
     text: "Vous avez été banni de"
     for: "pour"
@@ -494,9 +566,10 @@ fr:
     index:
       legend: "Connexion"
       p1: "Le site est actuellement en mode lecture seule pour la maintenance."
-      mail: "E-mail ou nom de l'utilisateur:"
-      password: "Mot de passe:"
-      login: "Connexion"
+      # conflit avec spec>support>authentication
+      mail: "E-mail or Username:"
+      password: "Password:"
+      login: "Login"
       p2: "Vous avez oublié votre mot de passe ou supprimé votre compte?"
       resetpassword: "Réinitialisez votre mot de passe"
       p3: "Pas encore utilisateur?"
@@ -762,13 +835,14 @@ fr:
   stories:
     form_errors:
       h2_part1: "Note: Ce commentaire est déjà soumis"
-      h2_part2: ", mais peut être de nouveau soumis."
+      h2_part2: ", mais may be submitted again."
       p1: "Si le contenu a changé ou justifie une nouvelle discussion, vous pouvez le soumettre à nouveau."
       p2: "Précédente discussion pour cet article:"
     form:
       url: "URL:"
       fetch: "récupérer le title"
-      title: "Titre:"
+      #conflit avec submit_story_spec
+      title: "Title:"
       tags: "Tags"
       text: "Texte:"
       p1: "Veuillez supprimer les composants superflus des titres tels que le nom du site, du blog, de la section et de l'auteur."
@@ -796,7 +870,7 @@ fr:
             (Cependant, il ne peut pas reconnaître et supprimer les noms de blog / auteur pour vous.)"
       autor: "Auteur:"
       submitter: "L'auteur est"
-      i_am: "Je suis"
+      i_am: "Je suis "
       autor_story: "l'auteur de l'article à cet URL (ou ce texte)"
       follow: "Suivre"
       submitter_following: "L'auteur suit "
@@ -833,7 +907,8 @@ fr:
     new: 
       legend: "Soumettre un article"
       markdown: "Formatage MarkDown disponible"
-      submit: "Soumettre"
+      #conflit avec submit-story_spec
+      submit: "Submit"
       preview: "Précédent"
     show:
       storytext: "URL source considérée comme indisponible à compter du"
@@ -932,12 +1007,15 @@ fr:
       admin: "Information Administrateur"
       recent: "Votes Recents:"
       com: "commentaire"
-      unban: "Autoriser" 
-      enable: "Activer les invitations"
+      unban: "Unban"
+      #conflit avec submit_story_spec 
+      enable: "Enable Invites"
       p1: "Le bannissepent ou la désactivation des invitations pour un utilisateur enverra un e-mail à l'utilisateur avec la raison ci-dessous, avec votre adresse e-mail comme réponse pour que l'utilisateur puisse répondre"
-      reason: "Raison:"
+      #conflit avec user_adminstration_spec
+      reason: "Reason:"
       ban: "Bannir"
-      disable: "Désactiver les invitations"
+      #conflit avec submit_story_spec 
+      disable: "Disable Invites"
     standing:
       h1: "Répartition des commentateurs recevant des drapeaux à la fin"
       p1: "La plupart des commentateurs obtiennent zéro ou très peu d'indicateurs dans leurs commentaires à la fin"
@@ -972,7 +1050,7 @@ fr:
       hours: "hour"
       ago: ""
       day: "jour"
-      month: "moi"
+      month: "mois"
       year: 'année'
       login: "Connexion"
       home: "Accueil"

@@ -7,12 +7,12 @@ module UsersHelper
     stories_displayed = stories_submitted - stories_deleted
 
     capture do
-      concat link_to(stories_displayed, "#{t('helpers.appli.newest')+showing_user.username}")
+      concat link_to(stories_displayed, "/newest/+showing_user.username}")
 
-      concat(" (+#{stories_deleted+t('helpers.appli.deleted')})") if user_is_moderator? && stories_deleted > 0
+      concat(" (+#{stories_deleted} #{t('helpers.appli.deleted')})") if user_is_moderator? && stories_deleted > 0
 
       if tag
-        concat t('helpers.appli.tagged')
+        concat ", most commonly tagged "
         concat link_to(tag.tag, tag_path(tag), class: tag.css_class, title: tag.description)
       end
     end
@@ -22,10 +22,10 @@ module UsersHelper
     comments_deleted = showing_user.comments_deleted_count
 
     capture do
-      concat link_to(showing_user.comments_posted_count, "#{t('helpers.appli.threads')+showing_user.username}")
+      concat link_to(showing_user.comments_posted_count, "/threads/#{showing_user.username}")
 
       if user_is_moderator? && comments_deleted > 0
-        concat " (+#{comments_deleted+t('helpers.appli.deleted')})"
+        concat " (+#{comments_deleted} #{t('helpers.appli.deleted')})"
       end
     end
   end
