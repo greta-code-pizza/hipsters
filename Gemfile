@@ -72,4 +72,6 @@ group :test, :development, :staging do
   gem 'stackprof'
 end
 
-gem "bugsnag", "~> 6.20"
+group :production do
+  gem "bugsnag", "~> 6.20"
+end
