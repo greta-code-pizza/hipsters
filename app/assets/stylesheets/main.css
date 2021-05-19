@@ -312,7 +312,7 @@ div#inside {
 }
 
 #header a.new_messages {
-	color: #ac130d;
+	color: var(--new-message-color);
 }
 
 div#leader {
