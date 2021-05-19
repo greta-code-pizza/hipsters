@@ -307,6 +307,23 @@
   <br>
   <br>
 
+  <div class=boxline>
+    <div class="legend">
+      Custom Themes
+    </div>
+
+    <p>hipsters offers you several themes so you can customize your favorite application</p>
+
+    <form action="/themes/change">
+      <label for="themes" style="width:100%;">Choose your themes : </label>
+      <select name="themes">
+        <option value="monokai">Monokai</option>
+        <option value="original">Original</option>
+      </select>
+      <button type="submit">Change themes</button>
+    </form>
+  </div>
+
   <div class="deletion">
       <%= form_with model: @edit_user, url: delete_account_path, method: :post, id: 'delete_user', local: true do |f| %>
       <div class="legend">

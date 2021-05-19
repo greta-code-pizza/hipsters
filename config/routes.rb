@@ -228,4 +228,7 @@ Rails.application.routes.draw do
   # dashboard ---------------------------
   get "/dashboard", to: "dashboard#index"
 
+  # themes
+  get "/themes/change" => "themes#change"
+
 end

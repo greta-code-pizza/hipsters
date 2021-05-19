@@ -22,7 +22,9 @@
   <% end %>
   <title><%= @title.present? ? "#{@title} | " : "" %><%=
     Rails.application.name %></title>
+    
   <%= stylesheet_link_tag "application", :media => "all" %>
+
   <% if @user %>
     <%= javascript_include_tag "application" %>
     <script>
