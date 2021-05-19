@@ -1,0 +1,4 @@
+branch: 'staging' # default is master
+paths: # Files to analyse.
+  - 'app/controllers/'
+  - 'app/models/'
