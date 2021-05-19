@@ -175,8 +175,7 @@ Rails.application.routes.draw do
   post "/tags" => "tags#create"
   post "/tags/:tag_name" => "tags#update", :as => "update_tag"
 
-  get "/advertisement/new" => "advertisement#new"
-  post "/advertisement/new" => "advertisement#create"
+  resources :advertisements
 
   post "/invitations" => "invitations#create"
   get "/invitations" => "invitations#index"
@@ -221,9 +220,12 @@ Rails.application.routes.draw do
   post '/csp-violation-report' => 'csp#violation_report'
 
 
-  #api test -------------------
-get "/api/stories/tag/:tag" => "api/tags#find_stories_by_tags"
-get "/api/stories" => "api/stories_api#find_all_stories"
 
+  # api test -------------------
+  get "/api/stories/tag/:tag" => "api/tags#find_stories_by_tags"
+  get "/api/stories" => "api/stories_api#find_all_stories"
+
+  # dashboard ---------------------------
+  get "/dashboard", to: "dashboard#index"
 
 end
