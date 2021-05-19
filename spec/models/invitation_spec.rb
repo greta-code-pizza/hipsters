@@ -9,7 +9,7 @@ describe Invitation do
   it "has a limit on the email field" do
     invitation = build(:invitation, email: 'a' * 256 + '@b.b')
     invitation.valid?
-    expect(invitation.errors[:email]).to eq(['is too long (maximum is 255 characters)'])
+    expect(invitation.errors[:email]).to eq([I18n.t('activerecord.errors.models.invitation.attributes.email.too_long')])
   end
 
   it "creates a code before validation" do
@@ -22,6 +22,6 @@ describe Invitation do
   it "has a limit on the memo field" do
     invitation = build(:invitation, memo: "a" * 256)
     invitation.valid?
-    expect(invitation.errors[:memo]).to eq(['is too long (maximum is 255 characters)'])
+    expect(invitation.errors[:memo]).to eq([I18n.t('activerecord.errors.models.invitation.attributes.memo.too_long')])
   end
 end

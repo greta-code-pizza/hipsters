@@ -4,8 +4,8 @@ class InvitationMailer < ApplicationMailer
 
     mail(
       to: invitation.email,
-      subject: "[#{Rails.application.name}] You are invited to join " <<
-               Rails.application.name
+      subject: "[#{t('helpers.appli.hipster')}] #{t('mailers.inv.invited')}" <<
+               "#{t('helpers.appli.hipster')}"
     )
   end
 end
