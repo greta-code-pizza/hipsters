@@ -49,6 +49,7 @@ class Comment < ApplicationRecord
   scope :comment_replies_for,
         ->(user_id) { for_user(user_id).where('parent_comment_id is not null') }
   scope :story_replies_for, ->(user_id) { for_user(user_id).where('parent_comment_id is null')}
+  scope :unread_replies_for, ->(user_id) { for_user(user_id).where(is_unread: true) }
 
   FLAGGABLE_DAYS = 7
   DELETEABLE_DAYS = FLAGGABLE_DAYS * 2

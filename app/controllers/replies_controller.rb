@@ -36,7 +36,9 @@ class RepliesController < ApplicationController
 
   def unread
     @heading = @title = "Your Unread Replies"
-    @replies = ReplyingComment.unread_replies_for(@user.id)
+    # @replies = Comment.unread_replies_for(@user.id)
+    @replies = Comment.where(user_id: @user.id, unread: true)
+    binding.pry
     # apply_current_vote
     render :show
   end

@@ -1,5 +1,5 @@
 class ReplyingComment < ApplicationRecord
-  attribute :is_unread, :boolean
+  # attribute :is_unread, :boolean
 
   belongs_to :comment
 
