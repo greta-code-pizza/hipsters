@@ -42,6 +42,14 @@ class Comment < ApplicationRecord
     ) : where('true')
   }
 
+  scope :for_user, ->(user_id) {
+    where(user_id: user_id)
+      .order(created_at: :desc)
+  }
+  scope :comment_replies_for,
+        ->(user_id) { for_user(user_id).where('parent_comment_id is not null') }
+  scope :story_replies_for, ->(user_id) { for_user(user_id).where('parent_comment_id is null')}
+
   FLAGGABLE_DAYS = 7
   DELETEABLE_DAYS = FLAGGABLE_DAYS * 2
 
@@ -62,6 +70,7 @@ class Comment < ApplicationRecord
 
   validate do
     self.comment.to_s.strip == "" &&
+    # (self.comment.to_s.strip == "" && self[:comment].to_s.strip == "") &&
       errors.add(:comment, "cannot be blank.")
 
     self.user_id.blank? &&
@@ -260,7 +269,7 @@ class Comment < ApplicationRecord
 
         if u.pushover_mentions?
           u.pushover!(
-            :title => "#{Rails.application.name} mention by " <<
+            :title => "#{t('helpers.appli.hipster')} mention by " <<
               "#{self.user.username} on #{self.story.title}",
             :message => self.plaintext_comment,
             :url => self.url,
@@ -299,7 +308,7 @@ class Comment < ApplicationRecord
 
       if u.pushover_replies?
         u.pushover!(
-          :title => "#{Rails.application.name} reply from " <<
+          :title => "#{t('helpers.appli.hipster')} reply from " <<
             "#{self.user.username} on #{self.story.title}",
           :message => self.plaintext_comment,
           :url => self.url,

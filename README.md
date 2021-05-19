@@ -4,9 +4,7 @@
 
 <br/>
 <div align="center">
-  <a href='https://codeclimate.com/github/greta-code-pizza/hipsters/maintainability'>
-    <img src="https://api.codeclimate.com/v1/badges/9d0328e288fcf5afb83e/maintainability" alt='Current version'>
-  </a>
+  <a href="https://codeclimate.com/github/greta-code-pizza/hipsters/maintainability"><img src="https://api.codeclimate.com/v1/badges/c07ea6229993e3bf65e6/maintainability" /></a>
   <a href='https://app.circleci.com/pipelines/github/greta-code-pizza'>
     <img src="https://img.shields.io/circleci/build/github/greta-code-pizza/hipsters/staging" alt='Current version'>
   </a>

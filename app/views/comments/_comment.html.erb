@@ -1,3 +1,4 @@
+
 <% flagged = comment.current_vote && comment.current_vote[:vote] == -1 %>
 <input id="comment_folder_<%= comment.short_id %>"
   class="comment_folder_button" type="checkbox"
@@ -78,7 +79,7 @@ class="comment <%= comment.current_vote ? (comment.current_vote[:vote] == 1 ?
 
       <% if !comment.previewing %>
         |
-        <a href="<%= comment.path %>">link</a>
+        <a href="<%= comment.path %>"><%= t('comments.comment.link')%></a>
 
         <% if comment.is_editable_by_user?(@user) %>
           |

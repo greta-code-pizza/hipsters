@@ -1,44 +1,29 @@
-/*
- *= require select2
- *= require font-awesome
- *= require_self
- *= require mobile
- *= require_tree ./local
- *= require monokai
- *= require main
-*/
-
-
-
-/* generics */
-
 /* force a vertical scrollbar to avoid page-shifting */
 html {
 	overflow-y: scroll;
 }
 
-body, textarea, input, button {
-	font-family: "helvetica neue", arial, sans-serif;
-	font-size: 10pt;
-	color: #333;
+body, 
+textarea, 
+input, 
+button {
+	font-family: var(--second-font-family);
+	font-size: 12.5px;
+	color: var(--text-color);
 	line-height: 1.45em;
 }
 
 body {
-	background-color: #fefefe;
-}
-
-.toto{
-	border: 10px solid green;
+	background-color: var(--bg-color);
 }
 
 a {
-	color: #2562dc;
+	color: var(--link-color);
 	cursor: pointer;
 }
 
 li.story div.details span.link a:visited {
-	color: #7395d9;
+	color: var(--story-title-visited-color);
 }
 
 h1 {
@@ -57,10 +42,10 @@ h2 {
 }
 
 a.tag {
-	background-color: #fffcd7;
-	border: 1px solid #d5d458;
+	background-color: var(--tag-color);
+	border: 1px solid var(--border-tag-color);
 	border-radius: 5px;
-	color: #555;
+	color: var(--font-tag-color);
 	font-size: 8pt;
 	margin-left: 0.25em;
 	padding: 0px 0.4em 1px 0.4em;
@@ -250,7 +235,7 @@ div#wrapper {
 	margin-right: auto;
 	padding-bottom: 2em;
 	min-width: 600px;
-	max-width: 900px;
+	max-width: 1200px;
 }
 div#inside {
 	margin-left: 0.25em;
@@ -281,6 +266,16 @@ div#inside {
 	padding: 1px;
 	margin-left: 4px;
 	margin-right: 11px;
+	border-radius: 100%;
+	background-color: var(--logo-color) !important;
+	position: relative;
+}
+
+#l_holder i {
+	position: absolute;
+	top: 2px;
+	left: 5px;
+	color: var(--logo-icon-color);
 }
 
 #headertitle {
@@ -292,9 +287,9 @@ div#inside {
 }
 
 .headerlinks a {
-	color: #777;
+	color: var(--menu-link-color);
 	text-decoration: none;
-	padding-right: 0.75em;
+	padding-right: 0.5em;
 }
 
 #headerright {
@@ -305,10 +300,15 @@ div#inside {
 #headerright .headerlinks a {
 	padding-right: 0;
 	padding-left: 0.75em;
+	color: var(--menu-right-color);
 }
 
 #header a.cur_url {
-	color: #333;
+	color: var(--logo-text-color);
+}
+
+#headerlinks a:first-child {
+	text-transform: uppercase;
 }
 
 #header a.new_messages {
@@ -425,7 +425,7 @@ div.voters .flagger {
 
 div.voters .upvoter:hover,
 .upvoted div.voters .upvoter {
-	border-bottom-color: #ac130d;
+	border-bottom-color: var(--upvoted-color);
 }
 
 div.voters .upvoter {
@@ -456,6 +456,7 @@ ol.stories li.story div.story_liner {
 	padding-top: 0.25em;
 	padding-bottom: 0.25em;
 	word-break: break-word;
+	background-color: var(--bg-2-color);
 }
 .comment {
 	clear: both;
@@ -470,7 +471,9 @@ ol.stories li.story div.story_liner {
 }
 
 ol.stories li:first-child div.story_liner {
-	padding-top: 0.5em;
+	padding: 15px;
+	border-radius: 6px;
+	margin-top: 6px;
 }
 li div.details {
 	padding-top: 0.1em;
@@ -501,8 +504,11 @@ li .link {
 }
 
 li .link a {
-	font-size: 11.5pt;
+	font-size: 14px;
 	text-decoration: none;
+	font-family: var(--main-font-family);
+	font-weight: normal;
+	text-transform: uppercase;
 }
 
 li.story .description_present {
@@ -1071,8 +1077,10 @@ table.data pre {
 .box .legend {
 	margin-bottom: 1em;
 	padding: 0;
+	padding-top: 10px;
 	font-weight: bold;
 	font-size: 11pt;
+	color: var(--legend-text-color);
 }
 .box .sublegend {
 	font-size: 9.5pt;
@@ -1295,5 +1303,3 @@ div.flash-success h2 {
 	text-decoration: none;
 	vertical-align: middle;
 }
-
-

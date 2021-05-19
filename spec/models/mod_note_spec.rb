@@ -11,7 +11,7 @@ describe ModNote do
                            markeddown_note: 'a')
     expect(mod_note).not_to be_valid
     expect(mod_note.errors.messages.dig(:note))
-      .to eq(["is too long (maximum is 65535 characters)"])
+      .to eq([I18n.t('activerecord.errors.models.mod_note.attributes.note.too_long')])
   end
 
   it "validates the length of markeddown_note" do
@@ -21,7 +21,7 @@ describe ModNote do
                            markeddown_note: 'a' * 65_536)
     expect(mod_note).not_to be_valid
     expect(mod_note.errors.messages.dig(:markeddown_note))
-      .to eq(["is too long (maximum is 65535 characters)"])
+      .to eq([I18n.t('activerecord.errors.models.mod_note.attributes.markeddown_note.too_long')])
   end
 
   it "validates the presence of note" do
@@ -31,7 +31,7 @@ describe ModNote do
                            markeddown_note: 'a')
     expect(mod_note).not_to be_valid
     expect(mod_note.errors.messages.dig(:note))
-      .to eq(["can't be blank"])
+      .to eq([I18n.t('activerecord.errors.models.mod_note.attributes.note.blank')])
   end
 
   it "validates the presence of markeddown_note" do
@@ -41,6 +41,6 @@ describe ModNote do
                            markeddown_note: nil)
     expect(mod_note).not_to be_valid
     expect(mod_note.errors.messages.dig(:markeddown_note))
-      .to eq(["can't be blank"])
+      .to eq([I18n.t('activerecord.errors.models.mod_note.attributes.markeddown_note.blank')])
   end
 end
