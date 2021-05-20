@@ -64,8 +64,10 @@ class ApplicationController < ActionController::Base
   end
 
   def mini_profiler
-    if @user && @user.is_admin?
-      Rack::MiniProfiler.authorize_request
+    unless Rails.env.production?
+      if @user && @user.is_admin?
+        Rack::MiniProfiler.authorize_request
+      end
     end
   end
 
