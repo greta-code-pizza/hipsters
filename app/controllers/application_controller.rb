@@ -2,10 +2,12 @@ class ApplicationController < ActionController::Base
   include IntervalHelper
 
   protect_from_forgery
+  before_action :set_locale
   before_action :authenticate_user
   before_action :mini_profiler
   before_action :set_traffic_style
   before_action :prepare_exception_notifier
+  
 
   # match this in your nginx config for bypassing the file cache
   TAG_FILTER_COOKIE = :tag_filters
@@ -17,6 +19,12 @@ class ApplicationController < ActionController::Base
 
   rescue_from ActionController::UnknownFormat, ActionView::MissingTemplate do
     render plain: '404 Not Found', status: :not_found, content_type: 'text/plain'
+  end
+
+  private
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+    Rails.application.routes.default_url_options[:locale]= I18n.locale 
   end
 
   def authenticate_user

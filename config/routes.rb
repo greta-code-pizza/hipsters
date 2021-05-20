@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  root :to => "home#index",
-    :protocol => (Rails.application.config.force_ssl ? "https://" : "http://"),
-    :as => "root"
-
+  scope "(:locale)", :locale => /fr|en/ do
+    root :to => "home#index",
+      :protocol => (Rails.application.config.force_ssl ? "https://" : "http://"),
+      :as => "root"
+  end
     # get "/tag" => "api/tags#tags"
   get "/404" => "home#four_oh_four", :via => :all
 
