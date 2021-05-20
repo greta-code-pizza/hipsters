@@ -65,6 +65,7 @@ class LoginController < ApplicationController
       end
 
       session[:u] = user.session_token
+      session[:user_id] = user.id
 
       if (rd = session[:redirect_to]).present?
         session.delete(:redirect_to)

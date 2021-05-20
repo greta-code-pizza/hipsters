@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :mini_profiler
   before_action :set_traffic_style
   before_action :prepare_exception_notifier
+  before_action :init_theme
 
   # match this in your nginx config for bypassing the file cache
   TAG_FILTER_COOKIE = :tag_filters
@@ -168,5 +169,13 @@ class ApplicationController < ActionController::Base
     exception_data[:username] = @user.username unless @user.nil?
 
     request.env["exception_notifier.exception_data"] = exception_data
+  end
+
+  def init_theme
+    @current_theme = if @user.nil?
+                       "monokai"
+                     else
+                       Theme.find_theme(session[:user_id])
+                     end
   end
 end
