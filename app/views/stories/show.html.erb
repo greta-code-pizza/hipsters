@@ -38,8 +38,11 @@
 </div>
 
 <% if !@story.previewing %>
+
   <ol class="comments comments1">
+  
     <% if !@story.is_gone? && !@story.previewing %>
+    
       <li class="comments_subtree"><%= render "comments/commentbox", :comment => @comment %></li>
       <% if @user %><script>autosize($("#comment")[0]);</script><% end %>
     <% end %>
@@ -51,21 +54,21 @@
     <% while subtree %>
       <% if (comment = subtree.shift) %>
         <li class="comments_subtree">
-
         <% children = comments_by_parent[comment.id] %>
         <%= render "comments/comment", :comment => comment,
           :show_story => (comment.story_id != @story.id),
           :show_tree_lines => true,
           :was_merged => (comment.story_id != @story.id),
-          :children => children,
-          :is_unread => 
+          :children => children
+        #   :is_unread => children.unread
           
           
-          if !@user || !@ribbon
-          return false
-        end
-    
-        (comment.created_at > @ribbon.updated_at) && (comment.user_id != @user.id)%>
+        #   if !@user || !@ribbon
+        #   return false
+        # end
+
+        # (comment.created_at > @ribbon.updated_at) && (comment.user_id != @user.id)
+        %>
 
         <% if ancestors.present? %>
           <div class="comment_siblings_tree_line"></div>
