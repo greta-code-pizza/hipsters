@@ -160,7 +160,7 @@ class Story < ApplicationRecord
     end
 
     if self.title.starts_with?("Ask") && self.tags_a.include?('ask')
-      errors.add(:title, " starting 'Ask #{Rails.application.name}' or similar is redundant " <<
+      errors.add(:title, " starting 'Ask #{'helpers.appli.hipster'}' or similar is redundant " <<
                           "with the ask tag.")
     end
     if self.title.match(GRAPHICS_RE)

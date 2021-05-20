@@ -46,6 +46,7 @@ gem 'transaction_retry' # mitigate https://github.com/lobsters/lobsters-ansible/
 gem "font-awesome-rails"
 # API
 gem 'rack-cors'
+gem 'http-accept'
 
 group :test, :development, :staging do
   gem 'capybara'

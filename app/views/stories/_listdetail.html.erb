@@ -124,7 +124,7 @@ class="story <%= story.vote && story.vote[:vote] == 1 ? "upvoted" : "" %>
             story.has_suggestions? ? "story_has_suggestions" : "" %>"><%= t('stories.listdetail.edit')%></a>
         <% end %>
         <% if story.can_have_suggestions_from_user?(@user) %>
-          | <%= link_to "suggest", story_suggest_path(story.short_id),
+          | <%= link_to t('stories.listdetail.suggest'), story_suggest_path(story.short_id),
             :class => "suggester" %>
         <% end %>
         <% if !story.is_gone? && @user %>
@@ -135,20 +135,20 @@ class="story <%= story.vote && story.vote[:vote] == 1 ? "upvoted" : "" %>
             | <a class="flagger">flag</a>
           <% end %>
           <% if story.is_hidden_by_cur_user %>
-            | <%= link_to "unhide", story_unhide_path(story.short_id),
+            | <%= link_to t('stories.listdetail.unhide'), story_unhide_path(story.short_id),
               :class => "hider" %>
           <% else %>
-            | <%= link_to "hide", story_hide_path(story.short_id),
+            | <%= link_to t('stories.listdetail.hide'), story_hide_path(story.short_id),
               :class => "hider" %>
           <% end %>
           <% if defined?(single_story) && single_story && story.hider_count > 0 %>
             (hidden by <%= pluralize(story.hider_count, "user") %>)
           <% end %>
           <% if story.is_saved_by_cur_user %>
-            | <%= link_to "unsave", story_unsave_path(story.short_id),
+            | <%= link_to t('stories.listdetail.unsave'), story_unsave_path(story.short_id),
               :class => "saver" %>
           <% else %>
-            | <%= link_to "save", story_save_path(story.short_id),
+            | <%= link_to t('stories.listdetail.save'), story_save_path(story.short_id),
               :class => "saver" %>
           <% end %>
         <% end %>
@@ -161,9 +161,9 @@ class="story <%= story.vote && story.vote[:vote] == 1 ? "upvoted" : "" %>
             |
             <a href="<%= story.comments_path %>">
             <% if story.comments_count == 0 %>
-            <%= t('stories.listdetail.nocomment')%></a>
+              <%= t('stories.listdetail.nocomment')%></a>
             <% else %>
-              <%= story.comments_count %> <%= 'comment'.pluralize(story.comments_count) %></a>
+              <%= story.comments_count %> <%= t('stories.listdetail.comment').pluralize(story.comments_count) %></a>
             <% end %>
           </span>
         <% end %>

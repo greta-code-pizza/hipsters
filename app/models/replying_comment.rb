@@ -4,9 +4,7 @@ class ReplyingComment < ApplicationRecord
   belongs_to :comment
 
   scope :for_user, ->(user_id) {
-    where(user_id: user_id)
-      .order(comment_created_at: :desc)
-      .preload(:comment => [:story, :user])
+    where(user_id: user_id).preload(:comment => [:story, :user])
   }
   scope :unread_replies_for, ->(user_id) { for_user(user_id).where(is_unread: true) }
   scope :comment_replies_for,

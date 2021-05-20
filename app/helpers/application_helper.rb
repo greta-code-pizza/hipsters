@@ -15,9 +15,9 @@ module ApplicationHelper
     html = ""
     unless object.errors.blank?
       html << "<div class=\"flash-error\">"
-      html << "<h2>#{pluralize(object.errors.count, 'error')} prohibited this \
-               #{object.class.name.downcase} from being saved</h2>"
-      html << "<p>There were the problems with the following fields:</p>"
+      html << "<h2>#{pluralize(object.errors.count,t('helpers.appli.error'))}  #{t('helpers.appli.prohibited')} \
+               #{object.class.name.downcase} #{t('helpers.appli.beingsaved')}</h2>"
+      html << "<p>#{t('helpers.appli.fields')}</p>"
       html << "<ul>"
       object.errors.full_messages.each do |error|
         html << "<li>#{error}</li>"
@@ -32,26 +32,26 @@ module ApplicationHelper
     return @header_links if @header_links
 
     @header_links = {
-      root_path => { :title => @cur_url == "/" ? Rails.application.name : "Home" },
-      recent_path => { :title => "Recent" },
-      comments_path => { :title => "Comments" },
+      root_path => { :title => @cur_url == "/" ? t('helpers.appli.hipster') : t('helpers.appli.home') },
+      recent_path => { :title => t('helpers.appli.recent') },
+      comments_path => { :title => t('helpers.appli.comments') },
     }
     if @user && @user.is_admin?
       @header_links[dashboard_path] = { :title => "Dashboard" }
     end
     if @user
-      @header_links[threads_path] = { :title => "Your Threads" }
+      @header_links[threads_path] = { :title => t('helpers.appli.threads') }
     end
 
     if @user && @user.can_submit_stories?
-      @header_links[new_story_path] = { :title => "Submit Story" }
+      @header_links[new_story_path] = { :title => t('helpers.appli.submit') }
     end
 
     if @user
-      @header_links[saved_path] = { :title => "Saved" }
+      @header_links[saved_path] = { :title => t('helpers.appli.saved') }
     end
 
-    @header_links[search_path] = { :title => "Search" }
+    @header_links[search_path] = { :title => t('helpers.appli.search') }
 
     @header_links.each do |k, v|
       v[:class] ||= []
@@ -73,10 +73,10 @@ module ApplicationHelper
       if (count = @user.unread_replies_count) > 0
         @right_header_links[replies_unread_path] = {
           :class => ["new_messages"],
-          :title => "#{@user.unread_replies_count} Reply".pluralize(count),
+          :title => "#{@user.unread_replies_count+ t('helpers.appli.reply')}".pluralize(count),
         }
       else
-        @right_header_links[replies_path] = { :title => "Replies" }
+        @right_header_links[replies_path] = { :title => t('helpers.appli.replies') }
       end
 
       if (count = @user.unread_message_count) > 0
@@ -90,7 +90,7 @@ module ApplicationHelper
 
       @right_header_links[settings_path] = { :title => "#{@user.username} (#{@user.karma})" }
     else
-      @right_header_links[login_path] = { :title => "Login" }
+      @right_header_links[login_path] = { :title => t('helpers.appli.login') }
     end
 
     @right_header_links.each do |k, v|
@@ -156,24 +156,24 @@ module ApplicationHelper
     ago = ""
     secs = (Time.current - time).to_i
     if secs <= 5
-      ago = "just now"
+      ago = t('helpers.appli.justnow')
     elsif secs < 60
-      ago = "less than a minute ago"
+      ago = t('helpers.appli.less')
     elsif secs < (60 * 60)
       mins = (secs / 60.0).floor
-      ago = "#{mins} #{'minute'.pluralize(mins)} ago"
+      ago = "#{mins} #{t('helpers.appli.minute').pluralize(mins)+ t('helpers.appli.ago')}"
     elsif secs < (60 * 60 * 48)
       hours = (secs / 60.0 / 60.0).floor
-      ago = "#{hours} #{'hour'.pluralize(hours)} ago"
+      ago = "#{hours} #{t('helpers.appli.hours').pluralize(hours)+ t('helpers.appli.ago')}"
     elsif secs < (60 * 60 * 24 * 30)
       days = (secs / 60.0 / 60.0 / 24.0).floor
-      ago = "#{days} #{'day'.pluralize(days)} ago"
+      ago = "#{days} #{t('helpers.appli.day').pluralize(days) + t('helpers.appli.ago')}"
     elsif secs < (60 * 60 * 24 * 365)
       months = (secs / 60.0 / 60.0 / 24.0 / 30.0).floor
-      ago = "#{months} #{'month'.pluralize(months)} ago"
+      ago = "#{months} #{t('helpers.appli.month')+ t('helpers.appli.ago')}"
     else
       years = (secs / 60.0 / 60.0 / 24.0 / 365.0).floor
-      ago = "#{years} #{'year'.pluralize(years)} ago"
+      ago = "#{years} #{t('helpers.appli.year').pluralize(years)+ t('helpers.appli.ago')}"
     end
 
     raw(content_tag(:span, ago, title: time.strftime("%F %T %z")))

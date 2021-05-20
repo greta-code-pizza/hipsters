@@ -86,9 +86,9 @@
   <div class="help">
     <%= t('search.searchhints')%> 
     <ul>
-      <li><%= t('search.li1_p1')%> <a href="https://mariadb.com/kb/en/full-text-index-overview/#in-boolean-mode"><%= t('search.li1_p2')%> </a> like <code>+</code> <%= t('search.li1_p3')%>  <code>-</code> <%= t('search.li1_p4')%>  <code><%= t('search.li1_p5')%> </code>.</li>
-      <li>Search by domain with <code>domain:example.com</code> (implicit <code>+</code>)</li>
-      <li>Search by <%= link_to 'tag', tags_path %> with <code>tag:meta</code> (implicit <code>+</code>)</li>
+      <li><%= t('search.li1_p1')%> <a href="https://mariadb.com/kb/en/full-text-index-overview/#in-boolean-mode"><%= t('search.li1_p2')%> </a> <%= t('search.li1_p3')%> <code>+</code> <%= t('search.li1_p3')%>  <code>-</code> <%= t('search.li1_p4')%>  <code><%= t('search.li1_p5')%> </code>.</li>
+      <li><%= t('search.bydomain')%><code>domain:example.com</code> (implicit <code>+</code>)</li>
+      <li><%= t('search.searchby')%><%= link_to 'tag', tags_path %> with <code>tag:meta</code> (implicit <code>+</code>)</li>
     </ul>
   </div>
 <% end %>
