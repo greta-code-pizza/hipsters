@@ -116,7 +116,7 @@ Rails.application.routes.draw do
     post "mod_note"
   end
 
-  get "/c/:id" => "comments#redirect_from_short_id"
+  get "/c/:id" => "comments#show"
   get "/c/:id.json" => "comments#show_short_id", :format => "json"
 
   # deprecated

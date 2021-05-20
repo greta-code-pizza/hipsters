@@ -49,7 +49,7 @@ class Comment < ApplicationRecord
   scope :comment_replies_for,
         ->(user_id) { for_user(user_id).where('parent_comment_id is not null') }
   scope :story_replies_for, ->(user_id) { for_user(user_id).where('parent_comment_id is null')}
-  scope :unread_replies_for, ->(user_id) { for_user(user_id).where(is_unread: true) }
+  scope :unread_replies_for, ->(user_id) { for_user(user_id).where(unread: true) }
 
   FLAGGABLE_DAYS = 7
   DELETEABLE_DAYS = FLAGGABLE_DAYS * 2
@@ -441,6 +441,10 @@ class Comment < ApplicationRecord
     ].reject(&:!).join(".") << "@" << Rails.application.domain
   end
 
+  def single_comment
+    "/c/#{self.short_id}"
+  end
+
   def path
     self.story.comments_path + "#c_#{self.short_id}"
   end
@@ -465,6 +469,13 @@ class Comment < ApplicationRecord
       "~"
     else
       "&nbsp;".html_safe
+    end
+  end
+
+  def set_read(comment, id)
+  
+    if Comment.exists?(id) && comment.user_id == id && comment.unread
+        comment.update_attributes(:unread => false) 
     end
   end
 

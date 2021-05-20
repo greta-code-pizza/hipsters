@@ -65,8 +65,10 @@ class CommentsController < ApplicationController
     end
   end
 
+  # disabled is_editable _by_user ( will try to add it on comment page to disable input )
   def show
-    if !((comment = find_comment) && comment.is_editable_by_user?(@user))
+    if !(comment = find_comment) 
+      #&& comment.is_editable_by_user?(@user))
       return render :plain => "can't find comment", :status => 400
     end
 
@@ -104,6 +106,8 @@ class CommentsController < ApplicationController
       :content_type => "text/html", :locals => { :comment => comment }
   end
 
+  # added functionality: by clicking reply if comment is unread  setting
+  # unread attribute to false
   def reply
     if !(parent_comment = find_comment)
       return render :plain => "can't find comment", :status => 400
@@ -112,6 +116,9 @@ class CommentsController < ApplicationController
     comment = Comment.new
     comment.story = parent_comment.story
     comment.parent_comment = parent_comment
+    if comment.unread
+      comment.set_read(parent_comment, @user.id)
+    end
 
     render :partial => "commentbox", :layout => false,
       :content_type => "text/html", :locals => { :comment => comment }
@@ -243,8 +250,6 @@ class CommentsController < ApplicationController
       .includes(:user, :hat, :story => :user)
       .joins(:story).where.not(stories: { is_expired: true })
       .limit(COMMENTS_PER_PAGE)
-      .offset((@page - 1) * COMMENTS_PER_PAGE)
-
     if @user
       @votes = Vote.comment_votes_by_user_for_comment_ids_hash(@user.id, @comments.map(&:id))
 
