@@ -1,13 +1,2 @@
 <h1>Nombre d'utilisateurs: <%= @users_count %></h1>
 <h1>Nombre de stories: <%= @stories_count %></h1>
-
-
-<p>
-<%= link_to_unless I18n.locale == :en, "English", locale: :en %>
-|
-<%= link_to_unless I18n.locale == :fr, "Francais", locale: :fr %>
-</p>
-
-<p><b>I18n.locale:</b> 
-<%= I18n.locale %>
-</p>

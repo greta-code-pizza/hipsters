@@ -21,10 +21,15 @@ class ApplicationController < ActionController::Base
     render plain: '404 Not Found', status: :not_found, content_type: 'text/plain'
   end
 
+  #Setting I18n.locale via Accept Language HTTP Header of Browser
   private
+  def extract_locale_from_accept_language_header
+    request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2,5}/).first
+  end
+
+  #Using I18n.locale for Defining the Desired Language
   def set_locale
-    I18n.locale = params[:locale] || I18n.default_locale
-    Rails.application.routes.default_url_options[:locale]= I18n.locale 
+    I18n.locale = extract_locale_from_accept_language_header || I18n.default_locale
   end
 
   def authenticate_user
