@@ -14,8 +14,8 @@ fr:
       edited: "editer"
       e-mailed: "envoyé par e-mail"
       delete: "supprimer"
-      flag: "Mettre un drapeau"
-      unflag: "Enlever un drapeau"
+      flag: "Mettre un flag"
+      unflag: "Enlever un flag"
       reply: "réponse"
       sur: "sur:"
       visible: "Visible par le modérateur:"
@@ -345,8 +345,8 @@ fr:
       p32_1: "Sponsor de l'emoji Hipster"
       p32_2: "En février 2018, Hipsters "
       p32_3: "a organisé une collecte de fonds"
-      p32_4: "d'adopter officiellement le nouvel emoji Hipster en soutien à la Fondation Unicode."
-      p33_1: "Le nom '' Hipster.rs '' est un mignon"
+      p32_4: "d'adopter officiellement le nouvel emoji Hipsters en soutien à la Fondation Unicode."
+      p33_1: "Le nom '' Hipsters.rs '' est un mignon"
       p33_2: "piratage de domaine"
       p33_3: "sans aucune signification plus profonde."
       p33_4: "Il"
@@ -494,14 +494,15 @@ fr:
     index:
       legend: "Connexion"
       p1: "Le site est actuellement en mode lecture seule pour la maintenance."
-      mail: "E-mail ou nom de l'utilisateur:"
-      password: "Mot de passe:"
-      login: "Connexion"
+      # conflit avec spec>support>authentication
+      mail: "E-mail or Username:"
+      password: "Password:"
+      login: "Login"
       p2: "Vous avez oublié votre mot de passe ou supprimé votre compte?"
       resetpassword: "Réinitialisez votre mot de passe"
       p3: "Pas encore utilisateur?"
       p4: "Inscrivez-vous ici"
-      p5: "Pas encore utilisateur? L'inscription se fait uniquement sur invitation pour lutter contre le spam et accroître la responsabilité. Si tu sais"
+      p5: "Pas encore utilisateur? L'inscription se fait uniquement sur invitation pour lutter contre le spam et accroître la responsabilité. Si tu sais "
       p6: "un utilisateur actuel"
       p7: "du site, demandez-leur une invitation ou"
       p8: "en demander un publiquement"
@@ -620,6 +621,8 @@ fr:
     li1_p4: "exiger des conditions,"
     li1_p5: "ignorer les termes, et"
     li1_p6: "''citations pour des phrases''"
+    bydomain: "Rechercher par domaine avec "
+    searchby: "Rechercher par "
 
   signup:
     index:
@@ -762,13 +765,14 @@ fr:
   stories:
     form_errors:
       h2_part1: "Note: Ce commentaire est déjà soumis"
-      h2_part2: ", mais peut être de nouveau soumis."
+      h2_part2: ", mais may be submitted again."
       p1: "Si le contenu a changé ou justifie une nouvelle discussion, vous pouvez le soumettre à nouveau."
       p2: "Précédente discussion pour cet article:"
     form:
       url: "URL:"
       fetch: "récupérer le title"
-      title: "Titre:"
+      #conflit avec submit_story_spec
+      title: "Title:"
       tags: "Tags"
       text: "Texte:"
       p1: "Veuillez supprimer les composants superflus des titres tels que le nom du site, du blog, de la section et de l'auteur."
@@ -796,7 +800,7 @@ fr:
             (Cependant, il ne peut pas reconnaître et supprimer les noms de blog / auteur pour vous.)"
       autor: "Auteur:"
       submitter: "L'auteur est"
-      i_am: "Je suis"
+      i_am: "Je suis "
       autor_story: "l'auteur de l'article à cet URL (ou ce texte)"
       follow: "Suivre"
       submitter_following: "L'auteur suit "
@@ -833,7 +837,8 @@ fr:
     new: 
       legend: "Soumettre un article"
       markdown: "Formatage MarkDown disponible"
-      submit: "Soumettre"
+      #conflit avec submit-story_spec
+      submit: "Submit"
       preview: "Précédent"
     show:
       storytext: "URL source considérée comme indisponible à compter du"
@@ -932,14 +937,17 @@ fr:
       admin: "Information Administrateur"
       recent: "Votes Recents:"
       com: "commentaire"
-      unban: "Autoriser" 
-      enable: "Activer les invitations"
+      unban: "Unban"
+      #conflit avec submit_story_spec 
+      enable: "Enable Invites"
       p1: "Le bannissepent ou la désactivation des invitations pour un utilisateur enverra un e-mail à l'utilisateur avec la raison ci-dessous, avec votre adresse e-mail comme réponse pour que l'utilisateur puisse répondre"
-      reason: "Raison:"
+      #conflit avec user_adminstration_spec
+      reason: "Reason:"
       ban: "Bannir"
-      disable: "Désactiver les invitations"
+      #conflit avec submit_story_spec 
+      disable: "Disable Invites"
     standing:
-      h1: "Répartition des commentateurs recevant des drapeaux à la fin"
+      h1: "Répartition des commentateurs recevant des flags à la fin"
       p1: "La plupart des commentateurs obtiennent zéro ou très peu d'indicateurs dans leurs commentaires à la fin"
       p2: "Actuellement, les utilisateurs qui voient l'avertissement ont été signalés entre"
       p3: "et"
@@ -948,7 +956,7 @@ fr:
       p6: "Si vous voyez l'avertissement, le meilleur scénario est que vous passiez en revue vos récents commentaires signalés ci-dessous, parlez peut-être à"
       p7: "sur ce que vous pensez avoir mal tourné et respectez les normes de la communauté.
             Si vous ne pouvez pas ou ne voulez pas faire cela, vous pouvez supprimer votre compte en bas de votre "
-      p8: "Nous comptons le nombre total de drapeaux car c'est la mesure la plus directe du préjudice:
+      p8: "Nous comptons le nombre total de flags car c'est la mesure la plus directe du préjudice:
             parfois un ou deux commentaires vraiment désagréables qui ont atteint des scores profondément négatifs,
             mais le plus souvent, il s'agit d'un modèle constant de comportement inapproprié, grossier, dédaigneux ou abusif qui empoisonne de nombreuses discussions.
             Nous avons essayé des mesures plus compliquées, mais elles correspondent presque parfaitement à un simple décompte et sont beaucoup plus difficiles à expliquer que le nombre total de fois qu'un autre utilisateur a signalé votre comportement comme inapproprié."
@@ -973,20 +981,20 @@ fr:
       hours: "hour"
       ago: ""
       day: "jour"
-      month: "moi"
+      month: "mois"
       year: 'année'
       login: "Connexion"
       home: "Accueil"
-      hipster: "Hipster"
+      hipster: "Hipsters"
       recent: "Récent"
       comments: "Commentaires"
       threads: "Votre fil"
       submit: "Envoyer un article"
       saved: "Sauvegardé"
       search: "Chercher"
-      prohibited: " empêche(ent) ce "
-      beingsaved: " d'être envoyé "
-      fields: "Il y avait des problèmes avec les champs suivants:"
+      prohibited: " empêche(nt) ce "
+      beingsaved: "d'être envoyé "
+      fields: "Il y a des problèmes avec les champs suivants:"
       reply: "Réponse"
       replies: "Réponses"
       error: 'erreur(s)'

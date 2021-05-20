@@ -39,14 +39,17 @@
       href="<%= @comments_rss_link[:href] %>" />
   <% end %>
 </head>
-<body>
+<% if Rails.env.development? || Rails.env.staging? %>
+  <body class="toto">
+<% else %>
+  <body>
+<% end %>
   <div id="wrapper">
     <div id="header">
       <div id="headerleft">
         <a id="l_holder" style="<%= @traffic_style %>"
           href="/" title="<%= t('helpers.appli.hipster') %> (Current traffic: <%=
-          @traffic_intensity.to_i %>%)"></a>
-
+          @traffic_intensity.to_i %>%)"><%= fa_icon "rss" %></a>
         <% if @cur_url.present? && !header_links.keys.include?(@cur_url) &&
         @heading.present? %>
           <span id="headertitle">

@@ -42,6 +42,11 @@ gem "ruumba" # tests views
 gem "sitemap_generator" # for better search engine indexing
 gem "svg-graph", require: 'SVG/Graph/TimeSeries' # for charting, note workaround in lib/time_series.rb
 gem 'transaction_retry' # mitigate https://github.com/lobsters/lobsters-ansible/issues/39
+# Font icons
+gem "font-awesome-rails"
+# API
+gem 'rack-cors'
+gem 'http-accept'
 
 group :test, :development, :staging do
   gem 'capybara'
@@ -69,3 +74,7 @@ group :test, :development, :staging do
   gem 'stackprof'
 end
 
+<<<<<<< HEAD
+=======
+gem "bugsnag", "~> 6.20"
+>>>>>>> 72f3e98da3f83237cd2e34b605f45afa756984ee

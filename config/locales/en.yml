@@ -695,6 +695,10 @@ en:
     li1_p4: "to require terms,"
     li1_p5: "to ignore terms, and"
     li1_p6: "''quotes for phrases''"
+    bydomain: "Search by domain with "
+    searchby: "Search by "
+    
+
 
   signup:
     index:
@@ -1072,10 +1076,11 @@ en:
       justnow: "just now"
       less: "less than a minute ago"
       minute: 'minute'
-      ago: "ago"
-      day: day
+      hours: "hour"
+      ago: " ago"
+      day: "day"
       month: "month"
-      year: 'year'
+      year: "year"
       login: "Login"
       home: "Home"
       hipster: "Lobsters"

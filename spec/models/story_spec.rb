@@ -13,7 +13,7 @@ describe Story do
 
     s.valid?
     expect(s.errors[:markeddown_description]).to(
-      eq(['is too long (maximum is 16777215 characters)'])
+      eq([I18n.t('activerecord.errors.models.story.attributes.markeddown_description.too_long')])
     )
   end
 
@@ -22,7 +22,7 @@ describe Story do
     s.twitter_id = "Z" * 25
 
     s.valid?
-    expect(s.errors[:twitter_id]).to eq(['is too long (maximum is 20 characters)'])
+    expect(s.errors[:twitter_id]).to eq([I18n.t('activerecord.errors.models.story.attributes.twitter_id.too_long')])
   end
 
   it "requires a url or a description" do
