@@ -12,6 +12,14 @@ fr:
           ip_address:
             too_long: "is too long (maximum is 255 characters)"
       models:
+        comment:
+          attributes:
+            comment:
+              blank: "cannot be blank."
+            user_id:
+              blank: "cannot be blank."
+            story_id:
+              blank: "cannot be blank."
         invitation:
           attributes:
             email:
@@ -101,7 +109,8 @@ fr:
       preview: "Précédent"
       cancel: "Annuler"
       hats: "Porter une casquette"
-      comment: "commentaire"
+      #conflit commentaire en comment
+      comment: "comment"
 
   email_message:
     notify:
@@ -1063,9 +1072,9 @@ fr:
       submit: "Envoyer un article"
       saved: "Sauvegardé"
       search: "Chercher"
-      prohibited: " empêche(ent) ce "
-      beingsaved: " d'être envoyé "
-      fields: "Il y avait des problèmes avec les champs suivants:"
+      prohibited: " empêche(nt) ce "
+      beingsaved: "d'être envoyé "
+      fields: "Il y a des problèmes avec les champs suivants:"
       reply: "Réponse"
       replies: "Réponses"
       error: 'erreur(s)'

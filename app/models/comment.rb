@@ -71,13 +71,13 @@ class Comment < ApplicationRecord
   validate do
     self.comment.to_s.strip == "" &&
     # (self.comment.to_s.strip == "" && self[:comment].to_s.strip == "") &&
-      errors.add(:comment, "cannot be blank.")
+      errors.add(:comment, I18n.t('activerecord.errors.models.comment.attributes.comment.blank'))
 
     self.user_id.blank? &&
-      errors.add(:user_id, "cannot be blank.")
+      errors.add(:user_id, I18n.t('activerecord.errors.models.comment.attributes.user_id.blank'))
 
     self.story_id.blank? &&
-      errors.add(:story_id, "cannot be blank.")
+      errors.add(:story_id, I18n.t('activerecord.errors.models.comment.attributes.story_id.blank'))
 
     self.parent_comment && self.parent_comment.is_gone? &&
       errors.add(:base, "Comment was deleted by the author or a mod while you were writing.")
