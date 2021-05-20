@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "Reading Dashboard", type: :feature do
 
   feature "when logged in" do
-    let(:admin) { create(:user) }
+    let(:admin) { create(:user, :admin) }
     before(:each) { stub_login_as admin }
 
     scenario "go to dashboard" do
