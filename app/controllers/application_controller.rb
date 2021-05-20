@@ -2,11 +2,13 @@ class ApplicationController < ActionController::Base
   include IntervalHelper
 
   protect_from_forgery
+  before_action :set_locale
   before_action :authenticate_user
   before_action :mini_profiler
   before_action :set_traffic_style
   before_action :prepare_exception_notifier
   before_action :init_theme
+  
 
   # match this in your nginx config for bypassing the file cache
   TAG_FILTER_COOKIE = :tag_filters
@@ -18,6 +20,18 @@ class ApplicationController < ActionController::Base
 
   rescue_from ActionController::UnknownFormat, ActionView::MissingTemplate do
     render plain: '404 Not Found', status: :not_found, content_type: 'text/plain'
+  end
+
+  #Setting I18n.locale via Accept Language HTTP Header of Browser
+  private
+  def extract_locale_from_accept_language_header
+    return 'fr' unless request.env['HTTP_ACCEPT_LANGUAGE']
+    request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
+  end
+
+  #Using I18n.locale for Defining the Desired Language
+  def set_locale
+    I18n.locale = extract_locale_from_accept_language_header || I18n.default_locale
   end
 
   def authenticate_user
@@ -37,10 +51,9 @@ class ApplicationController < ActionController::Base
       "  Request #{request.remote_ip} #{request.request_method} #{request.fullpath} user: " +
       (@user ? "#{@user.id} #{@user.username}" : "0 nobody")
     )
-
     true
   end
-
+ 
   def check_for_read_only_mode
     if Rails.application.read_only?
       flash.now[:error] = "Site is currently in read-only mode."
@@ -58,8 +71,10 @@ class ApplicationController < ActionController::Base
   end
 
   def mini_profiler
-    if @user && @user.is_admin?
-      Rack::MiniProfiler.authorize_request
+    unless Rails.env.production?
+      if @user && @user.is_admin?
+        Rack::MiniProfiler.authorize_request
+      end
     end
   end
 

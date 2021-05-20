@@ -1,38 +1,116 @@
-#ban_notification
-#categories
-#comments
-#email_message
-#email_reply
-#filters
-#global
-#hats
-#home >> en cours about
-#stories
-
-
-
 fr:
-  layout:
-    footer:
-      a1: toto
-      a2: toto
+  activerecord:
+    errors:
+      invitation_request:
+        attributes:
+          email:
+            too_long: "is too long (maximum is 255 characters)"
+          memo:
+            too_long: "is too long (maximum is 255 characters)"
+          name:
+            too_long: "is too long (maximum is 255 characters)"
+          ip_address:
+            too_long: "is too long (maximum is 255 characters)"
+      models:
+        comment:
+          attributes:
+            comment:
+              blank: "cannot be blank."
+            user_id:
+              blank: "cannot be blank."
+            story_id:
+              blank: "cannot be blank."
+        invitation:
+          attributes:
+            email:
+              too_long: "is too long (maximum is 255 characters)"
+            memo:
+              too_long: "is too long (maximum is 255 characters)"
+        mod_note:
+          attributes:
+            note:
+              too_long: "is too long (maximum is 65535 characters)"
+              blank: "can't be blank"
+            markeddown_note:
+              too_long: "is too long (maximum is 65535 characters)"
+              blank: "can't be blank"
+        moderation:
+          attributes:
+            action:
+              too_long: "is too long (maximum is 16777215 characters)"
+            reason:
+              too_long: "is too long (maximum is 16777215 characters)"
+        story:
+          attributes:
+            markeddown_description:
+              too_long: "is too long (maximum is 16777215 characters)"
+            twitter_id:
+              too_long: "is too long (maximum is 20 characters)"
+        story_text:
+          attributes:
+            body:
+              too_long: "is too long (maximum is 16777215 characters)"
+        user:
+          attributes:
+            password_reset_token:
+              too_long: "is too long (maximum is 75 characters)"
+            session_token:
+              too_long: "is too long (maximum is 75 characters)"
+            about:
+              too_long: "is too long (maximum is 16777215 characters)"
+            rss_token:
+              too_long: "is too long (maximum is 75 characters)"
+            mailing_list_token:
+              too_long: "is too long (maximum is 75 characters)"
+            banned_reason:
+              too_long: "is too long (maximum is 200 characters)"
+            disabled_invite_reason:
+              too_long: "is too long (maximum is 200 characters)"
+        vote:
+          attributes:
+            vote:
+              blank: "can't be blank"      
+            reason:
+              wrong_length: "is the wrong length (should be 1 character)"  
+        tag:
+          attributes:
+            tag.blank: "can't be blank"
+      messages:
+        record_invalid: "Validation failed: Username is not permitted"
+
+
   ban_notification:
     text: "Vous avez été banni de"
     for: "pour"
     notification: "Vous n'êtes plus autorisés à vous connecter à ce site. Si vous le souhaitez, vous pouvez contester ce ban avec un modérateur en répondant à cet email"
 
   categories:
-  text: "Astuce: lisez des histoires dans plusieurs catégories avec"
+    text: "Astuce: lisez des histoires dans plusieurs catégories avec"
 
   comments:
+    comment:
+      prev: "prévisualiser"
+      now: "juste maintenant"
+      edited: "editer"
+      e-mailed: "envoyé par e-mail"
+      delete: "supprimer"
+      flag: "Mettre un flag"
+      unflag: "Enlever un flag"
+      reply: "réponse"
+      sur: "sur:"
+      visible: "Visible par le modérateur:"
+      link: "lien"
+
     _commentbox:
       placeholder: "Vous devez être connectés pour poster un commentaire"
       markdown: "Formatage Markdown disponible"
-      post: "Posté"
+      post: "Poster"
       update: "Mis à jour"
       preview: "Précédent"
       cancel: "Annuler"
       hats: "Porter une casquette"
+      #conflit commentaire en comment
+      comment: "comment"
 
   email_message:
     notify:
@@ -45,19 +123,19 @@ fr:
       text: "Continuer la discussion à"
 
   filters:
-    legend: "Tags filtrés"
-    text1_part1: "Pour cacher des articles avec certains?"
-    #text1_part2: "from across the site, check them below"
-    text2_part1: "Puisque vous n'êtes pas connecté, vos filtres seront stockés dans un cookie de navigateur de longue durée.
+    legend: "Les tags filtrés"
+    text1_part1: "Pour cacher des histoires avec certains"
+    text1_part2: "de partout sur le site, vérifiez-les ci-dessous"
+    text2_part1: "Puisque vous n'êtes pas connecté, vos filtres seront stockés dans un cookie de navigateur de longue durée.  
                   Pour stocker de manière permanente vos filtres de balises et les faire fonctionner dans tous les navigateurs"
-    text2_part2: "Pour votre compte"
+    text2_part2: "à votre compte"
     table_th1 : "Cacher"
     table_th2 : "Tag"
-    table_th3 : "Description"
+    table_th3 : "Déscription"
     table_th4 : "Articles"
-    table_th5 : "Filtrer"
+    table_th5 : "Filtration"
     inactive_tag: "inactif"
-    save: "Sauvegarder Filtres"
+    save: "Enregistrer les filtres"
 
   global:
     table_tr1:
@@ -88,17 +166,18 @@ fr:
       text: "texte"
       prefix: "prefixer le texte avec au moins"
       space: "4 espaces"
+      image: "(image en ligne)"
 
   hats:
     build_request:
       legend: "Demander le rôle"
-      p1: "Un rôle est un moyen formel et authentifié de parler officiellement d'un projet, d'une organisation ou d'une compagnie de Lobsters.
+      p1: "Un rôle est un moyen formel et authentifié de parler officiellement d'un projet, d'une organisation ou d'une compagnie de Hipsters .
            Un utilisateur peut avoir plusieurs rôles, mais ne peut en endosser qu'un par commentaire ou message"
       p2: "Les rôles servent à faire des déclarations publiques, non rappeler d'anciennes contribution d'un projet ou d'emplois occupés.
           Veuillez en demander un uniquement si vous agissez officiellement ici, par exemple si vous êtes un développeur ou un employé autorisé à communiquer au nom de votre entreprise.
           Les rôles sont généralment réservés aux projet et organisations notables"
       p3: "Pour demander un rôle pour votre compte, fournissez une brève description du rôle (par exemple 'OpenBSD Developer', un lien publique   sera affiché lors du survol de vote rôle que les utilisateurs pourront voir, comme une adresse mail pour le projet, ou un lien vers le site Web de l'entreprise montrant votre emploi, et un commentaire privé qui ne sera visible que par les modérateurs durant la validation"
-      p4: "Il est vraiment utile si vous associez votre compte GitHub ou Twitter à votre compte Lobsters et, dans votre commentaire, créez un    lien vers l'endroit où l'organisation est liée à ce compte publique. Then nous pourrons instentanément voir votre légitimité sans avoir à vous envoyer un mail de vérification"
+      p4: "Il est vraiment utile si vous associez votre compte GitHub ou Twitter à votre compte Hipsters  et, dans votre commentaire, créez un    lien vers l'endroit où l'organisation est liée à ce compte publique. Then nous pourrons instentanément voir votre légitimité sans avoir à vous envoyer un mail de vérification"
     
       p5: "Lorsque vous ne pouvez plus parler pour un projet ou une entreprise, veuillez contacter un modérateur pour retirer votre rôle. Les anciens messages s'afficheront toujours mais vous ne pourrez plus les utiliser"
       hat: "Rôle:"
@@ -108,17 +187,15 @@ fr:
       comment: "Commentaire:"
       placeholder_comment: "Durant l'approbation, ce ne sera visible que par les modérateurs. Veuillez créer un lien vers les discussions ou ce rôle serait utile pour parler au nom de ce projet"     
       request_hat_bnt : "Demande de rôle"
-
     index:
       legendR: "Demande de rôle"
-      legend: "Rôle"
-      text: "Un rôle est un moyen formel et authentifié de parler officiellement d'un projet, d'une organisation ou d'une compagnie de Lobsters.
+      legend: "Rôles"
+      text: "Un rôle est un moyen formel et authentifié de parler officiellement d'un projet, d'une organisation ou d'une compagnie de Hipsters .
            Un utilisateur peut avoir plusieurs rôles, mais ne peut en endosser qu'un par commentaire ou message"
       table_th1: "Utilisateur"
       table_th2: "Rôle"
       table_th3: "Lien"
       none: "rien"
-    
     request_index: 
       legend: "Requiert rôle"
       no_hat_requests: "Pas de rôle demandé"
@@ -137,12 +214,12 @@ fr:
       legend: "404"
       text: "La ressource que vous avez demandé n'a pas été trouvée, ou l'article a été supprimé"
     about:
-      title: 'à propos'
-      p1_part1: "Lobsters est une communauté axée sur l'informatique centrée sur l'agrégation de liens
-          et discussion, lancée le 3 juillet 2012.
-          L'administrateur est"
+      title: "A propos"
+      p1_part1: "Hipsters  est une communauté axée sur l'informatique centrée sur l'agrégation de liens
+                et discussion, lancée le 3 juillet 2012.
+                L'administrateur est"
       p1_part2: ", contactez-le pour tout problème de support"
-      p1_part3: "Lobsters a été créé par "
+      p1_part3: "Hipsters  a été créé par "
       p1_part4: "avec des touches de conception soignées pour encourager une communauté saine:"
       li1:
         a: "a"
@@ -171,7 +248,7 @@ fr:
       p2_p6: "Le système de tags fonctionne de cette façon pour trois raisons:"      
       tags: "tags"
       filter: "filtres"
-      example: "exemples:"
+      example: "exemple:"
       li6: "Il maintient le site sur le sujet en n'autorisant qu'une liste prédéfinie de balises. Ces balises représentent ce que la plupart des utilisateurs du site veulent lire, donc le contenu qui ne rentre dans aucune catégorie ne doit pas être soumis. Il permet également d'organiser les articles et de les rechercher plus facilement"
       li7: 
         p1: "Cela favorise la discussion, Sur un site avec des forums séparés, un développeur Ruby s'abonnerait probablement à un forum Ruby, mais pas à un forum Python. Quand un lien est posté sur le forum Python, le développeur Ruby ne le verrait probablement jamais même si il aurait quelque chose d'utile à dire à ce sujet (peut être le lien concerne une bibliothèque Python qui fait la même chose qu'une bibliothèque Ruby). Sur ce site, le lien serait affiché avec un "
@@ -179,12 +256,12 @@ fr:
         p3: "it out."
         python: "python"
       li8: "Cela garde la communauté cohérente. Les histoires contiennent souvent des discussions sur plus d'un sujet, mais sur d'autres sites, ils sont confinés à une seule catégorie/forum, limitant l'exposition. Le lien pourrait être soumis à plus qu'un seul forum, mais chaque conversation resterait séparée et les utilisateurs interagiraient rarement avec les utilisateurs d'autres forums. Sur ce site, l'histoire serait simplement étiquetée avec plusieurs tags et tous les utilisateurs verraient toutes les discussions sur l'histoire en un seul endroit"
-      p3_p1: "La création de nouvelles balises et la suppression des anciennes balises sont effectuées par la communauté en soumettabt, discutant et en votant pour"
+      p3_p1: "La création de nouveaux tags et la suppression des anciens tags sont effectuées par la communauté en soumettabt, discutant et en votant pour"
       p3_p2: "Les demandes taggées à leur sujet, et les événements sont"
       p3_p3: "depuis 2018-04). Pour proposer un tag, postez un"
       p3_p4: "Suivant avec le nom et la description. Expliquez la portée, répertoriez les histoires existantes qui auraient du être taggées, expliquez pourquoi les gens voudraient spécifiquement les filtrer et justifiez la complexité accrue pour les contributeurs et les modérateurs"
       logged: "connecté"
-      p4_p1: "Lobsters se concentre assez étroitement sur l'informatique, et des tags comme"
+      p4_p1: "Hipsters  se concentre assez étroitement sur l'informatique, et des tags comme"
       p4_p2: "n'implique pas que chaque oeuvre d'art est sur le sujet. Quelques règles de base pour de bons articles à soumettre: Améliorent-ils les futurs programmes du lecteur? Cela approfondira-t-il leur compréhension du dernier programme? Cela va t il être plus intéressant dans cinq ou dix ans?"
       p5: "Certaines choses populaires sur des sites plus grands similaires à celui ci sont ici hors sujet: entrepreneuriat, management, actialité des entreprises qui emploient beaucoup de développeurs, investissement, événements mondiaux, anthropologie, auto-assistance, système de productivité personnelle"
       h2_2: "arborescence d'invitation"
@@ -194,7 +271,7 @@ fr:
       p7_p1: "Les nouveaux utilisateurs doivent être invités par un utilisateur actuel, bien qu'il n'y ait pas de processus formel de   vérification.
               Les invitations sont utilisées comme mécanisme de contrôle du spam,
               pour ralentir les inscriptions à un rythme"
-      p7_p2: "et pour encourager les utilisateurs à être gentils, ne pas faire de la base d'utilisateurs Lobsters un club d'élite.
+      p7_p2: "et pour encourager les utilisateurs à être gentils, ne pas faire de la base d'utilisateurs Hipsters  un club d'élite.
             Le moyen le plus rapide de recevoir une invitation est de parler à quelqu'un que vous"
       p7_p3: "Si vous avez écrit un lien qui a été publié, veuillez contacter"
       p7_p4: ", nous serions ravis de vous voir participer à la discussion.
@@ -217,16 +294,159 @@ fr:
       hotness: "modifier les pertinences"
       p9_p1: "Il n'y a pas de limite au nombre d'invitations qu'un utilisateur peut envoyer (bien que nous puissions à un moment donné, gérer"
       p9_p2: "Quand le compte est banni pour spam,"
-      #p9_p3: "sockpuppeting"
+      p9_p3: "comptes utilisateurs/identités multiples malveillants"
       p9_p4: ", ou tout autre abus,
               les modérateurs envisageront de désactiver la capacité de leur invité à envoyer des invitations ou, rarement, de les interdire également."
       growth: "croissance"
       p10_p1: "Les utilisateurs peuvent signaler les histoires et les commentaires lorsqu'il y a un problème sérieux qui nécessite l'attention du modérateur.
               Les utilisateurs doivent atteindre "
       p10_p2: "karma à signaler. Pour guider l'utilisation et éviter les méta-conversations distrayantes («Pourquoi cela a-t-il été signalé!?», Etc.), le marquage nécessite une sélection dans une liste prédéfinie de raisons."
-    
+      p11_p1: "Pour les histoires, ce sont:
+              «Hors sujet» pour les histoires qui ne concernent pas l'informatique;
+              `` Déjà publié '' pour les soumissions en double et les liens qui développent ou les réponses à un fil de discussion datant de moins d'une semaine (voir "
+      p11_p2: "; et '' Broken Link '' pour les liens 404, 500 ou présentant un paywall;
+              «Spam» pour les liens faisant la promotion d'un service commercial."
+      p12_p1: "Pour les commentaires, ce sont:
+              «Off-topi» pour dériver vers des méta ou des sujets qui ne sont pas liés à l'histoire;
+              «Moi-à» lorsqu'un commentaire n'ajoute pas de nouvelles informations, généralement une seule phrase d'appréciation, d'accord ou d'humour;
+              «Trol» pour faire dérailler les conversations en arguments classiques, bien intentionnés ou non;
+              «Unkin» lorsqu'il n'est pas charitable, insultant ou méprisant; et «Spam» pour la promotion de services commerciaux."
+      p13_p1: "Moins de 1% des articles ou des commentaires sont signalés et les utilisateurs ne sont pas automatiquement punis par des indicateurs.
+              Les utilisateurs dont les histoires ou les commentaires sont signalés beaucoup plus souvent sont fortement encouragés à parler aux mods de ce qui ne fonctionne pas.
+              (Veuillez ne pas utiliser de signalement pour essayer de faire tomber des sujets ou des personnes que vous n'aimez pas; cliquez sur `` masquer '' sur l'histoire et
+              Icône de validation par la communauté "
+      p13_p2: "passez"
+      merging: "fusionner"
+      p13_p3: " plutôt que d'encombrer le tableau de bord du mod avec de fausses alarmes.)"
+      h2: "Politique de transparence"
+      p14_p1: "Tout"
+      p14_p2: "actions du modérateur"
+      p14_p3: "sur ce site sont visibles par
+              tout le monde et les identités de ces modérateurs sont "
+      p14_p4: "publique"
+      p14_p5: "Bien que les actions individuelles d'un modérateur puissent susciter un débat, il ne devrait y avoir aucune question quant à savoir si une action s'est produite ou qui est responsable."
+      p15_p1: "Si les utilisateurs sont suffisamment perturbateurs pour justifier leur interdiction, ils seront bannis
+              absolument, compte tenu de leur interdiction et de leur profil d'utilisateur désactivé
+              indiquera quel modérateur les a bannis et pourquoi.
+              Il n'y aura pas "
+      p15_p2: "interdiction des ombres"
+      p15_p3: "ou d'autres actions de modération secrètes."
+      p16_p1: "Le"
+      p16_p2: "code source de ce site"
+      p16_p3: "et son"
+      p16_p4: "provisioning et déploiement"
+      p16_p5: "sont mis à disposition sous une licence BSD à 3 clauses pour la visualisation, l'audit, la fourche ou la contribution à.
+              La base de code est utilisée pour exécuter une douzaine de sites soeurs (que nous connaissons) et nous"
+      p16_p6: "garder une liste"
+      p16_p7: "veuillez nous contacter si vous en avez lancé un."
+      p17_p1: "La communauté Hipsters est dans un endroit idéal où elle est assez grande pour valoir la peine de poser des questions et assez petite, les réponses ont du sens.
+              On a"
+      p17_p2: "quelques statistiques de base"
+      p17_p3: "disponible, et Peter est heureux d'exécuter des requêtes sur le"
+      p17_p4: "base de données"
+      p17_p5: " et les journaux Rails / MySQL / nginx (mais ne les écrivez pas pour vous),
+              tant qu'ils ne révèlent pas d'informations personnelles telles que les adresses IP, la navigation et le vote ou qu'ils ne créent pas les `` pires '' classements célébrant les utilisateurs / commentaires / histoires les plus signalés.
+              Si vous êtes un chercheur universitaire, veuillez"
+      p17_p6: "être comme le MIT"
+      p17_p7: ", pas comme"
+      p17_p8: "expérimenter secrètement sur des mainteneurs sans examen IRB."
+      p18_p1: "Si vous n'aimez pas le contenu ou les politiques de modération ici, vous préférerez peut-être"
+      p18_p2: "Ou vous pouvez utiliser"
+      p18_p3: "notre base de code"
+      p18_p4: "pour démarrer votre propre site."
+      h2_4: "Autres caractéristiques techniques"
+      p19_1: "Mode liste de diffusion"
+      p19_2: "peut être activé
+            par utilisateur pour recevoir toutes les nouvelles histoires (y compris leur contenu en texte brut
+            récupéré et extrait par"
+      p19_4: ") et les commentaires des utilisateurs sous forme d'e-mails, reflétant les fils de discussion hors ligne. Cela le rend
+            facile et efficace de lire de nouvelles histoires et de garder une trace des nouveaux commentaires
+            sur d'anciens fils ou histoires, tout comme les listes de diffusion techniques ou Usenet de
+            autrefois. Chaque utilisateur se voit attribuer une adresse de liste de diffusion privée dans ce domaine
+            qui leur permet de répondre aux histoires ou aux commentaires directement dans leur e-mail
+            client. Ces e-mails sont ensuite convertis et soumis au site Web en tant que
+            des commentaires, comme si le commentaire avait été publié via un navigateur Web."
+      p19_5: "Ne supprimez pas simplement ce message d'erreur. Vous n'avez pas configuré le mode liste de diffusion, n'est-ce pas? Ce n'est vraiment pas votre page à propos, écrivez-en une à partir de zéro."
+      p20_1: "Messagerie privée" 
+      p20_12:  "permet aux utilisateurs de communiquer en privé
+              sans avoir à divulguer publiquement une adresse e-mail, et les utilisateurs peuvent recevoir
+              e-mail et"
+      p20_2: "pushover"
+      p20_3: " des notifications de nouveaux messages privés."
+      p21_1: "Conception réactive" 
+      p21_2: "améliore la fonctionnalité sur les petits écrans
+              tels que les téléphones et les tablettes sans avoir à utiliser une URL distincte, une tierce partie
+              sites Web (souvent en lecture seule) ou applications mobiles."
+      p22_1: "Moteur de recherche intégré"
+      p22_2: "couvre toutes les histoires et commentaires soumis, y compris les caches de texte intégral de tous les articles soumis
+             contenu de l'histoire. La recherche d'un mot-clé fera souvent apparaître des histoires pertinentes
+             qui ne mentionnent même pas ce mot-clé dans l'URL ou le titre."
+      p23_1: "Fusion de l'article'"
+      p23_2: "recueille des commentaires sur un sujet qui, autrement, se fragmenterait entre plusieurs histoires.
+              Cela empêche la première page d'être submergée par un seul sujet et la discussion ensemble pour ceux qui sont intéressés (ou si désintéressés qu'ils préfèrent le cacher).
+              Les modérateurs fusionnent les histoires sur le même sujet soumises en une semaine.
+              Voici un"
+      p23_3: "petit"
+      p23_4: "et"
+      p23_5: "large"
+      p23_5: "exemple."
+      p24_1: "Correspondance floue des URL des histoires soumises"
+      p24_2: "pour éviter les soumissions en double d'URL similaires qui ne diffèrent que par "
+      p24_3: ", barres obliques de fin, paramètres d'analyse inutiles, etc.
+              à l'aide du bookmarklet de soumission d'histoires, les URL d'histoires sont automatiquement
+              converti pour utiliser l'URL canonique de la page (si disponible) pour présenter le meilleur
+              URL pour représenter l'histoire, telle que définie par l'auteur ou l'éditeur de l'histoire."
+      p25_1: "Titres et tags suggérés par l'utilisateur"
+      p25_2: "peut être automatiquement appliqué à une histoire lorsqu'un quorum d'utilisateurs s'accorde sur un nouveau titre (comme la suppression du nom d'un site ou l'ajout de l'année de l'histoire
+              publication) ou ensemble de balises, sans aucune action du modérateur requise."
+      p26_1: "Rôles"
+      p26_2: "sont un processus plus formel permettant aux utilisateurs de publier des commentaires tout en portant "
+      p26_3: "tel ou tel"
+      p26_4: "hat '' pour donner plus d'autorité à leurs propos (comme un employé parlant au nom de l'entreprise ou un développeur open source parlant pour le projet)."
+      p27_1: "Flux RSS par balise, multi-tags et à l'échelle du site"
+      p27_2: "sont accessibles au public et les utilisateurs connectés ont des flux RSS privés qui filtrent chaque utilisateur"
+      p27_3: "tags filtrées"
+      p28_1: "Officiel Twitter mirror"
+      p28_2: "publie toutes les histoires qui ont atteint la première page de la "
+      p28_3: "compte sur Twitter pour faciliter le suivi, le retweet / le partage ou l'archivage."
+      p29_1: "Service caché"
+      p29_2: "pour un accès anonyme au site."
+      p30_1: "Autocollants"
+      p30_2: "sera à nouveau disponible lorsque quelqu'un trouvera un service qui imprimera et expédiera des autocollants en vinyle carrés de 2 po
+              avec un saignement '' <= 1/16 '' (de préférence à fond perdu) directement aux personnes qui le souhaitent"
+      p31_1: "Hipsters est hébergé chez DigitalOcean. Nous"
+      p31_2: "récemment migré"
+      p31_3: "et notre configuration est toujours en évolution.
+              S'il vous plaît tracasser pushcx s'il n'a pas rempli les détails d'ici mars 2021.
+              Notre nom de domaine est enregistré auprès de "
+      p31_4: "CRI Domains"
+      p31_5: ", qui a fait don de notre première année d'inscription. Le DNS est fourni par"
+      p31_6: "et nous utilisons"
+      p31_7: "pour les sauvegardes, pour lesquelles pushcx paie."
+      p32_1: "Sponsor de l'emoji Hipster"
+      p32_2: "En février 2018, Hipsters "
+      p32_3: "a organisé une collecte de fonds"
+      p32_4: "d'adopter officiellement le nouvel emoji Hipsters en soutien à la Fondation Unicode."
+      p33_1: "Le nom '' Hipsters.rs '' est un mignon"
+      p33_2: "piratage de domaine"
+      p33_3: "sans aucune signification plus profonde."
+      p33_4: "Il"
+      p33_5: "n'a rien à faire"
+      p33_6: "avec le gourou de l'entraide Jordan Peterson, dont les fans ont commencé à"
+      p33_7: "s'appellent eux-mêmes '' Hipsters '' "
+      p33_8: "environ six ans après avoir commencé."
+      p34_1: "Si vous préférez lire Hipsters sur un fond sombre au lieu d'un fond clair, il existe quelques options. Vous pouvez installer le"
+      p34_2: "Dark Reader extension"
+      p34_3: "ou une extension pour ajouter votre propre CSS à des sites comme"
+      p34_4: "ou"
+      p34_5: "jamais élégant"
+      p34_6: "Thémes:"
+      p34_7: "Discussion:"
+      p34_8: "Si vous préférez les liens d'article ou les liens de commentaire pour ouvrir un nouvel onglet au lieu de naviguer dans votre onglet actuel, vous pouvez ajouter"
+      p34_9: "un script côté client. Si vous préférez les liens d'article ou les liens de commentaire pour ouvrir un nouvel onglet au lieu de naviguer dans votre onglet actuel, vous pouvez ajouter"
+      p34_1O: "faire cela."
     chat:
-      legend: "Chat Lobsters"
+      legend: "Tchat Hipsters "
       p1_1: "Un canal de discussion officiel en temps réel est à la disposition des membres et des invités
             du site, hébergé sur le"
       in: " dans "
@@ -235,7 +455,7 @@ fr:
       and: ", avec"
       p1_3: "sont des opérateurs de canaux"
       p2: "les politiques et idéaux du canal de discussion sont les mêmes que sur le site internet. Contenu et conversation de qualité, respect des autres utilisateurs et non spamming. une discussion légèrement hors sujet est généralement acceptable. Le canal n'est pas assez occupé pour qu'il y ait toujours quelqu'un qui parle, alors ne soyez pas surpris si vous essayez d'entamer une conversation et que personne ne répond. Laissez le ouvert et vous verrez une activité, bien que nous soyons plus actifs pendant les heures de travail aux Etats-Unis."
-      p3: "Les nouveaux contributeurs sont toujours les bienvenus sur Lobsters. Si vous êtes l'auteur ou impliqué d'une autre manière dans un article qui a été soumis au site "
+      p3: "Les nouveaux contributeurs sont toujours les bienvenus sur Hipsters . Si vous êtes l'auteur ou impliqué d'une autre manière dans un article qui a été soumis au site "
        
       p4: "Sinon, vous êtes invités à rejoindre le communauté dans la salle de chat. Les invitations ne sont pas automatiquement prolongées, mais en général quelqu'un le fera une fois qu'il vous connaîtra dans le chat. Ils vous demanderont probablement un lien vers votre page d'accueil ou un profil publique pour s'assurer que vous n'êtes pas un spammeur"
       p5_1: "lurking est un bot qui se cache dans le canal"
@@ -249,12 +469,11 @@ fr:
       cloak: "voile."
       p8_1: "Pour un flux d'articles sans discussion,"
       p8_2: "publie également de nouvelles histoires dans"
-      p9_1: "Lobsters utilisait un canal appelé"
+      p9_1: "Hipsters  utilisait un canal appelé"
       p9_2: "pour des conversations hors sujet (en particulier la politique américaine) qui «débordaient» de la chaîne principale.
             C'était utile à la suite de certains grands événements, mais les modérateurs "
       p9_3: "ne voulaient pas continuer indéfiniment"
       p9_4: "Les membres de la communauté dirigent indépendamment"
-
     index:
       the: "Les"
       newest: "nouveaux"
@@ -265,17 +484,226 @@ fr:
       in: "dans le"
       tagged: "taggé"
       as: "comme"
-
     privacy:
       legend: "Politique de confidentialité"
       p1: "C'est Internet, vous n'avez aucune vie privée."
       p2:  "(sauf si vous êtes" 
       p3: "en dessous de 13" 
       p4: ", auquel cas vous n'êtes pas autorisé ici."
-
     rss:
       newest: "nouveau"
       comments: "Commentaires"
+
+  inv_mail:
+    user: "L'utilisateur"
+    invited: "vous a invité à"
+    p1: "Pour accepter cette invitation et créer un compte, visitez l'URL ci-dessous:"
+    inv: "invitations/"
+
+  inv_request:
+    hello: "Salut"
+    p1: "Quelqu'un à"
+    p2: "a soumis une demande d'invitation à"
+    name: "Nom:"
+    mail: "E-mail:"
+    users: "(ne sera pas affiché aux autres utilisateurs)"
+    p3: "Si c'est vous, visitez l'URL ci-dessous pour confirmer votre demande et l'afficher aux autres utilisateurs connectés."
+    p4: "Si ce n'est pas vous, vous pouvez supprimer ce message."
+    
+  inv:
+    build:
+      legend: "Demander une invitation"
+      p1: "Si vous ne connaissez pas (ou ne trouvez pas) un"
+      p2: "utilisateur existant"
+      p3: "à qui demander une invitation, vous pouvez en faire une demande publique.  
+           Cela affichera votre nom et votre mémo à tous les autres utilisateurs connectés qui pourront ensuite vous envoyer une invitation s'ils vous reconnaissent."
+      p4: "Votre adresse e-mail doit être valide et confirmée en visitant une URL qui vous a été envoyée par e-mail avant que votre demande ne soit affichée.  
+           Votre adresse e-mail ne sera montrée à aucun autre utilisateur (à l'exception des modérateurs)."
+      name: "Nom (pas le nom d'utilisateur):"
+      mail: "Adresse email:"
+      url: "URL:"
+      p5: "URL pour vous vérifier (site Web personnel, compte GitHub, etc.)"
+      request: "Demander une invitation"
+    index:
+      legend: "Invitations demandées"
+      p1: "Ces personnes ont demandé des invitations et confirmé leurs adresses e-mail. Si vous reconnaissez quelqu'un, n'hésitez pas à lui envoyer une invitation et à supprimer sa demande.  
+           Si une demande semble suspecte, supprimez-la."
+      th1: "Date/Heure"
+      th2: "Nom"
+      send: "Envoyer une invitation"
+      are: "sont"
+      invite: "Vous êtes sûr de vouloir inviter cette personne et supprimer cette demande?"
+      delete: "Supprimer"
+      sure: "Êtes-vous sûr?"
+      deleterequest: "vous souhaitez supprimer cette demande?"
+      noinvitation: "Aucune demande d'invitation"
+
+  key:
+    new: 
+      legend1: "Connectez votre compte "
+      legend2: "à Keybase"
+      confirm: "Confirmer"
+
+  layout:
+    footer:
+      a1: "Journal de modération"
+      a2: "File d’attente d’invitations"
+      a3: "Requêtes de rôle"
+      a4: "Rôles"
+      a5: "Tags"
+      a6: "Privée"
+      a7: "A propos"
+    app:
+      sign: "S'inscrire maintenant"
+      join: "Rejoindre"
+      moderation: "Journal de modération"
+      invitation: "File d’attente d’invitations"
+      hat: "Requêtes de rôle"
+      hats: "Les rôles"
+      chat: "Le Tchat"
+      privacy: "Privée"
+      about: "A propos"
+    upvoted:
+      legend: "Vote positif"
+      
+  login:
+    forgot:
+      legend: "Réinitialiser le mot de passe"
+      p1: "If you've forgotten your password, enter your Adresse email or username below and instructions will be e-mailed to you."
+      mail: "E-mail ou nom de l'utilisateur:"
+      reset: "Réinitialiser le mot de passe"
+    index:
+      legend: "Connexion"
+      p1: "Le site est actuellement en mode lecture seule pour la maintenance."
+      # conflit avec spec>support>authentication
+      mail: "E-mail or Username:"
+      password: "Password:"
+      login: "Login"
+      p2: "Vous avez oublié votre mot de passe ou supprimé votre compte?"
+      resetpassword: "Réinitialisez votre mot de passe"
+      p3: "Pas encore utilisateur?"
+      p4: "Inscrivez-vous ici"
+      p5: "Pas encore utilisateur? L'inscription se fait uniquement sur invitation pour lutter contre le spam et accroître la responsabilité. Si tu sais "
+      p6: "un utilisateur actuel"
+      p7: "du site, demandez-leur une invitation ou"
+      p8: "en demander un publiquement"
+      p9: "communauté du Tchat"
+    setnew: 
+      legend: "Definir un nouveau mot de passe"
+      username: "Nom d'utilisateur:"
+      newpassword: "nouveau mot de passe:"
+      again: "(Encore):"
+      setnewpassword: "Definir un nouveau mot de passe"
+    twofa:
+      legend: "Connexion - Authentification à deux facteurs"
+      p1: "Entrez le code TOTP actuel de votre application TOTP:"
+      login: "Connexion"
+
+  messages:
+    form:
+      to: "A:"
+      subject: "Sujet:"
+      message: "Message:"
+      puthat: "Ajouter un rôles:"
+      reply: "Réponse"
+      sendmessage: "Message envoyé"
+    index:
+      viewreceived: "Afficher reçu"
+      viewsent: "Afficher les messages envoyés"
+      private: "Messages privés"
+      sent: "envoyé"
+      from: "De"
+      to: "à"
+      received: "Reçu"
+      sent: "Envoyé"
+      delete: "Supprimer la sélection"
+      sent2: "envoyé"
+      p1: "Tu n'as aucun"
+      p2: "messages privés."
+      legend: "Rédiger le message"
+      subject: "Sujet"
+    shw:
+      backsent: "Retour aux messages envoyés"
+      backmessages: "Back to Messages"
+      sent: "Envoyé de"
+      delete: "Supprimer le message"
+      keepnew: "Garder comme neuf"
+      p1: "Pour obtenir de l'aide concernant ce message, contactez"
+      p2: "un moderateurr"
+      compose: "Rédiger la réponse"
+
+  mod:
+    nav:
+      F-Stories: "F-Articles:"
+      F-Comments: "F-Commentaires:"
+      commenters: "Commentateurs:"
+    commenters:
+      title: "Moyenne des commentateurs, y compris les commentateurs les plus signalés ci-dessus"
+    index:
+      legend: "Activité d'autres mods"
+      Compose Reply: "Rédiger la réponse"
+
+  mod_notes:
+    table:
+      userwhen: "Utilisateur/Quand"
+    index:
+      username: "Nom d'uilisateur:"
+      filter: 'Filtre'
+
+  moderations:
+    index:
+      legend: "Journal de modération"
+      moderator: "Moderateurr:"
+      filter: "Filtre"
+    table:
+      th1: "Date / heure"
+      th2: "Moderateurr"
+      th3: "Article/Commentaire/Utilisateur, Action, Raison"
+      users: "(Utilisateurs)"
+      story: "Article:"
+      commentby: "Commenter par"
+      sur: "sur"
+      user: "Utilisateur"
+      deleted: "(Suppression)"
+      domain: "Domaine"
+
+  password:
+    someone: "Quelqu'un à"
+    account: "demandé de réinitialiser le mot de passe de votre compte"
+    sur: "sur"
+    subrequest: "Si vous avez soumis cette demande, visitez le lien ci-dessous pour définir un nouveau mot de passe. Sinon, vous pouvez ignorer cet e-mail."
+
+  replies: 
+    placeholder:
+      p1: "2020-12-03: Nous avons récemment migré la base de données et cette fonctionnalité martèle cette configuration de base de données, elle n'est donc pas disponible jusqu'à ce que nous puissions régler cela. Désolé pour les tracas. - Peter"
+    show:
+      unread: 'Non lu'
+      all: 'Tout'
+      comments: 'Commentaires'
+      stories: 'Articles'
+      noreplies: "Aucune réponse à afficher."
+      allreplies: "Toutes les réponses à vos histoires et commentaires, les plus récentes en premier."
+      allcomments: "Toutes les réponses à vos commentaires, les plus récentes en premier."
+      newreplies: "Nouvelles réponses à vos histoires et commentaires que vous n'avez pas vus sur cette page ou sur les pages de l'histoire."
+      allstories: "Toutes les réponses aux histoires que vous avez soumises, les plus récentes en premier."
+
+  search:
+    legend: "Recherche"
+    stories: "Articles"
+    comments: "Commentaires"
+    orderby: "Commandé par:"
+    relevance: "Pertinence"
+    newest: "Le plus récent"
+    points: "Points"
+    searchhints: "Conseils de recherche:"
+    li1_p1: "Utiliser"
+    li1_p2: "opérateurs de recherche"
+    li1_p3: "comme"
+    li1_p4: "exiger des conditions,"
+    li1_p5: "ignorer les termes, et"
+    li1_p6: "''citations pour des phrases''"
+    bydomain: "Rechercher par domaine avec "
+    searchby: "Rechercher par "
 
   signup:
     index:
@@ -311,14 +739,93 @@ fr:
       markdown: "Formatage markDown disponible"
       signup: "Se déconnecter"
   
-      
-
-      
-
-
-
-    
-
+  settings: 
+    index: 
+      legend1: "Paramètres du compte"
+      legend2: "Voir le profil"
+      legend3: "Les paramètres de sécurité"
+      legend4: "Paramètres de notification de réponse aux commentaires"
+      legend5: "Paramètres de notification de mention de commentaire"
+      legend6: "Paramètres de notification des messages privés"
+      legend7: "Paramètres des commentaires d'articles soumis"
+      legend8: "Paramètres de la liste de diffusion"
+      legend9: "Paramètres divers"
+      legend10: "Inviter un nouvel utilisateur"
+      legend11: "Supprimer le compte"
+      p1: "Votre avatar sera mis en cache à partir de l'icône Gravatar pour votre adresse e-mail ci-dessus."      
+      p2: "Pour les commentaires facultatifs et les notifications de message ci-dessous"  
+      p3_1: "Lorsqu'elle est activée, vous recevrez toutes les histoires et commentaires nouvellement soumis à l'adresse e-mail indiquée ci-dessus, à l'exception des histoires et des commentaires filtrés par vous"
+      p3_2: "Tous les messages électroniques sembleront être envoyés à votre adresse de liste privée
+            ci-dessous sur lequel vous pouvez filtrer et les e-mails que vous envoyez à cette adresse
+            sera publié sous votre compte sur ce site Web. Vous devriez garder votre
+            adresse de liste unique privée pour empêcher les autres de publier des commentaires en votre nom."    
+      p4: "Pour supprimer définitivement votre compte, vérifiez votre mot de passe actuel ci-dessous."
+      li1: "Votre compte sera mis dans un état supprimé."
+      li2: "Votre nom d'utilisateur restera réservé et ne sera disponible pour aucun autre compte."
+      li3: "Vos messages privés seront supprimés."
+      li4: "Vos articles soumis ne seront pas supprimées."
+      li5_p1: "Vos commentaires avec des scores négatifs seront supprimés, et vous pouvez cocher ``désavouer les commentaires''
+              ci-dessous si vous souhaitez que toutes vos histoires et commentaires deviennent une liste"
+      li5_p2: "au lieu de votre nom d'utilisateur."
+      a: " Les Tags filtrés"  
+      logout: "Se déconnecter" 
+      confirm: "Êtes-vous sûr de vouloir vous déconnecter?"
+      username: "Nom d'utilisateur:"
+      current: "Mot de passe actuel:"
+      newpassword: "Nouveau mot de passe:"
+      confirmpassword: "Confirmation du mot de passe"
+      mail: "Adresse email:"
+      homepage: "Page d'accueil:"
+      about: "A propos:"
+      saveaccount: "Enregistrer les paramètres du compte"
+      external: "Comptes externes"
+      linktext1: "Gérer l'abonnement facilement"
+      linktext2: "S'incrire facilement'"
+      linkedto: "Lié à"
+      disconnect: "Déconnecter"
+      Connect: "Connecter"
+      factorauth: "Authentification à deux facteurs:"
+      enabled: "Activer"
+      disable: "Désactiver"
+      enroll: "Inscrire"
+      receivemail: "Recevoir un e-mail:"
+      receivealert: "Recevoir une alerte "
+      hint: "Nécessite un abonnement ci-dessus"
+      showin: "Afficher"
+      yourthreads: "vos fils"
+      tagfilter: "filtres des tags"
+      receivelist: "Recevoir les e-mails de la liste:"
+      nomails: "Aucun e-mail"
+      allstoriesandcomments: "Tout les articles et commentaires"
+      onlystories: "Seulement les articles"
+      listaddress: "La liste des adresses:"
+      showstory: "Afficher les aperçus de l'articles:"
+      showuser: "Afficher les avatars des utilisateurs:"
+      saveall: "Sauvegarder tout les paramétres"
+      sendinvitations: "Vous ne pouvez pas envoyer d'invitations:"
+      verifypass: "Vérification mot de passe"
+      iamsure: "Je suis sûr(e):"
+      disown: "Renier articles/commentaires:"
+      deleteaccount: "Oui, Supprimer mon compte"
+      inactiveuser: "utilisateur-inactif"
+      optional: "(optionel)"
+    twofa_enroll:
+      legend: "Retour aux paramètres"
+      p1_p1: "Scannez le code QR ci-dessous ou cliquez dessus pour l'ouvrir dans votre"
+      p1_p2: "application de choix:"
+      p2: "Une fois que vous avez terminé de vous inscrire à votre application TOTP, passez à l'écran suivant pour vérifier votre code TOTP actuel et activer réellement
+          Authentification à deux facteurs sur votre compte."
+      verify: "Vérifier et activer"
+    twofa_verify:
+      p1: "Pour activer l'authentification à deux facteurs sur votre compte à l'aide de votre nouveau secret TOTP, entrez le code à six chiffres de votre application TOTP:"
+      code: "TOTP Code:"
+      verify: "Vérifier et activer"
+    twofa:
+      p1: "Pour désactiver l'authentification à deux facteurs pour votre compte, entrez votre mot de passe actuel:"
+      p2: "Pour commencer l'inscription à l'authentification à deux facteurs pour votre compte, entrez votre mot de passe actuel:"
+      currentpassword: "Mot de passe actuel:"
+      disableauthentication: "Désactiver l'authentification à deux facteurs"
+      continue: "Continuer"
 
 
   stats:
@@ -339,13 +846,14 @@ fr:
   stories:
     form_errors:
       h2_part1: "Note: Ce commentaire est déjà soumis"
-      h2_part2: ", mais peut être de nouveau soumis."
+      h2_part2: ", mais may be submitted again."
       p1: "Si le contenu a changé ou justifie une nouvelle discussion, vous pouvez le soumettre à nouveau."
       p2: "Précédente discussion pour cet article:"
     form:
       url: "URL:"
       fetch: "récupérer le title"
-      title: "Titre:"
+      #conflit avec submit_story_spec
+      title: "Title:"
       tags: "Tags"
       text: "Texte:"
       p1: "Veuillez supprimer les composants superflus des titres tels que le nom du site, du blog, de la section et de l'auteur."
@@ -356,46 +864,42 @@ fr:
                           Consultez les directives ci-dessous pour en savoir plus."
       summary: "Directives de soumission d'article"
       li1:
-        p: "N'éditorialisez pas les titres des articles, mais lorsque l'histoire originale est
-        le titre n'a pas de contexte ou n'est pas clair, veuillez le modifier."
-        strong: "Veuillez supprimer les éléments superflus des titres tels que le nom du
-        site, blog, section et auteur."
-      li2: "Lorsque l'article soumis a plus d'un an environ,
-        veuillez ajouter l'année où il a été écrit au titre du message dans
-        parenthèses."
-      li3: "Lors de la soumission d'une URL, le champ de texte est facultatif et ne doit
-        être utilisé lorsqu'un contexte supplémentaire ou une explication de l'URL est
-        nécessaire. Les commentaires ou opinions doivent être réservés pour un commentaire,
-        afin qu'il puisse être voté séparément de l'article."
+        p: "N'éditorialisez pas les titres des articles, mais lorsque l'histoire originale est le titre n'a pas de contexte ou n'est pas clair, veuillez le modifier."
+        strong: "Veuillez supprimer les éléments superflus des titres tels que le nom du site, blog, section et auteur."
+      li2: "Lorsque l'article soumis a plus d'un an environ, veuillez ajouter l'année où il a été écrit au titre du message dans parenthèses."
+      li3: "Lors de la soumission d'une URL, le champ de texte est facultatif et ne doit être utilisé lorsqu'un contexte supplémentaire ou une explication de l'URL est
+           nécessaire. Les commentaires ou opinions doivent être réservés pour un commentaire, afin qu'il puisse être voté séparément de l'article."
       li4: 
         if: "Sinon" 
-        text: "s'appliquent clairement à l'article que vous soumettez, les chances
-        est-ce qu'il n'a pas sa place ici. N'utilisez pas trop de tags si ils
-        ne sont pas l’objet principal de l’article."
+        text: "s'appliquent clairement à l'article que vous soumettez, les chances est-ce qu'il n'a pas sa place ici. N'utilisez pas trop de tags si ils
+              ne sont pas l’objet principal de l’article."
       li5: 
-        p1: "Pour pouvoir soumettre facilement une page que vous consultez dans votre navigateur
-        à"
-        p2: ", faites glisser ce bookmarklet vers votre
-        barre des signets:"
+        p1: "Pour pouvoir soumettre facilement une page que vous consultez dans votre navigateur à"
+        p2: ", faites glisser ce bookmarklet vers votre barre des signets:"
         p3: "Soumettre à"
         p4: "Vous serez redirigé vers cette page avec l'URL et le titre de la page consultée.
-        (Cependant, il ne peut pas reconnaître et supprimer les noms de blog / auteur pour vous.)"
+            (Cependant, il ne peut pas reconnaître et supprimer les noms de blog / auteur pour vous.)"
       autor: "Auteur:"
       submitter: "L'auteur est"
-      i_am: "Je suis"
+      i_am: "Je suis "
       autor_story: "l'auteur de l'article à cet URL (ou ce texte)"
       follow: "Suivre"
       submitter_following: "L'auteur suit "
       mail_story: "cet article pour recevoir des réponses par e-mail et Pushover "
-      
     # +similar
     listdetail:
       authored_by: "autorisé par"
       via: "via"
+      unhide: "montrer"
+      hide: "cacher"
+      save: "savegarder"
+      unsave: "ne pas sauvegarder"
       edit: "editer"
       justnow: "maintenant"
       nocomment: "pas de commentaires"
-
+      suggest: "suggérer"
+      cached: "caché"
+      comment: "commentaire"
     edit:
       legend: "Editer un article"
       merge: "fusionner dans:"
@@ -411,23 +915,188 @@ fr:
       confirm: "Etes-vous sur de vouloir annuler la suppression de cet article?"
       delete: "Supprimer"
       confirmdelete: "AEtes-vous sur de vouloir supprimer cet article?"
-
     new: 
       legend: "Soumettre un article"
       markdown: "Formatage MarkDown disponible"
-      submit: "Soumettre"
+      #conflit avec submit-story_spec
+      submit: "Submit"
       preview: "Précédent"
-
     show:
       storytext: "URL source considérée comme indisponible à compter du"
       cache: ", texte mis en cache disponible"
       allstory: "Tous les droits d'auteur du contenu de l'article des propriétaires respectifs."
       storylink: "Articles avec des liens similaires:"
-
     suggest: 
       legend: "Proposer un changement d'article"
-      suggest: "Proposer"
-      cancel: "cancel"
+      suggest: "Proposer un changement"
+      cancel: "annuler"
 
-  
+  tags:
+    form:
+      name: "Nom:"
+      category: "Categorie:"
+      description: "Déscription:"
+      permit: "Permis par les nouveaux utilisateurs:"
+      privileged: "Privilégié:"
+      media: "Est un média:"
+      active: "Actif:"
+      hotness: "Hotness Mod:"
+      update: "Mise à jour Tag"
+      create: "Créer Tag"
+    multi:
+      p1: "Astuce: lire des histoires sur plusieurs tags avec"
+    edit:
+      legend: "Editer les tags"
+      filter: "Filtrer par Tag"
+    index:
+      legend: "Tags"
+      p1: "Les tags inactifs ne peuvent plus être utilisé. Vous pouvez aussi"
+      filter: "filtrer vos articles avec des tags"
+      inactive: "inactif"
+      newtag: "Créer un nouveau Tag"
+      filtered: "filtré"
+      edit: 'editer'
+    new:
+      legend: "Créer un Tag"
+
+  users:
+    flag:
+      p1: "Vos commentaires ont été fortement signalés dans plusieurs articles dans le dernier"
+      p2: "Revoir "
+      p3: "pour le contexte sur la façon dont cela est inhabituel. Reconsidérez votre comportement ou"
+      p4: "prendre une pause"
+      p5: "Tu pourrais aussi parler à "
+      p6: "à propos de ce qui ne va pas, ou supprimez votre compte du bas de votre"
+      p7: "si vous préfèrez partir."
+    inv:
+      p1: "Les invitations sont illimitées, mais les personnes que vous invitez seront associées à votre compte dans l' "
+      p2: "arborescence des utilisateurs"
+      p3: "et vous pouvez en être responsable s'ils posent des problèmes. Veuillez utiliser votre discrétion lorsque vous invitez des personnes que vous ne connaissez pas personnellement."
+      mail: "Adresse email:"
+      memo: "Mémo à l'utilisateur:"
+      send: "Envoyer invitation"
+    not:
+      legend: "User not found"
+      p1: "Si cet utilisateur existait auparavant, il a changé son nom d'utilisateur. Vérifier le"
+      p2: "Journal de modération"
+    list:
+      admin: "(administrateur)"
+      mod: "(moderateurr)"
+    show:
+      send: "Envoyer un message"
+      banned: "Utilisisateur banni"
+      inactive: "Utilisateur inactif"
+      active: "Actif"
+      administrator: "administrateur"
+      moderator: "moderateur"
+      user: "utilisateur"
+      with: "avec invitations"
+      submissions: "et article soumis"
+      disabled: "désactivé"
+      joined: "Rejoint:"
+      inv: "invitation"
+      from: "pour"
+      averaging: ", calcul de la moyenne "
+      banned2: "Banni:"
+      per: "par article/commentaire"
+      left: "La gauche:"
+      commentspost: "Commentaires Postés:"
+      number: "nombre_avec_précision"
+      homepage: "Page d'accueil:"
+      storiessub: "Articles soumises:"
+      mystery: "mystère..."
+      hats: "Rôles:"
+      about: "A propos:"
+      h2: "Information Modérateur"
+      flagged: "Signalé (1m):"
+      non: "Non"
+      self: "Auto-promoteur:"
+      yes: "Oui"
+      last: "Les 10 dernières remarques:"
+      new: "Nouvelle remarque:"
+      last2: "Les 10 dernières modérations:"
+      admin: "Information Administrateur"
+      recent: "Votes Recents:"
+      com: "commentaire"
+      unban: "Unban"
+      #conflit avec submit_story_spec 
+      enable: "Enable Invites"
+      p1: "Le bannissepent ou la désactivation des invitations pour un utilisateur enverra un e-mail à l'utilisateur avec la raison ci-dessous, avec votre adresse e-mail comme réponse pour que l'utilisateur puisse répondre"
+      #conflit avec user_adminstration_spec
+      reason: "Reason:"
+      ban: "Bannir"
+      #conflit avec submit_story_spec 
+      disable: "Disable Invites"
+    standing:
+      h1: "Répartition des commentateurs recevant des flags à la fin"
+      p1: "La plupart des commentateurs obtiennent zéro ou très peu d'indicateurs dans leurs commentaires à la fin"
+      p2: "Actuellement, les utilisateurs qui voient l'avertissement ont été signalés entre"
+      p3: "et"
+      p4: "fois."
+      p5: "Ou, pour rendre cela visible:"
+      p6: "Si vous voyez l'avertissement, le meilleur scénario est que vous passiez en revue vos récents commentaires signalés ci-dessous, parlez peut-être à"
+      p7: "sur ce que vous pensez avoir mal tourné et respectez les normes de la communauté.
+            Si vous ne pouvez pas ou ne voulez pas faire cela, vous pouvez supprimer votre compte en bas de votre "
+      p8: "Nous comptons le nombre total de flags car c'est la mesure la plus directe du préjudice:
+            parfois un ou deux commentaires vraiment désagréables qui ont atteint des scores profondément négatifs,
+            mais le plus souvent, il s'agit d'un modèle constant de comportement inapproprié, grossier, dédaigneux ou abusif qui empoisonne de nombreuses discussions.
+            Nous avons essayé des mesures plus compliquées, mais elles correspondent presque parfaitement à un simple décompte et sont beaucoup plus difficiles à expliquer que le nombre total de fois qu'un autre utilisateur a signalé votre comportement comme inapproprié."
+      p9: "L'avertissement (et l'apparition sur un tableau de bord de mod) ne se déclenche que lorsque l'auteur a reçu un nombre inhabituellement élevé d'indicateurs sur plusieurs commentaires sur plusieurs fils, car tout le monde peut avoir une mauvaise journée ou un mauvais fil.
+            Le problème est un motif sur de nombreux fils, surtout si cela dure depuis un certain temps."
+      p10: "Pour répondre à certaines objections courantes:
+            Ce n'est pas basé sur le pourcentage de commentaires de l'auteur marqués ou sur le score moyen, car les bons commentaires n'excusent pas les mauvais.
+            Cela n'ignore pas les commentaires pour lesquels vous vous sentez provoqué ou justifié parce que vous êtes toujours responsable de vos propos.
+            Cela inclut les indicateurs sur les commentaires avec des scores positifs nets, car Hipsters  n'est pas un concours pour écrire des commentaires légèrement plus drôles ou plus perspicaces qu'ils ne sont cruels..
+            Si vous pensez que les personnes à qui vous répondez ne méritent pas la courtoisie et le respect: pourquoi passez-vous du temps à leur parler?"
+      p11: "Pour référence, vos récents commentaires signalés sont ci-dessous."
+    tree:
+      newest: "Nouveaux utilisateurs:"
+      admi: "(administrateur)"
+      mod: "(moderateur)"
+  helpers:
+    appli:
+      justnow: "juste maintenant"
+      less: "il y a moins d'une minute"
+      minute: 'minute'
+      hours: "hour"
+      ago: ""
+      day: "jour"
+      month: "mois"
+      year: 'année'
+      login: "Connexion"
+      home: "Accueil"
+      hipster: "Hipsters"
+      recent: "Récent"
+      comments: "Commentaires"
+      threads: "Votre fil"
+      submit: "Envoyer un article"
+      saved: "Sauvegardé"
+      search: "Chercher"
+      prohibited: " empêche(nt) ce "
+      beingsaved: "d'être envoyé "
+      fields: "Il y a des problèmes avec les champs suivants:"
+      reply: "Réponse"
+      replies: "Réponses"
+      error: 'erreur(s)'
+    users:
+      newest: "/récent/"
+      deleted: "supprimé"
+      threads: "/fil/"
+      tagged: ", le plus souvent tagué "
+  mailers:
+    ban:
+      banned: "Vous avez été banni"
+    email:
+      private: "Message privé de "
+    reply:
+      reply: "Réponse de "
+      on: "sur"
+      mention: "Mention de "
+    inv:
+      invited: "Vous êtes invité à rejoindre"
+    request:
+      confirm: "Confirmez votre invitation"
+      request: "demande à "
+    reset:
+      reset: "Reset your password"
 

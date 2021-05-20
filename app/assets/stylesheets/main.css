@@ -235,7 +235,7 @@ div#wrapper {
 	margin-right: auto;
 	padding-bottom: 2em;
 	min-width: 600px;
-	max-width: 900px;
+	max-width: 1200px;
 }
 div#inside {
 	margin-left: 0.25em;
@@ -312,7 +312,7 @@ div#inside {
 }
 
 #header a.new_messages {
-	color: #ac130d;
+	color: var(--new-message-color);
 }
 
 div#leader {

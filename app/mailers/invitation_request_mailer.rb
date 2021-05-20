@@ -4,8 +4,8 @@ class InvitationRequestMailer < ApplicationMailer
 
     mail(
       to: invitation_request.email,
-      subject: "[#{Rails.application.name}] Confirm your invitation " <<
-               "request to " << Rails.application.name
+      subject: "[#{t('helpers.appli.hipster')}] #{t('mailers.request.confirm')} " <<
+      "#{t('mailers.request.confirm')} << #{t('helpers.appli.hipster')}"
     )
   end
 end

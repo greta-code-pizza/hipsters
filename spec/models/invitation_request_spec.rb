@@ -9,7 +9,7 @@ describe InvitationRequest do
   it "has a limit on the email field" do
     invitation_request = build(:invitation_request, email: "a" * 256 + '@b.b')
     invitation_request.valid?
-    expect(invitation_request.errors[:email]).to eq(['is too long (maximum is 255 characters)'])
+    expect(invitation_request.errors[:email]).to eq([I18n.t('activerecord.errors.models.invitation_request.attributes.email.too_long')])
   end
 
   it "creates a code before validation" do
@@ -22,19 +22,19 @@ describe InvitationRequest do
   it "has a limit on the memo field" do
     invitation_request = build(:invitation_request, memo: 'https://' + 'a' * 256)
     invitation_request.valid?
-    expect(invitation_request.errors[:memo]).to eq(['is too long (maximum is 255 characters)'])
+    expect(invitation_request.errors[:memo]).to eq([I18n.t('activerecord.errors.models.invitation_request.attributes.memo.too_long')])
   end
 
   it "has a limit on the name field" do
     invitation_request = build(:invitation_request, name: "a" * 256)
     invitation_request.valid?
-    expect(invitation_request.errors[:name]).to eq(['is too long (maximum is 255 characters)'])
+    expect(invitation_request.errors[:name]).to eq([I18n.t('activerecord.errors.models.invitation_request.attributes.name.too_long')])
   end
 
   it "has a limit on the ip_address field" do
     invitation_request = build(:invitation_request, ip_address: "a" * 256)
     invitation_request.valid?
     expect(invitation_request.errors[:ip_address])
-      .to eq(['is too long (maximum is 255 characters)'])
+      .to eq([I18n.t('activerecord.errors.models.invitation_request.attributes.ip_address.too_long')])
   end
 end

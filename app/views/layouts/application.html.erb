@@ -21,8 +21,7 @@
       href="<%= @short_url %>" />
   <% end %>
   <title><%= @title.present? ? "#{@title} | " : "" %><%=
-    Rails.application.name %></title>
-
+  t('helpers.appli.hipster') %></title>
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= stylesheet_link_tag @current_theme, :media => "all" %>
 
@@ -43,14 +42,17 @@
       href="<%= @comments_rss_link[:href] %>" />
   <% end %>
 </head>
-<body>
+<% if Rails.env.development? || Rails.env.staging? %>
+  <body class="toto">
+<% else %>
+  <body>
+<% end %>
   <div id="wrapper">
     <div id="header">
       <div id="headerleft">
         <a id="l_holder" style="<%= @traffic_style %>"
-          href="/" title="<%= Rails.application.name %> (Current traffic: <%=
+          href="/" title="<%= t('helpers.appli.hipster') %> (Current traffic: <%=
           @traffic_intensity.to_i %>%)"><%= fa_icon "rss" %></a>
-
         <% if @cur_url.present? && !header_links.keys.include?(@cur_url) &&
         @heading.present? %>
           <span id="headertitle">
@@ -102,7 +104,7 @@
           <%= render :partial => "layouts/footer" %>
         <% else %>
           <% if !@user && Rails.application.open_signups? %>
-            <a href="/invitations/open"><%= t('layout.app.join')%> <%= Rails.application.name %></a>
+            <a href="/invitations/open"><%= t('layout.app.join')%> <%= t('helpers.appli.hipster') %></a>
           <% end %>
           <a href="/moderations"><%= t('layout.app.moderation')%></a>
           <% if @user && @user.can_see_invitation_requests? &&

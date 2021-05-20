@@ -119,6 +119,7 @@ class StoriesController < ApplicationController
   def show
     # @story was already loaded by track_story_reads for logged-in users
     @story ||= Story.where(short_id: params[:id]).first!
+    
     if @story.merged_into_story
       respond_to do |format|
         format.html {
@@ -130,7 +131,7 @@ class StoriesController < ApplicationController
         }
       end
     end
-
+    
     if !@story.can_be_seen_by_user?(@user)
       raise ActionController::RoutingError.new("story gone")
     end
@@ -140,14 +141,12 @@ class StoriesController < ApplicationController
             .includes(:user, :story, :hat, :votes => :user)
             .arrange_for_user(@user)
     end
-
     @title = @story.title
     @short_url = @story.short_id_url
 
     respond_to do |format|
       format.html {
         @comment = @story.comments.build
-
         @meta_tags = {
           "twitter:card" => "summary",
           "twitter:site" => "@lobsters",

@@ -92,11 +92,11 @@
 
         <li><p>
         <%= t('stories.form.li5.p1')%>
-        to <%= Rails.application.name %><%= t('stories.form.li5.p2')%>
+        <%= t('helpers.appli.hipster') %><%= t('stories.form.li5.p2')%>
         [<a href="javascript:{window.open(%22<%= Rails.application.root_url
         %>stories/new?url=%22+encodeURIComponent(document.location)+<%
         %>%22&title=%22+encodeURIComponent(document.title));%20void(0);}<%
-        %>"><%= t('stories.form.li5.p3')%> <%= Rails.application.name %></a>].
+        %>"><%= t('stories.form.li5.p3')%> <%= t('helpers.appli.hipster')%></a>].
         <%= t('stories.form.li5.p4')%>
         </p></li>
 
