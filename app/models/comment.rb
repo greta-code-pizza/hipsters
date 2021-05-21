@@ -46,8 +46,17 @@ class Comment < ApplicationRecord
     where(user_id: user_id)
       .order(created_at: :desc)
   }
-  scope :comment_replies_for,
-        ->(user_id) { for_user(user_id).where('parent_comment_id is not null') }
+  scope :all_replies,
+        ->(user_id) { for_user(user_id).where() }
+  scope :comment_replies_for, ->(user_id){
+    threads = for_user(user_id).where(parent_comment_id: nil).pluck(:thread_id)
+ 
+    replies = threads.map do |thread| 
+      where(thread_id: thread).where('parent_comment_id is not null')
+    end
+    
+    # where('parent_comment_id is not null ')
+}
   scope :story_replies_for, ->(user_id) { for_user(user_id).where('parent_comment_id is null')}
   scope :unread_replies_for, ->(user_id) { for_user(user_id).where(unread: true) }
 
@@ -473,9 +482,9 @@ class Comment < ApplicationRecord
   end
 
   def set_read(comment, id)
-  
+
     if Comment.exists?(id) && comment.user_id == id && comment.unread
-        comment.update_attributes(:unread => false) 
+        comment.update_attributes(:unread => false)
     end
   end
 

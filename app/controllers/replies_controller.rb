@@ -6,7 +6,7 @@ class RepliesController < ApplicationController
 
   def all
     @heading = @title = "All Your Replies"
-    @replies = Comment.where(user_id: @user.id)
+    @replies = Comment.all_replies(@user.id)
                  .for_user(@user.id)
                  .offset((@page - 1) * REPLIES_PER_PAGE)
                  .limit(REPLIES_PER_PAGE)
@@ -16,10 +16,12 @@ class RepliesController < ApplicationController
   end
 
   def comments
-    @heading = @title = "Your Comment Replies"   
-    @replies = Comment.comment_replies_for(@user.id)
-                 .offset((@page - 1) * REPLIES_PER_PAGE)
-                 .limit(REPLIES_PER_PAGE)
+    @heading = @title = "Your Comment Replies"  
+@replies = Comment.comment_replies_for(@user.id)
+binding.pry
+    # @replies = Comment.comment_replies_for(@user.id)
+    #              .offset((@page - 1) * REPLIES_PER_PAGE)
+    #              .limit(REPLIES_PER_PAGE)
     # apply_current_vote
     render :show
   end
