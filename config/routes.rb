@@ -229,5 +229,6 @@ Rails.application.routes.draw do
   resources :themes
 
   get "/themes/current/change/" => "themes#change_themes"
+  get "themes/plugins/:id" => "api/themes_api#find_themes"
 
 end
