@@ -54,8 +54,6 @@ class Comment < ApplicationRecord
     replies = threads.map do |thread| 
       where(thread_id: thread).where('parent_comment_id is not null')
     end
-    
-    # where('parent_comment_id is not null ')
 }
   scope :story_replies_for, ->(user_id) { for_user(user_id).where('parent_comment_id is null')}
   scope :unread_replies_for, ->(user_id) { for_user(user_id).where(unread: true) }
