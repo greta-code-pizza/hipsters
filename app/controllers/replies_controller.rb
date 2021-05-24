@@ -17,8 +17,8 @@ class RepliesController < ApplicationController
 
   def comments
     @heading = @title = "Your Comment Replies"  
-@replies = Comment.comment_replies_for(@user.id)
-binding.pry
+    @replies = Comment.comment_replies_for(@user.id)
+    binding.pry
     # @replies = Comment.comment_replies_for(@user.id)
     #              .offset((@page - 1) * REPLIES_PER_PAGE)
     #              .limit(REPLIES_PER_PAGE)
