@@ -23,10 +23,14 @@
   <title><%= @title.present? ? "#{@title} | " : "" %><%=
   t('helpers.appli.hipster') %></title>
   <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= stylesheet_link_tag @current_theme, :media => "all" %>
+
   <% if @user %>
     <%= javascript_include_tag "application" %>
     <script>
       Lobsters.curUser = '<%= @user.username %>';
+      let user_id = '<%= @user.id %>';
+      localStorage.setItem("user_id", user_id);
     </script>
   <% end %>
   <%= csrf_meta_tags %>
