@@ -12,7 +12,6 @@ development:
 
 test:
   <<: *default
-  host: 127.0.0.1
   database: hipsters_test
   username: <%= ENV["DB_USER_TEST"] %>
   password: <%= ENV["DB_PASSWORD_TEST"] %>
