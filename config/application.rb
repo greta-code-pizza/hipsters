@@ -77,6 +77,10 @@ class << Rails.application
     true
   end
 
+  def allow_new_users_to_invite?
+    true
+  end
+
   def open_signups?
     ENV["OPEN_SIGNUPS"] == "true"
   end
