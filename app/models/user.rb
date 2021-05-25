@@ -124,6 +124,7 @@ class User < ApplicationRecord
   before_validation :on => :create do
     self.create_rss_token
     self.create_mailing_list_token
+    self[:theme_id] = Theme.default.id
   end
 
   BANNED_USERNAMES = ["admin", "administrator", "contact", "fraud", "guest",
@@ -265,6 +266,10 @@ class User < ApplicationRecord
     end
 
     true
+  end
+
+  def theme
+    Theme.where(id: theme_id)
   end
 
   def banned_from_inviting?

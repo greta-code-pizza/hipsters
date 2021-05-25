@@ -7,7 +7,7 @@ module UsersHelper
     stories_displayed = stories_submitted - stories_deleted
 
     capture do
-      concat link_to(stories_displayed, "/newest/+showing_user.username}")
+      concat link_to(stories_displayed, "/newest/#{showing_user.username}")
 
       concat(" (+#{stories_deleted} #{t('helpers.appli.deleted')})") if user_is_moderator? && stories_deleted > 0
 
