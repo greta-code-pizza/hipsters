@@ -1078,6 +1078,7 @@ fr:
       reply: "Réponse"
       replies: "Réponses"
       error: 'erreur(s)'
+      deleted: "supprimé(s)"
     users:
       newest: "/récent/"
       deleted: "supprimé"
