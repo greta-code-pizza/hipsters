@@ -82,6 +82,9 @@ class << Rails.application
   end
 
   def domain
+    return "hipsters-stag.herokuapp.com" if Rails.env.staging?
+    return "hipsters-feed.herokuapp.com" if Rails.env.production?
+
     "example.com"
   end
 
