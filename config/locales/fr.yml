@@ -737,7 +737,7 @@ fr:
           votre profil public et peut être modifié à tout moment."
       about: "A propos:"
       markdown: "Formatage markDown disponible"
-      signup: "Se déconnecter"
+      signup: "Se connecter"
   
   settings: 
     index: 
