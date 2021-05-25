@@ -187,10 +187,11 @@ class ApplicationController < ActionController::Base
   end
 
   def init_theme
-    @current_theme = if @user.nil?
-                       "monokai"
-                     else
-                       Theme.find_theme(session[:user_id])
-                     end
+    @current_theme = 
+      if @user.nil? || session[:user_id].nil?
+        "monokai"
+      else
+        Theme.find_theme(session[:user_id])
+      end
   end
 end

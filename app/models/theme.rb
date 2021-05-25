@@ -24,4 +24,8 @@ class Theme < ApplicationRecord
     user.theme_id = theme_id
     user.save
   end
+
+  def self.default
+    Theme.find_or_create_by!(name: "monokai")
+  end
 end

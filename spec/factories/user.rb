@@ -5,6 +5,8 @@ FactoryBot.define do
     sequence(:username) {|n| "username#{n}" }
     password { "blah blah" }
     password_confirmation(&:password)
+    theme_id { Theme.default.id }
+
     trait(:banned) do
       transient do
         banner { nil }
