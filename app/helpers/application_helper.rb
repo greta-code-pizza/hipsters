@@ -15,7 +15,7 @@ module ApplicationHelper
     html = ""
     unless object.errors.blank?
       html << "<div class=\"flash-error\">"
-      html << "<h2>#{pluralize(object.errors.count,'error')}  #{t('helpers.appli.prohibited')} \
+      html << "<h2>#{pluralize(object.errors.count,t('helpers.appli.error'))}  #{t('helpers.appli.prohibited')} \
                #{object.class.name.downcase} #{t('helpers.appli.beingsaved')}</h2>"
       html << "<p>#{t('helpers.appli.fields')}</p>"
       html << "<ul>"

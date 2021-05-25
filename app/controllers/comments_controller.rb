@@ -16,7 +16,6 @@ class CommentsController < ApplicationController
        story.is_gone?
       return render :plain => "can't find story", :status => 400
     end
-   
     comment = story.comments.build
     comment.comment = params[:comment].to_s
     comment.user = @user

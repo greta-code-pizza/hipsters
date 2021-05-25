@@ -77,11 +77,18 @@ class << Rails.application
     true
   end
 
+  def allow_new_users_to_invite?
+    true
+  end
+
   def open_signups?
     ENV["OPEN_SIGNUPS"] == "true"
   end
 
   def domain
+    return "hipsters-stag.herokuapp.com" if Rails.env.staging?
+    return "hipsters-feed.herokuapp.com" if Rails.env.production?
+
     "example.com"
   end
 

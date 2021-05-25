@@ -1076,10 +1076,11 @@ en:
       justnow: "just now"
       less: "less than a minute ago"
       minute: 'minute'
-      ago: "ago"
-      day: day
+      hours: "hour"
+      ago: " ago"
+      day: "day"
       month: "month"
-      year: 'year'
+      year: "year"
       login: "Login"
       home: "Home"
       hipster: "Lobsters"
