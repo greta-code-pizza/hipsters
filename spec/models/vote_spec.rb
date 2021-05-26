@@ -7,7 +7,7 @@ describe Vote do
     v = build(:vote, user: u, story: s, vote: nil)
 
     v.valid?
-    expect(v.errors[:vote]).to eq(["can't be blank"])
+    expect(v.errors[:vote]).to eq([I18n.t('activerecord.errors.models.vote.attributes.vote.blank')])
   end
 
   context "upvoting a score and flags" do
@@ -85,7 +85,7 @@ describe Vote do
     v = build(:vote, user: u, story: s, reason: "ABC")
 
     v.valid?
-    expect(v.errors[:reason]).to eq(["is the wrong length (should be 1 character)"])
+    expect(v.errors[:reason]).to eq([I18n.t('activerecord.errors.models.vote.attributes.reason.wrong_length')])
   end
 
   it "applies a story upvote and karma properly" do

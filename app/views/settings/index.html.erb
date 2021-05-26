@@ -238,7 +238,7 @@
 
     <div class="boxline">
       <%= f.label :show_submitted_story_threads,
-        raw(" t('settings.index.showin') <a href=\"/threads\"> t('settings.index.yourthreads')</a>:"),
+        raw(" #{t('settings.index.showin')} <a href=\"/threads\"> #{t('settings.index.yourthreads')}</a>:"),
         :class => "required" %>
       <%= f.check_box :show_submitted_story_threads %>
     </div>
@@ -306,6 +306,24 @@
 
   <br>
   <br>
+
+  <div class=boxline>
+    <div class="legend">
+      Custom Themes
+    </div>
+
+    <p>hipsters offers you several themes so you can customize your favorite application</p>
+
+    <form action="/themes/current/change/" action="post"> 
+      <label for="id" style="width:100%;">Choose your themes : </label>
+      <select id="themeName" name="id">
+        <% @all_themes.each do |theme| %>
+          <option value="<%= theme.id %>" <%= "selected" if @current_theme_id == theme.id %> ><%= theme.name %></option>
+        <% end %>
+      </select>
+      <button type="submit">Change themes</button>
+    </form>
+  </div>
 
   <div class="deletion">
       <%= form_with model: @edit_user, url: delete_account_path, method: :post, id: 'delete_user', local: true do |f| %>

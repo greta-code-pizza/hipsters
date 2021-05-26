@@ -7,7 +7,7 @@ class CreateCategories < ActiveRecord::Migration[6.0]
   end
 
   def change
-    raise "You need to edit this migration to define categories matching your site" unless Rails.application.name == 'Lobsters'
+    raise "You need to edit this migration to define categories matching your site" unless Rails.application.name == <%= t('herlpers.appli.hipster')%>
 
     create_table :categories do |t|
       t.string :category

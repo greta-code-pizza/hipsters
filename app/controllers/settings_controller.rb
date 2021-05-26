@@ -7,6 +7,10 @@ class SettingsController < ApplicationController
     @title = "Account Settings"
 
     @edit_user = @user.dup
+
+    @all_themes = Theme.find_all_theme
+
+    @current_theme_id = Theme.find_current_id_theme(session[:user_id])
   end
 
   def delete_account

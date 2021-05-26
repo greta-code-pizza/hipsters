@@ -9,7 +9,6 @@ en:
     text: "Tip: read stories across multiple categories with"
 
   comments:
-    #a traduire comment en fr
     comment:
       prev: "previewed"
       now: "just now"
@@ -21,6 +20,7 @@ en:
       reply: "reply"
       sur: "on:"
       visible: "Visible to moderator:"
+      link: "link"
 
     _commentbox:
       placeholder: "You must be logged in to leave a comment."
@@ -30,6 +30,7 @@ en:
       preview: "Preview"
       cancel: "Cancel"
       hats: "Put on hat"
+      comment: "comment"
 
   email_message:
     notify:
@@ -90,7 +91,7 @@ en:
   hats:
     build_request:
       legend: "Request a Hat"
-      p1: "A hat is a formal, verified way of speaking officially for a project, organization, or company on Lobsters.
+      p1: "A hat is a formal, verified way of speaking officially for a project, organization, or company on Hipsters.
           A user can have more than one hat, but only wear one at a time on a comment or private message."
       p2: "Hats are for making public statements, not commemorating contributions to a project or jobs held.
           Please request one only if you'll be acting offically here, like if you're a core project developer or company employee authorized to post on behalf of your organization.
@@ -100,7 +101,7 @@ en:
           over the hat that users can see, such as your e-mail address at that project
           or company, or a link to a company website showing your employment, and
           private comments that will be seen only by moderators during approval.'
-      p4: "It's really helpful if you link your GitHub or Twitter account to your Lobsters account and,
+      p4: "It's really helpful if you link your GitHub or Twitter account to your Hipsters account and,
           in your comment, link to where the organization links to that public account.
           Then we can instantly see you're legit without having to send a verification email."
       p5: "When you can no longer speak for a project or company, please contact a moderator to doff your hat.
@@ -141,12 +142,12 @@ en:
       legend: "404"
       text: "The resource you requested was not found, or the story has been deleted."
     about:
-      title: "About"
-      p1_part1: 'Lobsters is a computing-focused community centered around link aggregation
+      title: "About à"
+      p1_part1: 'Hipsters is a computing-focused community centered around link aggregation
           and discussion, launched on July 3rd, 2012.
           The administrator is'
       p1_part2: ", contact him with any support issues."
-      p1_part3: "Lobsters was created by "
+      p1_part3: "Hipsters was created by "
       p1_part4: "with careful design touches to encourage a healthy community:"
       li1:
         a: "a"
@@ -206,7 +207,7 @@ en:
       p3_p4: "thread with the name and description.
               Explain the scope, list existing stories that should have been tagged, make a case for why people would want to specifically filter it out, and justify the increased complexity for submitters and mods."
       logged: "logged"
-      p4_p1: "Lobsters is focused pretty narrowly on computing; tags like"
+      p4_p1: "Hipsters is focused pretty narrowly on computing; tags like"
       p4_p2: "don't imply every piece of art is on-topic.
               Some rules of thumb for great stories to submit: Will this improve the reader's 
               next program? Will it deepen their understanding of their last program? Will it 
@@ -226,7 +227,7 @@ en:
       p7_p1: "New users must be invited by a current user, though there is no formal vetting process.
               Invitations are used as a mechanism for spam-control,
               to slow registrations to a pace"
-      p7_p2: "and to encourage users to be nice, not to make the Lobsters userbase an elite club.
+      p7_p2: "and to encourage users to be nice, not to make the Hipsters userbase an elite club.
             The quickest way to receive an invitation is to talk to someone you "
       p7_p3: "If you wrote a link that was posted, please reach out in"
       p7_p4: ", we'd love to have you join the discussion.
@@ -302,7 +303,7 @@ en:
               The codebase is used to run a dozen or so sister sites (that we know of) and we"
       p16_p6: "keep a list"
       p16_p7: "please get in touch if you've launched one."
-      p17_p1: "The Lobsters community is in a sweet spot that it's large enough to be worth asking questions about and small enough the answers make sense.
+      p17_p1: "The Hipsters community is in a sweet spot that it's large enough to be worth asking questions about and small enough the answers make sense.
               We have"
       p17_p2: "some basic stats"
       p17_p3: "available, and Peter is happy to run queries against the"
@@ -383,7 +384,7 @@ en:
       p30_1: "Stickers"
       p30_2: "will be available again when someone finds a service that will print and ship 2'' square vinyl stickers
               with a blee <= 1/16'' (preferably full-bleed) directly to people who want them."
-      p31_1: "Lobsters is hosted at DigitalOcean. We"
+      p31_1: "Hipsters is hosted at DigitalOcean. We"
       p31_2: "recently migrated"
       p31_3: "and our setup is still in flux.
               Please hassle pushcx if he hasn't filled in details by March 2021.
@@ -393,19 +394,19 @@ en:
               DNS is provided by"
       p31_6: "and we use"
       p31_7: "for backups, both of which pushcx pays for."
-      p32_1: "Sponsor of the lobster emoji"
-      p32_2: "In February 2018, Lobsters"
+      p32_1: "Sponsor of the Hipster emoji"
+      p32_2: "In February 2018, Hipsters"
       p32_3: "held a fundraiser"
-      p32_4: "to officially adopt the new lobster emoji in support of the Unicode Foundation."
+      p32_4: "to officially adopt the new Hipster emoji in support of the Unicode Foundation."
       p33_1: "The name ''Lobste.rs'' is a cute"
       p33_2: "domain hack"
       p33_3: "without any deeper meaning."
       p33_4: "It"
       p33_5: "has nothing to do"
       p33_6: "with self-help guru Jordan Peterson, whose fans started to"
-      p33_7: "call themselves ''lobsters'' "
+      p33_7: "call themselves ''Hipsters'' "
       p33_8: "about six years after we started."
-      p34_1: "If you prefer to read Lobsters on a dark background instead of a light one, there are a few options. You could install the"
+      p34_1: "If you prefer to read Hipsters on a dark background instead of a light one, there are a few options. You could install the"
       p34_2: "Dark Reader extension"
       p34_3: "or an extension to add your own CSS to sites like"
       p34_4: "or"
@@ -422,7 +423,7 @@ en:
 
     
     chat:
-      legend: "Lobsters Chat"
+      legend: "Hipsters Chat"
       p1_1: "An official real-time discussion channel is available to members and guests
             of the site, hosted on the"
       in: " in "
@@ -436,7 +437,7 @@ en:
             channel isn't busy enough that there's always someone talking, so don't be
             surprised if you try to start a conversation and no one responds.  Leave it
             open and you'll see activity, though we're most active during US work hours."
-      p3: "New contributors are always welcome on Lobsters.
+      p3: "New contributors are always welcome on Hipsters.
           If you are the author of or otherwise involved with a story that was submitted to the site, ask and someone can send you an invite.
           We've unfortunately had problems with impersonation, so it helps a lot if you point out how your email address is linked to the story."
        
@@ -454,7 +455,7 @@ en:
       cloak: "cloak."
       p8_1: "For a feed of stories without discussion,"
       p8_2: "also posts new stories in "
-      p9_1: "Lobsters used to have an channel called "
+      p9_1: "Hipsters used to have an channel called "
       p9_2: "for off-topic conversations (especially American politics) that ''boiled over'' from the main channel.
             It was useful in the wake of some big events, but the mods "
       p9_3: "didn't want to run it indefinitely<"
@@ -694,6 +695,10 @@ en:
     li1_p4: "to require terms,"
     li1_p5: "to ignore terms, and"
     li1_p6: "''quotes for phrases''"
+    bydomain: "Search by domain with "
+    searchby: "Search by "
+    
+
 
   signup:
     index:
@@ -772,7 +777,7 @@ en:
       homepage: "Homepage:"
       about: "About:"
       saveaccount: "Save Account Settings"
-      external: External Accounts
+      external: "External Accounts"
       linktext1: "Manage Pushover Subscription"
       linktext2: "Subscribe With Pushover"
       linkedto: "Linked to"
@@ -899,7 +904,14 @@ en:
       via: "via"
       edit: "edit"
       justnow: "just now"
+      save: "save"
+      unsave: "unsave"
       nocomment: "no comments"
+      unhide: "unhide"
+      hide: "hide"
+      suggest: "suggest"
+      cached: "cached"
+      comment: "comment"
 
     edit:
       legend: "Edit Story"
@@ -950,12 +962,15 @@ en:
       p1: "Tip: read stories across multiple tags with"
     edit:
       legend: "Tag Edit"
-      filter: ""
+      filter: "Filter By Tag"
     index:
       legend: "Tags"
       p1: "Inactive tags can no longer be used. You can also"
       filter: "filter out stories by tag"
       inactive: "inactive"
+      newtag: "Create New Tag"
+      filtered: "filtered"
+      edit: 'edit'
     new:
       legend: "Tag Create"
 
@@ -1049,14 +1064,57 @@ en:
       p10: "To address some common objections:
             This isn't based on the percentage of the author's comments flagged or the average score because good comments don't excuse bad ones.
             This doesn't ignore comments where you feel provoked or justified because you're still responsible for your words.
-            This includes flags on comments with net positive scores because Lobsters isn't a contest to write comments that are slightly funnier or more insightful than they are cruel.
+            This includes flags on comments with net positive scores because Hipsters isn't a contest to write comments that are slightly funnier or more insightful than they are cruel.
             If you think the people you're responding to don't deserve courtesy and respect: why do you spending time talking to them at all?"
       p11: "For reference, your recent flagged comments are below."
     tree:
       newest: "Newest users:"
       admi: "(administrator)"
       mod: "(moderator)"
-
+  helpers:
+    appli:
+      justnow: "just now"
+      less: "less than a minute ago"
+      minute: 'minute'
+      hours: "hour"
+      ago: " ago"
+      day: "day"
+      month: "month"
+      year: "year"
+      login: "Login"
+      home: "Home"
+      hipster: "Lobsters"
+      recent: "Recent"
+      comments: "Comments"
+      threads: "Your Threads"
+      submit: "Submit Story"
+      saved: "Saved"
+      search: "Search"
+      prohibited: "prohibited this "
+      beingsaved: "from being saved"
+      fields: "There were the problems with the following fields:"
+      reply: "Reply"
+      replies: "Replies"
+      error: 'error'
+    users:
+      newest: "/newest/"
+      deleted: "deleted"
+      threads: "/threads/"
+      tagged: ", most commonly tagged "
+  mailers:
+    ban:
+      banned: "You have been banned"
+    email:
+      private: "Private Message from "
+    reply:
+      reply: "Reply from "
+      on: "on"
+      mention: "Mention from "
+    inv:
+      invited: "You are invited to join"
+    request:
+      confirm: "Confirm your invitation"
+      request: "request to "
 
       
 

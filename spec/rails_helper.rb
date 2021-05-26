@@ -32,6 +32,7 @@ RSpec.configure do |config|
 
     c = Category.create! category: "category1"
     c.tags.create!([{ tag: "tag1" }, { tag: "tag2" }])
+    Theme.default
   end
 
   config.before(:example) do

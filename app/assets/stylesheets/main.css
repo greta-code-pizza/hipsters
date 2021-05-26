@@ -235,7 +235,7 @@ div#wrapper {
 	margin-right: auto;
 	padding-bottom: 2em;
 	min-width: 600px;
-	max-width: 900px;
+	max-width: 1200px;
 }
 div#inside {
 	margin-left: 0.25em;
@@ -312,7 +312,7 @@ div#inside {
 }
 
 #header a.new_messages {
-	color: #ac130d;
+	color: var(--new-message-color);
 }
 
 div#leader {
@@ -470,7 +470,7 @@ ol.stories li.story div.story_liner {
 	color: #666;
 }
 
-ol.stories li:first-child div.story_liner {
+ol.stories li div.story_liner {
 	padding: 15px;
 	border-radius: 6px;
 	margin-top: 6px;

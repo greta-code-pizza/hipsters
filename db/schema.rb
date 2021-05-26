@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_19_100907) do
+ActiveRecord::Schema.define(version: 2021_05_20_100849) do
 
   create_table "advertisements", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(version: 2021_05_19_100907) do
     t.bigint "user_id", null: false, unsigned: true
     t.bigint "granted_by_user_id", null: false, unsigned: true
     t.string "hat", null: false
-    t.string "link", collation: "utf8mb4_general_ci"
+    t.string "link"
     t.boolean "modlog_use", default: false
     t.datetime "doffed_at"
     t.index ["granted_by_user_id"], name: "hats_granted_by_user_id_fk"
@@ -284,6 +284,13 @@ ActiveRecord::Schema.define(version: 2021_05_19_100907) do
     t.index ["tag"], name: "tag", unique: true
   end
 
+  create_table "themes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "current", default: false
+  end
+
   create_table "users", id: :bigint, unsigned: true, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "username", limit: 50
     t.string "email", limit: 100
@@ -308,6 +315,7 @@ ActiveRecord::Schema.define(version: 2021_05_19_100907) do
     t.bigint "disabled_invite_by_user_id", unsigned: true
     t.string "disabled_invite_reason", limit: 200
     t.text "settings"
+    t.bigint "theme_id", default: 6
     t.index ["banned_by_user_id"], name: "users_banned_by_user_id_fk"
     t.index ["disabled_invite_by_user_id"], name: "users_disabled_invite_by_user_id_fk"
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -317,6 +325,7 @@ ActiveRecord::Schema.define(version: 2021_05_19_100907) do
     t.index ["password_reset_token"], name: "password_reset_token", unique: true
     t.index ["rss_token"], name: "rss_token", unique: true
     t.index ["session_token"], name: "session_hash", unique: true
+    t.index ["theme_id"], name: "fk_rails_342250fdc1"
     t.index ["username"], name: "username", unique: true
   end
 
@@ -368,6 +377,7 @@ ActiveRecord::Schema.define(version: 2021_05_19_100907) do
   add_foreign_key "tag_filters", "users", name: "tag_filters_user_id_fk"
   add_foreign_key "taggings", "stories", name: "taggings_story_id_fk"
   add_foreign_key "taggings", "tags", name: "taggings_tag_id_fk", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "users", "themes"
   add_foreign_key "users", "users", column: "banned_by_user_id", name: "users_banned_by_user_id_fk"
   add_foreign_key "users", "users", column: "disabled_invite_by_user_id", name: "users_disabled_invite_by_user_id_fk"
   add_foreign_key "users", "users", column: "invited_by_user_id", name: "users_invited_by_user_id_fk"
@@ -376,6 +386,6 @@ ActiveRecord::Schema.define(version: 2021_05_19_100907) do
   add_foreign_key "votes", "users", name: "votes_user_id_fk"
 
   create_view "replying_comments", sql_definition: <<-SQL
-      select `read_ribbons`.`user_id` AS `user_id`,`comments`.`id` AS `comment_id`,`read_ribbons`.`story_id` AS `story_id`,`comments`.`parent_comment_id` AS `parent_comment_id`,`comments`.`created_at` AS `comment_created_at`,`parent_comments`.`user_id` AS `parent_comment_author_id`,`comments`.`user_id` AS `comment_author_id`,`stories`.`user_id` AS `story_author_id`,(`read_ribbons`.`updated_at` < `comments`.`created_at`) AS `is_unread`,(select `votes`.`vote` from `votes` where ((`votes`.`user_id` = `read_ribbons`.`user_id`) and (`votes`.`comment_id` = `comments`.`id`))) AS `current_vote_vote`,(select `votes`.`reason` from `votes` where ((`votes`.`user_id` = `read_ribbons`.`user_id`) and (`votes`.`comment_id` = `comments`.`id`))) AS `current_vote_reason` from (((`read_ribbons` join `comments` on((`comments`.`story_id` = `read_ribbons`.`story_id`))) join `stories` on((`stories`.`id` = `comments`.`story_id`))) left join `comments` `parent_comments` on((`parent_comments`.`id` = `comments`.`parent_comment_id`))) where ((`read_ribbons`.`is_following` = 1) and (`comments`.`user_id` <> `read_ribbons`.`user_id`) and (`comments`.`is_deleted` = 0) and (`comments`.`is_moderated` = 0) and ((`parent_comments`.`user_id` = `read_ribbons`.`user_id`) or ((`parent_comments`.`user_id` is null) and (`stories`.`user_id` = `read_ribbons`.`user_id`))) and (`stories`.`score` >= 0) and (`comments`.`score` >= 0) and ((`parent_comments`.`id` is null) or ((`parent_comments`.`score` >= 0) and (`parent_comments`.`is_moderated` = 0) and (`parent_comments`.`is_deleted` = 0))) and exists(select 1 from (`votes` `f` join `comments` `c` on((`f`.`comment_id` = `c`.`id`))) where ((`f`.`vote` < 0) and (`f`.`user_id` = `parent_comments`.`user_id`) and (`c`.`user_id` = `comments`.`user_id`) and (`f`.`story_id` = `comments`.`story_id`))) is false)
+      select `read_ribbons`.`user_id` AS `user_id`,`comments`.`id` AS `comment_id`,`read_ribbons`.`story_id` AS `story_id`,`comments`.`parent_comment_id` AS `parent_comment_id`,`comments`.`created_at` AS `comment_created_at`,`parent_comments`.`user_id` AS `parent_comment_author_id`,`comments`.`user_id` AS `comment_author_id`,`stories`.`user_id` AS `story_author_id`,(`read_ribbons`.`updated_at` < `comments`.`created_at`) AS `is_unread`,(select `votes`.`vote` from `votes` where ((`votes`.`user_id` = `read_ribbons`.`user_id`) and (`votes`.`comment_id` = `comments`.`id`))) AS `current_vote_vote`,(select `votes`.`reason` from `votes` where ((`votes`.`user_id` = `read_ribbons`.`user_id`) and (`votes`.`comment_id` = `comments`.`id`))) AS `current_vote_reason` from (((`read_ribbons` join `comments` on((`comments`.`story_id` = `read_ribbons`.`story_id`))) join `stories` on((`stories`.`id` = `comments`.`story_id`))) left join `comments` `parent_comments` on((`parent_comments`.`id` = `comments`.`parent_comment_id`))) where ((`read_ribbons`.`is_following` = 1) and (`comments`.`user_id` <> `read_ribbons`.`user_id`) and (`comments`.`is_deleted` = 0) and (`comments`.`is_moderated` = 0) and ((`parent_comments`.`user_id` = `read_ribbons`.`user_id`) or (isnull(`parent_comments`.`user_id`) and (`stories`.`user_id` = `read_ribbons`.`user_id`))) and (`stories`.`score` >= 0) and (`comments`.`score` >= 0) and (isnull(`parent_comments`.`id`) or ((`parent_comments`.`score` >= 0) and (`parent_comments`.`is_moderated` = 0) and (`parent_comments`.`is_deleted` = 0))) and (exists(select 1 from (`votes` `f` join `comments` `c` on((`f`.`comment_id` = `c`.`id`))) where ((`f`.`vote` < 0) and (`f`.`user_id` = `parent_comments`.`user_id`) and (`c`.`user_id` = `comments`.`user_id`) and (`f`.`story_id` = `comments`.`story_id`))) is false))
   SQL
 end

@@ -1,0 +1,24 @@
+:root {
+    --logo-color: #6A1715;
+    --logo-icon-color: #fff;
+    --logo-text-color: #000;
+    --menu-link-color: #77779C;
+    --menu-right-color: #77779C;
+    --text-color: #000;
+    --legend-text-color: #fc9867;
+    --link-color: #2A6DDD;
+    --bg-color: #fff;
+    --bg-2-color:  #efefef;
+    --tag-color: #efefef;
+    --border-tag-color: #f5ecc6;
+    --font-tag-color: #c5b672;
+  
+    --story-title-color: #2A6DDD;
+    --story-title-visited-color:#224b92;
+  
+    --text-color: #000;
+    --upvoted-color: #ff6188;
+  
+    --main-font-family: monospace;
+    --second-font-family: monospace;
+}

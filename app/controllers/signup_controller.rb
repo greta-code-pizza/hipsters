@@ -62,7 +62,7 @@ class SignupController < ApplicationController
         @invitation.update(used_at: Time.current, new_user: @new_user)
       end
       session[:u] = @new_user.session_token
-      flash[:success] = "Welcome to #{Rails.application.name}, " <<
+      flash[:success] = "Welcome to #{t('helpers.appli.hipster')}, " <<
                         "#{@new_user.username}!"
 
       if Rails.application.allow_new_users_to_invite?
