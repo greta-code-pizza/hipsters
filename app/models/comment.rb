@@ -46,8 +46,8 @@ class Comment < ApplicationRecord
     where(user_id: user_id)
       .order(created_at: :desc)
   }
-  scope :all_replies,
-        ->(user_id) { for_user(user_id).where() }
+  scope :all_replies_for,
+        ->(user_id) { comment_replies_for(user_id) +  story_replies_for(user_id)}
   scope :comment_replies_for, ->(user_id){
     threads = for_user(user_id).where(parent_comment_id: nil).pluck(:thread_id)
 
@@ -57,7 +57,7 @@ class Comment < ApplicationRecord
     end
     replies
 }
-  scope :story_replies_for, ->(user_id) { all.joins(:story).where(stories: {user_is_author: true})}
+  scope :story_replies_for, ->(user_id) { all.joins(:story).where(stories: {user_id: user_id})}
   scope :unread_replies_for, ->(user_id) { 
     unread_replies = []
     comment_replies_for(user_id).map { |comment| 

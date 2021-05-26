@@ -200,7 +200,7 @@ ActiveRecord::Schema.define(version: 2021_05_19_100907) do
 
   create_table "stories", id: :bigint, unsigned: true, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.datetime "created_at"
-    t.bigint "created", null: false, unsigned: true
+    t.bigint "user_id", null: false, unsigned: true
     t.string "url", limit: 250, default: ""
     t.string "title", limit: 150, default: "", null: false
     t.text "description", size: :medium

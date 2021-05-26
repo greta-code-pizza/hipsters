@@ -6,8 +6,8 @@ class RepliesController < ApplicationController
 
   def all
     @heading = @title = "All Your Replies"
-    @replies = Comment
-                 .for_user(@user.id)
+    replies =  Comment.all_replies_for(@user.id)
+    @replies = Comment.where(id: replies.map(&:id))
                  .offset((@page - 1) * REPLIES_PER_PAGE)
                  .limit(REPLIES_PER_PAGE)
                
