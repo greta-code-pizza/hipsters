@@ -57,7 +57,7 @@ class Comment < ApplicationRecord
     end
     replies
 }
-  scope :story_replies_for, ->(user_id) { for_user(user_id).joins(:story).where(stories: {user_is_author: true})}
+  scope :story_replies_for, ->(user_id) { all.joins(:story).where(stories: {user_is_author: true})}
   scope :unread_replies_for, ->(user_id) { 
     unread_replies = []
     comment_replies_for(user_id).map { |comment| 
