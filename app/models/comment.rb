@@ -50,13 +50,23 @@ class Comment < ApplicationRecord
         ->(user_id) { for_user(user_id).where() }
   scope :comment_replies_for, ->(user_id){
     threads = for_user(user_id).where(parent_comment_id: nil).pluck(:thread_id)
- 
-    replies = threads.map do |thread| 
-      where(thread_id: thread).where('parent_comment_id is not null')
+
+    replies = []
+    threads.map do |thread| 
+       where(thread_id: thread).where('parent_comment_id is not null').map { |c| replies << c }
     end
+    replies
 }
-  scope :story_replies_for, ->(user_id) { for_user(user_id).where('parent_comment_id is null')}
-  scope :unread_replies_for, ->(user_id) { for_user(user_id).where(unread: true) }
+  scope :story_replies_for, ->(user_id) { for_user(user_id).joins(:story).where(stories: {user_is_author: true})}
+  scope :unread_replies_for, ->(user_id) { 
+    unread_replies = []
+    comment_replies_for(user_id).map { |comment| 
+      if (comment.unread && comment.user_id != user_id)
+        unread_replies << comment
+      end
+  }
+  unread_replies
+}
 
   FLAGGABLE_DAYS = 7
   DELETEABLE_DAYS = FLAGGABLE_DAYS * 2

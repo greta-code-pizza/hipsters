@@ -6,10 +6,11 @@ class RepliesController < ApplicationController
 
   def all
     @heading = @title = "All Your Replies"
-    @replies = Comment.all_replies(@user.id)
+    @replies = Comment
                  .for_user(@user.id)
                  .offset((@page - 1) * REPLIES_PER_PAGE)
                  .limit(REPLIES_PER_PAGE)
+               
     # apply_current_vote // depends on "current_vote_vote" attribute which does not exist in this version
     render :show
     
@@ -17,12 +18,13 @@ class RepliesController < ApplicationController
 
   def comments
     @heading = @title = "Your Comment Replies"  
-    @replies = Comment.comment_replies_for(@user.id)
-    binding.pry
-    # @replies = Comment.comment_replies_for(@user.id)
-    #              .offset((@page - 1) * REPLIES_PER_PAGE)
-    #              .limit(REPLIES_PER_PAGE)
-    # apply_current_vote
+
+    replies =  Comment.comment_replies_for(@user.id)
+    @replies = Comment.where(id: replies.map(&:id))
+                 .offset((@page - 1) * REPLIES_PER_PAGE)
+                 .limit(REPLIES_PER_PAGE)
+               
+    # apply_current_vote   
     render :show
   end
 
@@ -32,14 +34,17 @@ class RepliesController < ApplicationController
                 .story_replies_for(@user.id)
                 .offset((@page - 1) * REPLIES_PER_PAGE)
                 .limit(REPLIES_PER_PAGE)
+                
     # apply_current_vote
     render :show
   end
 
   def unread
     @heading = @title = "Your Unread Replies"
-    # @replies = Comment.unread_replies_for(@user.id)
-    @replies = Comment.where(user_id: @user.id, unread: true)
+    replies =  Comment.unread_replies_for(@user.id)
+    @replies = Comment.where(id: replies.map(&:id))
+                .offset((@page - 1) * REPLIES_PER_PAGE)
+                .limit(REPLIES_PER_PAGE)
     # apply_current_vote
     render :show
   end

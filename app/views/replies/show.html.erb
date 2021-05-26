@@ -14,7 +14,8 @@
 <%= render partial: 'users/flag_warning' if @show_flag_warning %>
 <% if @replies.present? %>
   <ol class="comments comments1">
-    <% @replies.each do |reply| %>
+    <% @replies.each do |reply|  %>
+      <% if reply %>
       <li class="comments_subtree">
         <%= render "comments/comment",
             comment: reply,
@@ -22,7 +23,7 @@
             unread: reply.unread,
             show_tree_lines: false %>
         <ol class="comments"></ol>
-      </li>
+      </li><% end %>
     <% end %>
   </ol>
 <% else %>
