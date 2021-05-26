@@ -10,7 +10,6 @@ class RepliesController < ApplicationController
     @replies = Comment.where(id: replies.map(&:id))
                  .offset((@page - 1) * REPLIES_PER_PAGE)
                  .limit(REPLIES_PER_PAGE)
-               
     # apply_current_vote // depends on "current_vote_vote" attribute which does not exist in this version
     render :show
     

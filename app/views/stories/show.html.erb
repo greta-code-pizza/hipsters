@@ -57,9 +57,8 @@
           :show_story => (comment.story_id != @story.id),
           :show_tree_lines => true,
           :was_merged => (comment.story_id != @story.id),
-          :children => children
-        #   :is_unread => children.unread
-          
+          :children => children,
+          :is_unread => comment.unread          
           
         #   if !@user || !@ribbon
         #   return false
