@@ -1,6 +1,6 @@
 <div class="box wide">
   <div class="legend right">
-    <%# <%= link_to_different_page(t('replies.show.unread'),   replies_unread_path) %> |
+    <%= link_to_different_page(t('replies.show.unread'),   replies_unread_path) %> |
     <%= link_to_different_page(t('replies.show.all'),      replies_path) %> |
     <%= link_to_different_page(t('replies.show.comments'), replies_comments_path) %> |
     <%= link_to_different_page(t('replies.show.stories'),  replies_stories_path) %>
@@ -14,15 +14,16 @@
 <%= render partial: 'users/flag_warning' if @show_flag_warning %>
 <% if @replies.present? %>
   <ol class="comments comments1">
-    <% @replies.each do |reply| %>
+    <% @replies.each do |reply|  %>
+      <% if reply %>
       <li class="comments_subtree">
         <%= render "comments/comment",
             comment: reply,
             show_story: true,
-            #is_unread: reply.is_unread,
+            unread: reply.unread,
             show_tree_lines: false %>
         <ol class="comments"></ol>
-      </li>
+      </li><% end %>
     <% end %>
   </ol>
 <% else %>

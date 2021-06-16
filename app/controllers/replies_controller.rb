@@ -6,8 +6,8 @@ class RepliesController < ApplicationController
 
   def all
     @heading = @title = "All Your Replies"
-    @replies = Comment.where(user_id: @user.id)
-                 .for_user(@user.id)
+    replies =  Comment.all_replies_for(@user.id)
+    @replies = Comment.where(id: replies.map(&:id))
                  .offset((@page - 1) * REPLIES_PER_PAGE)
                  .limit(REPLIES_PER_PAGE)
     # apply_current_vote // depends on "current_vote_vote" attribute which does not exist in this version
@@ -15,12 +15,16 @@ class RepliesController < ApplicationController
     
   end
 
+  # since comment_replies_for(@user.id) returns an array in order to use method offset
+  # with Comment.where(id: replies.map(&:id)) converting it to an ActiveRecord::Relation
   def comments
-    @heading = @title = "Your Comment Replies"   
-    @replies = Comment.comment_replies_for(@user.id)
+    @heading = @title = "Your Comment Replies"  
+    replies =  Comment.comment_replies_for(@user.id)
+    @replies = Comment.where(id: replies.map(&:id))
                  .offset((@page - 1) * REPLIES_PER_PAGE)
                  .limit(REPLIES_PER_PAGE)
-    # apply_current_vote
+               
+    # apply_current_vote   
     render :show
   end
 
@@ -30,13 +34,17 @@ class RepliesController < ApplicationController
                 .story_replies_for(@user.id)
                 .offset((@page - 1) * REPLIES_PER_PAGE)
                 .limit(REPLIES_PER_PAGE)
+                
     # apply_current_vote
     render :show
   end
 
   def unread
     @heading = @title = "Your Unread Replies"
-    @replies = ReplyingComment.unread_replies_for(@user.id)
+    replies =  Comment.unread_replies_for(@user.id)
+    @replies = Comment.where(id: replies.map(&:id))
+                .offset((@page - 1) * REPLIES_PER_PAGE)
+                .limit(REPLIES_PER_PAGE)
     # apply_current_vote
     render :show
   end

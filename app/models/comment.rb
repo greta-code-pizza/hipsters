@@ -46,9 +46,27 @@ class Comment < ApplicationRecord
     where(user_id: user_id)
       .order(created_at: :desc)
   }
-  scope :comment_replies_for,
-        ->(user_id) { for_user(user_id).where('parent_comment_id is not null') }
-  scope :story_replies_for, ->(user_id) { for_user(user_id).where('parent_comment_id is null')}
+  scope :all_replies_for,
+        ->(user_id) { comment_replies_for(user_id) +  story_replies_for(user_id)}
+  scope :comment_replies_for, ->(user_id){
+    threads = for_user(user_id).where(parent_comment_id: nil).pluck(:thread_id)
+
+    replies = []
+    threads.map do |thread| 
+       where(thread_id: thread).where('parent_comment_id is not null').map { |c| replies << c }
+    end
+    replies
+}
+  scope :story_replies_for, ->(user_id) { all.joins(:story).where(stories: {user_id: user_id})}
+  scope :unread_replies_for, ->(user_id) { 
+    unread_replies = []
+    comment_replies_for(user_id).map { |comment| 
+      if (comment.unread && comment.user_id != user_id)
+        unread_replies << comment
+      end
+  }
+  unread_replies
+}
 
   FLAGGABLE_DAYS = 7
   DELETEABLE_DAYS = FLAGGABLE_DAYS * 2
@@ -440,6 +458,10 @@ class Comment < ApplicationRecord
     ].reject(&:!).join(".") << "@" << Rails.application.domain
   end
 
+  def single_comment
+    "/c/#{self.short_id}"
+  end
+
   def path
     self.story.comments_path + "#c_#{self.short_id}"
   end
@@ -464,6 +486,13 @@ class Comment < ApplicationRecord
       "~"
     else
       "&nbsp;".html_safe
+    end
+  end
+
+  def set_read(comment, id)
+
+    if Comment.exists?(id) && comment.user_id == id && comment.unread
+        comment.update_attributes(:unread => false)
     end
   end
 

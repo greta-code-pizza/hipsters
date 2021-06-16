@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2021_05_20_100849) do
 
   create_table "advertisements", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
-    t.text "content"
+    t.text "lien_externe"
     t.string "tag"
     t.timestamp "created_at"
     t.integer "vote", default: 0
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2021_05_20_100849) do
     t.boolean "is_moderated", default: false
     t.boolean "is_from_email", default: false
     t.bigint "hat_id", unsigned: true
+    t.boolean "unread", default: true
     t.index ["comment"], name: "index_comments_on_comment", type: :fulltext
     t.index ["confidence"], name: "confidence_idx"
     t.index ["hat_id"], name: "comments_hat_id_fk"

@@ -419,6 +419,9 @@ class Story < ApplicationRecord
     "#{short_id_path}/#{self.title_as_url}"
   end
 
+  def single_commnets_path
+  end
+
   def comments_url
     "#{short_id_url}/#{self.title_as_url}"
   end
