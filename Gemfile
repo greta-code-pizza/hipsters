@@ -49,7 +49,7 @@ gem 'rack-cors'
 gem 'http-accept'
 
 group :test, :development, :staging do
-  gem 'capybara'
+  gem 'capybara', '>= 3.35.3'
   gem 'database_cleaner'
   gem 'good_migrations', '>= 0.0.2'
   gem "listen"
@@ -62,7 +62,7 @@ group :test, :development, :staging do
   gem "byebug"
   gem "rb-readline"
   gem "vcr"
-  gem "webmock" # used to support vcr
+  gem "webmock" , ">= 3.12.2" # used to support vcr
   gem 'simplecov', require: false
   gem 'pry-rails'
 
