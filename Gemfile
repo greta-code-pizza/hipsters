@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "~> 6.0.3.7"
+gem "rails", "~> 6.0.4.1"
 
 gem "mysql2"
 
@@ -43,7 +43,7 @@ gem "sitemap_generator" # for better search engine indexing
 gem "svg-graph", require: 'SVG/Graph/TimeSeries' # for charting, note workaround in lib/time_series.rb
 gem 'transaction_retry' # mitigate https://github.com/lobsters/lobsters-ansible/issues/39
 # Font icons
-gem "font-awesome-rails"
+gem "font-awesome-rails", ">= 4.7.0.7"
 # API
 gem 'rack-cors'
 gem 'http-accept'
