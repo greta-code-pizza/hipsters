@@ -32,7 +32,7 @@ gem "rqrcode"
 
 # parsing
 gem "pdf-reader"
-gem "nokogiri", ">= 1.11.0.rc4"
+gem "nokogiri", ">= 1.12.5"
 gem "htmlentities"
 gem "commonmarker", "~> 0.14"
 
@@ -43,13 +43,13 @@ gem "sitemap_generator" # for better search engine indexing
 gem "svg-graph", require: 'SVG/Graph/TimeSeries' # for charting, note workaround in lib/time_series.rb
 gem 'transaction_retry' # mitigate https://github.com/lobsters/lobsters-ansible/issues/39
 # Font icons
-gem "font-awesome-rails"
+gem "font-awesome-rails", ">= 4.7.0.7"
 # API
 gem 'rack-cors'
 gem 'http-accept'
 
 group :test, :development, :staging do
-  gem 'capybara'
+  gem 'capybara', '>= 3.35.3'
   gem 'database_cleaner'
   gem 'good_migrations', '>= 0.0.2'
   gem "listen"
