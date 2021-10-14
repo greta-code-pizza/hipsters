@@ -23,7 +23,7 @@ gem "uglifier", ">= 1.3.0"
 # deployment
 gem "actionpack-page_caching", ">= 1.2.3"
 gem "exception_notification", ">= 4.4.3"
-gem "puma", ">= 5.3.1"
+gem "puma", ">= 5.5.1"
 
 # security
 gem "bcrypt", "~> 3.1.2"
