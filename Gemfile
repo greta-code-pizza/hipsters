@@ -11,7 +11,7 @@ gem "mysql2"
 gem 'scenic', '>= 1.5.4'
 gem 'scenic-mysql_adapter', '>= 1.0.1'
 gem "activerecord-typedstore"
-gem 'sprockets-rails', '2.3.3'
+gem 'sprockets-rails', '3.0.0'
 
 gem 'dotenv-rails', '>= 2.7.6', groups: [:development, :staging, :test]
 
