@@ -34,7 +34,7 @@ gem "rqrcode"
 gem "pdf-reader"
 gem "nokogiri", ">= 1.11.0.rc4"
 gem "htmlentities"
-gem "commonmarker", "~> 0.14"
+gem "commonmarker", "~> 0.23", ">= 0.23.7"
 
 gem "oauth" # for twitter-posting bot
 gem "mail" # for parsing incoming mail
